@@ -53,10 +53,44 @@
 #define GameWidth  480
 #define GameHeight 320
 
+#define kEasyDif        500
+#define kMediumDif      550
+#define kHardDif        600
+
+#define kLangEng        1
+#define kLangFr         2
+#define kLangMan        3
+#define kLangGer        4
+#define kLangSpan       5
+
+#define kShadowTag      9
+
+#define kCatTag         101
+#define kDogTag         102
+#define kDuckTag        103
+#define kCowTag         104
+#define kRoosterTag     105
+#define kSnailTag       106
+#define kRabbitTag      107
+#define kButterflyTag   108
+#define kHorseTag       109
+#define kParrotTag      110
+#define kPigTag         111
+
+#define kMiniRooster    200
+
+#define kZSelection     6
+#define kZShadow        7
+#define kZbackButton    8
+#define kZGameOverLabel 10
+
 #define kMaxScoreKey @"maxScoreKey"
 
 extern float GameCenterX;
 extern float GameCenterY;
+
+extern int CurrentLanguage;
+extern int CurrentDifficulty;
 
 extern BOOL IsHookActive;
 extern BOOL IsFishCauth;

@@ -27,7 +27,7 @@
         
         if(type == 1)
         {
-            sprite = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%i.png", type]];
+            sprite = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%ifish.png", type]];
             height = 30;
             speed = 14.0;
         }
@@ -35,18 +35,18 @@
         else if(type == 0)
         {
             randFish = arc4random() % 2;
-            sprite = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%i%i.png", type, randFish]];
+            sprite = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%i%ifish.png", type, randFish]];
             speed = 5.0;
         }
         else if(type == 4)
         {
-            sprite = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%i.png", type]];
+            sprite = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%ifish.png", type]];
             speed = 7.0;
             height = arc4random() % 50 + 30;
         }
         else
         {
-            sprite = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%i.png", type]];
+            sprite = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%ifish.png", type]];
             speed = 9.0;
         }
         

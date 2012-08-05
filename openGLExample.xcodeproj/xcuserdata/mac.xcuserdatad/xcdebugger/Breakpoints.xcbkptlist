@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365838603.222243"
+         timestampString = "365877833.993155"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "202"
-         endingLineNumber = "202"
+         startingLineNumber = "203"
+         endingLineNumber = "203"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365838603.222243"
+         timestampString = "365877833.993155"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "210"
-         endingLineNumber = "210"
+         startingLineNumber = "211"
+         endingLineNumber = "211"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
+         timestampString = "365877833.993155"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "578"
-         endingLineNumber = "578"
+         startingLineNumber = "590"
+         endingLineNumber = "590"
          landmarkName = "-tick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
+         timestampString = "365877833.993155"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "577"
-         endingLineNumber = "577"
+         startingLineNumber = "589"
+         endingLineNumber = "589"
          landmarkName = "-tick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
+         timestampString = "365878146.502975"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "663"
-         endingLineNumber = "663"
+         startingLineNumber = "678"
+         endingLineNumber = "678"
          landmarkName = "-tick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
+         timestampString = "365877833.993155"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "668"
-         endingLineNumber = "668"
+         startingLineNumber = "587"
+         endingLineNumber = "587"
          landmarkName = "-tick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
+         timestampString = "365878146.502975"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "575"
-         endingLineNumber = "575"
+         startingLineNumber = "680"
+         endingLineNumber = "680"
          landmarkName = "-tick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
+         timestampString = "365878146.502975"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "665"
-         endingLineNumber = "665"
+         startingLineNumber = "681"
+         endingLineNumber = "681"
          landmarkName = "-tick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,24 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
+         timestampString = "365877833.993155"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "666"
-         endingLineNumber = "666"
-         landmarkName = "-tick:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "511"
-         endingLineNumber = "511"
+         startingLineNumber = "523"
+         endingLineNumber = "523"
          landmarkName = "-removeFish:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
+         timestampString = "365877833.993155"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "371"
-         endingLineNumber = "371"
+         startingLineNumber = "372"
+         endingLineNumber = "372"
          landmarkName = "-startGame"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
+         timestampString = "365877833.993155"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "536"
-         endingLineNumber = "536"
+         startingLineNumber = "548"
+         endingLineNumber = "548"
          landmarkName = "-tick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -216,11 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
+         timestampString = "365877833.993155"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "569"
-         endingLineNumber = "569"
+         startingLineNumber = "581"
+         endingLineNumber = "581"
          landmarkName = "-tick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -229,11 +216,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
+         timestampString = "365877833.993155"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "579"
-         endingLineNumber = "579"
+         startingLineNumber = "591"
+         endingLineNumber = "591"
          landmarkName = "-tick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -242,11 +229,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
+         timestampString = "365877833.993155"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "533"
-         endingLineNumber = "533"
+         startingLineNumber = "545"
+         endingLineNumber = "545"
          landmarkName = "-tick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -255,11 +242,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
+         timestampString = "365877833.993155"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "383"
-         endingLineNumber = "383"
+         startingLineNumber = "384"
+         endingLineNumber = "384"
          landmarkName = "-startGame"
          landmarkType = "5">
       </FileBreakpoint>
@@ -268,12 +255,64 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/GameLayer.mm"
-         timestampString = "365849685.801489"
+         timestampString = "365877833.993155"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "388"
-         endingLineNumber = "388"
+         startingLineNumber = "389"
+         endingLineNumber = "389"
          landmarkName = "-startGame"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "openGLExample/SelectGameLayer.m"
+         timestampString = "365857970.049176"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "35"
+         endingLineNumber = "35"
+         landmarkName = "-init"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "openGLExample/GameLayer.mm"
+         timestampString = "365877833.993155"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "423"
+         endingLineNumber = "423"
+         landmarkName = "-startGame"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "openGLExample/GameLayer.mm"
+         timestampString = "365878146.502975"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "755"
+         endingLineNumber = "755"
+         landmarkName = "-fishAnimation:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "openGLExample/GameLayer.mm"
+         timestampString = "365880411.281513"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "772"
+         endingLineNumber = "772"
+         landmarkName = "-removeFishSprite:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

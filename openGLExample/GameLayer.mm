@@ -86,14 +86,14 @@ enum {
         waveBack = [CCSprite spriteWithFile: @"waveBack.png"];
         waveBack.position = ccp(GameCenterX, GameCenterY + 85);
         [self addChild: waveBack];
-        waveBackSpeed = 10;
+        waveBackSpeed = 7;
         ccTexParams tp = {GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_CLAMP_TO_EDGE};
         [waveBack.texture setTexParameters: &tp];
         
         waveFront = [CCSprite spriteWithFile: @"waveFront.png"];
         waveFront.position = ccp(GameCenterX, GameCenterY + 85);
         [self addChild: waveFront z: 15];
-        waveFrontSpeed = -6;
+        waveFrontSpeed = -4;
         ccTexParams tpF = {GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_CLAMP_TO_EDGE};
         [waveFront.texture setTexParameters: &tpF];
         
@@ -187,6 +187,7 @@ enum {
 		
         fishesArray = [[NSMutableArray alloc] init];
         sharksArray = [[NSMutableArray alloc] init];
+        curFishesArray = [[NSMutableArray alloc] init];
         
         self.isTouchEnabled = YES;
         
@@ -417,6 +418,11 @@ enum {
         [self removeFish: currentFish];
     }
     
+    for(Shark *currentShark in sharksArray)
+    {
+        [self removeShark: currentShark];
+    }
+    
     [self removeChild: curFish cleanup: YES];
     [fishesArray removeAllObjects];
     
@@ -460,28 +466,34 @@ enum {
 {
     time--;
     
-    if(time != 90 && time % 8 == 0)
+    if(CurrentDifficulty == 2)
     {
-        [self spawnShark];
-    }
-    
-    if(time <= 0)
-    {
-        time = 0;
-        
-        NSInteger bestResultEver = [Settings sharedSettings].maxScore;
-        if(score > bestResultEver)
+        if(time != 90 && time % 15 == 0)
         {
-            //check for a new record and save if any
-            [Settings sharedSettings].maxScore = score;
-            [[Settings sharedSettings] save];
+            [self spawnShark];
         }
-        NSInteger b_Score = [Settings sharedSettings].maxScore;
-        
-        [guiLayer showGameOverMenu: b_Score];
     }
     
-    [guiLayer formatCurrentTime: time];
+    if(CurrentDifficulty == 1 || CurrentDifficulty == 2)
+    {
+        if(time <= 0)
+        {
+            time = 0;
+            
+            NSInteger bestResultEver = [Settings sharedSettings].maxScore;
+            if(score > bestResultEver)
+            {
+                //check for a new record and save if any
+                [Settings sharedSettings].maxScore = score;
+                [[Settings sharedSettings] save];
+            }
+            NSInteger b_Score = [Settings sharedSettings].maxScore;
+            
+            [guiLayer showGameOverMenu: b_Score];
+        }
+        
+        [guiLayer formatCurrentTime: time];
+    }
 }
 
 
@@ -589,6 +601,9 @@ enum {
                 {
                     curFish = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%i.png", currentFish.type]];
                 }
+                
+                //[curFishesArray addObject: curFish];
+                
                 //curFish.scaleX = -1;
                 [self addChild: curFish z: 30];
                 
@@ -664,30 +679,39 @@ enum {
     
     if(curFish && IsFishCauth == YES)
     {
-        if(curFish.position.y > 250)
-        {
-            IsFishCauth = NO;
-            IsHookActive = YES;
-            
-            if (_revolJoint) 
+        //for(CCSprite *curFishSprite in curFishesArray)
+        //{
+            if(curFish.position.y > 250)
             {
-                world->DestroyJoint(_revolJoint);
-                _revolJoint = NULL;
-            } 
-            
-            if(fishBody)
-            {
-                world->DestroyBody(fishBody);
-                fishBody = NULL;
+                IsFishCauth = NO;
+                IsHookActive = YES;
+                
+                if (_revolJoint) 
+                {
+                    world->DestroyJoint(_revolJoint);
+                    _revolJoint = NULL;
+                } 
+                
+                if(fishBody)
+                {
+                    world->DestroyBody(fishBody);
+                    fishBody = NULL;
+                }
+                
+                //curFish.scale = 0;
+                curFishAnimated = [CCSprite spriteWithTexture: [curFish texture]];
+                curFishAnimated.position = curFish.position;
+                [self addChild: curFishAnimated];
+                
+                [self removeChild: curFish cleanup: YES];
+                [self fishAnimation];
+                
+                fishCount--;
+                score++;
+                
+                [guiLayer updateScoreLabel: score];
             }
-            
-            //curFish.scale = 0;
-            [self removeChild: curFish cleanup: YES];
-            
-            fishCount--;
-            score++;
-            [guiLayer updateScoreLabel: score];
-        }
+        //}
     }
     
     for(Fish* currentFishToRemove in fishToRemove)
@@ -724,7 +748,29 @@ enum {
 
 }
 
+- (void) fishAnimation
+{
+    //CCAction *moveFishAction = 
+    
+    [curFishAnimated runAction: 
+                    [CCSequence actions: 
+                                    [CCScaleTo actionWithDuration: 0.4 scale: 1.5], 
+                                    [CCSpawn actions: 
+                                                [CCScaleTo actionWithDuration: 0.4 
+                                                                        scale: 0.0], 
+                                                [CCMoveTo actionWithDuration: 0.4 
+                                                                    position: ccp(50, GameHeight - 20)],
+                                     nil], 
+                     
+                                    [CCCallFunc actionWithTarget: self selector: @selector(removeFishSprite)],
+                     nil]
+     ];
+}
 
+- (void) removeFishSprite
+{
+    [self removeChild: curFishAnimated cleanup: YES];
+}
 
 
 // on "dealloc" you need to release all your retained objects

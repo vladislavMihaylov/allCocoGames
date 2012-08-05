@@ -1,71 +1,111 @@
 //
 //  MainMenuLayer.m
-//  openGLExample
+//  catchCoco
 //
-//  Created by Mac on 25.07.12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
+//  Created by Mac on 14.04.12.
+//  Copyright 2012 spotGames. All rights reserved.
 //
 
 #import "MainMenuLayer.h"
-#import "GameConfig.h"
-#import "GameLayer.h"
 #import "SettingsLayer.h"
+#import "SelectGameLayer.h"
+#import "GameConfig.h"
 #import "SimpleAudioEngine.h"
+
 
 @implementation MainMenuLayer
 
-+ (CCScene *) scene
++(CCScene *) scene
 {
-    CCScene *scene = [CCScene node];
-    
-    MainMenuLayer *layer = [MainMenuLayer node];
-    
-    [scene addChild: layer];
-    
-    return scene;
+	// 'scene' is an autorelease object.
+	CCScene *scene = [CCScene node];
+	
+	// 'layer' is an autorelease object.
+	MainMenuLayer *layer = [MainMenuLayer node];
+	
+	// add layer as a child to scene
+	[scene addChild: layer];
+	
+	// return the scene
+	return scene;
+}
+
+-(id) init
+{
+	// always call "super" init
+	// Apple recommends to re-assign "self" with the "super" return value
+	if( (self=[super init])) 
+    {
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"bg.mp3" loop:YES];
+        [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:0.5f];
+        
+        
+        CCSprite *menuBackground = [CCSprite spriteWithFile:@"menuBg.png"];
+        menuBackground.position = ccp(GameCenterX, GameCenterY);
+        [self addChild:menuBackground];
+        
+        CCMenuItemImage *settingsItemMenu = [CCMenuItemImage itemFromNormalImage:@"languagesBtn.png" 
+                                                                   selectedImage:@"languagesBtnOn.png"
+                                                                          target:self 
+                                                                        selector:@selector(showSettings:)
+                                            ];
+        
+        CCMenuItemImage *playItemMenu     = [CCMenuItemImage itemFromNormalImage:@"playMenuBtn.png" 
+                                                                   selectedImage:@"playMenuBtnOn.png"
+                                                                          target:self 
+                                                                        selector:@selector(play:)
+                                            ];
+        
+        playItemMenu.position = ccp(GameWidth * 1.7, GameCenterY + 30);
+        settingsItemMenu.position = ccp(GameWidth * 1.7, GameCenterY - 80);
+        
+        CCMenu *mainMenu = [CCMenu menuWithItems: settingsItemMenu, playItemMenu, nil];
+        mainMenu.position = ccp(0, 0);
+        [self addChild:mainMenu];
+        
+        
+        [playItemMenu runAction: [CCEaseBackOut actionWithAction:
+                                        [CCMoveTo actionWithDuration: 0.8f 
+                                                            position: ccp(GameWidth * 0.7, GameCenterY + 30)
+                                        ]
+                                 ]
+        ];
+        
+        [settingsItemMenu runAction: [CCSequence actions:
+                                        [CCDelayTime actionWithDuration:0.3], 
+                                        [CCEaseBackOut actionWithAction:
+                                                [CCMoveTo actionWithDuration: 0.8f 
+                                                                    position: ccp(GameWidth * 0.7, GameCenterY - 80)
+                                                 ]
+                                        ],nil
+                                      ]
+         ];
+        
+    }
+	return self;
+}
+
+-(void)play:(id)sender
+{
+    [[SimpleAudioEngine sharedEngine] playEffect:@"tap.mp3"];
+    [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration:1.0f 
+                                                                                  scene: [SelectGameLayer scene]
+                                               ]
+    ];
+}
+
+-(void)showSettings:(id)sender
+{
+    [[SimpleAudioEngine sharedEngine] playEffect:@"tap.mp3"];
+    [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration:1.0f 
+                                                                                  scene: [SettingsLayer scene] 
+                                               ]
+    ];
 }
 
 - (void) dealloc
 {
-    [super dealloc];
+	[super dealloc];
 }
-
-- (id) init
-{
-    if((self = [super init]))
-    {
-        //[[SimpleAudioEngine sharedEngine] playBackgroundMusic: @"bgMusic.mp3" loop: YES];
-        
-        CCMenuItemFont *play = [CCMenuItemFont itemFromString: @"PLAY" 
-                                                       target: self 
-                                                     selector: @selector(playGame:)
-                                ];
-        
-        CCMenuItemFont *settings = [CCMenuItemFont itemFromString: @"SETTINGS" 
-                                                       target: self 
-                                                     selector: @selector(settingsLayer:)
-                                ];
-        
-        play.position = ccp(GameCenterX, GameCenterY);
-        settings.position = ccp(GameCenterX, GameCenterY - 100);
-        
-        CCMenu *mainMenu = [CCMenu menuWithItems: play, settings, nil];
-        mainMenu.position = ccp(0,0);
-        
-        [self addChild: mainMenu];
-    }
-    return self;
-}
-
-- (void) playGame: (id) sender
-{
-    [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [GameLayer scene]]];
-}
-
-- (void) settingsLayer: (id) sender
-{
-    [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [SettingsLayer scene]]];
-}
-
 
 @end

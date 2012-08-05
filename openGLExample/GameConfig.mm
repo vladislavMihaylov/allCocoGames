@@ -11,6 +11,9 @@
 float GameCenterX = GameWidth / 2.0;
 float GameCenterY = GameHeight / 2.0;
 
+int CurrentLanguage     = kLangEng;
+int CurrentDifficulty   = 0;
+
 BOOL IsHookActive = YES;
 BOOL IsFishCauth = NO;
 

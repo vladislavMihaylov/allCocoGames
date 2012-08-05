@@ -1,19 +1,21 @@
 //
 //  SettingsLayer.h
-//  openGLExample
+//  catchCoco
 //
-//  Created by Mac on 25.07.12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
+//  Created by Mac on 14.04.12.
+//  Copyright 2012 spotGames. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface SettingsLayer :CCLayer 
-{
+@interface SettingsLayer : CCLayer {
+    
+    CCSprite *selection;
+    CCSprite *difSelection;
     
 }
 
-+ (CCScene *) scene;
++(CCScene *) scene;
 
 @end

@@ -60,6 +60,7 @@
     
    
     CCSprite *curFish;
+    CCSprite *curFishAnimated;
     CCSprite *waveBack;
     CCSprite *waveFront;
     CCSprite *bubblesSprite;
@@ -75,6 +76,7 @@
     float waveFrontOffSetX;
     
     NSMutableArray *fishesArray;
+    NSMutableArray *curFishesArray;
     NSMutableArray *sharksArray;
 }
 
@@ -89,6 +91,7 @@
 - (void) startGame;
 - (void) doPauseGame;
 - (void) unPauseGame;
+- (void) fishAnimation;
 
 @property (nonatomic, assign) CGPoint pos; 
 @property (nonatomic, assign) GUILayer *guiLayer;
