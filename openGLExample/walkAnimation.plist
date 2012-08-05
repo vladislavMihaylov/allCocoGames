@@ -44,5 +44,19 @@
 		<key>delay</key>
 		<real>0.15</real>
 	</dict>
+	<key>shark</key>
+	<dict>
+		<key>animationFrames</key>
+		<string>0,1</string>
+		<key>delay</key>
+		<real>0.1</real>
+	</dict>
+	<key>eat</key>
+	<dict>
+		<key>animationFrames</key>
+		<string>0,1,2,1</string>
+		<key>delay</key>
+		<real>0.05</real>
+	</dict>
 </dict>
 </plist>

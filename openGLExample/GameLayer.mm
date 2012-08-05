@@ -21,6 +21,8 @@
 #import <vector>
 
 #import "Fish.h"
+#import "Shark.h"
+
 using namespace std;
 
 enum {
@@ -184,6 +186,7 @@ enum {
         /////////
 		
         fishesArray = [[NSMutableArray alloc] init];
+        sharksArray = [[NSMutableArray alloc] init];
         
         self.isTouchEnabled = YES;
         
@@ -280,8 +283,39 @@ enum {
         [self startGame];
         [self scheduleUpdate];
 
+
 	}
 	return self;
+}
+
+- (void) spawnShark
+{
+    Shark *shark = [Shark createShark];
+    [self addChild: shark z: 60];
+    
+    [sharksArray addObject: shark];
+    
+    shark.gameLayer = self;
+    
+    [shark swim];
+}
+
+- (void) spawnFish
+{
+    if(fishCount < 3)
+    {
+        Fish *fish = [Fish createFish];
+        
+        [self addChild: fish z: 50];
+        
+        [fishesArray addObject: fish];
+        
+        fishCount++;
+        
+        fish.gameLayer = self;
+        
+        [fish swim];
+    }
 }
 
 - (void) update: (ccTime) dt
@@ -397,6 +431,11 @@ enum {
         [currentFish pauseSchedulerAndActions];
     }
     
+    for(Shark *currentShark in sharksArray)
+    {
+        [currentShark pauseSchedulerAndActions];
+    }
+    
     //[self stopAllActions];
     IsCanSpawnFish = NO;
     [self unschedule: @selector(timeIterator)];
@@ -408,14 +447,23 @@ enum {
     {
         [currentFish resumeSchedulerAndActions];
     }
-    //IsCanSpawnFish = YES;
-    //[self updateIntervalForFishSpawn];
+    
+    for(Shark *currentShark in sharksArray)
+    {
+        [currentShark resumeSchedulerAndActions];
+    }
+    
     [self schedule: @selector(timeIterator) interval: 1.0];
 }
 
 - (void) timeIterator
 {
     time--;
+    
+    if(time != 90 && time % 8 == 0)
+    {
+        [self spawnShark];
+    }
     
     if(time <= 0)
     {
@@ -434,25 +482,6 @@ enum {
     }
     
     [guiLayer formatCurrentTime: time];
-}
- 
-
-- (void) spawnFish
-{
-    if(fishCount < 3)
-    {
-        Fish *fish = [Fish createFish];
-        
-        [self addChild: fish z: 50];
-        
-        [fishesArray addObject: fish];
-        
-        fishCount++;
-        
-        fish.gameLayer = self;
-        
-        [fish swim];
-    }
 }
 
 
@@ -485,6 +514,12 @@ enum {
     fishCount--;
 }
 
+- (void) removeShark: (Shark *) currentShark
+{
+    [sharksArray removeAllObjects]; 
+    [self removeChild: currentShark cleanup: YES];
+}
+
 -(void) tick: (ccTime) dt
 {
     
@@ -506,6 +541,28 @@ enum {
     }
     
     NSMutableArray *fishToRemove = [[NSMutableArray alloc] init];
+
+    
+    for (Shark *currentShark in sharksArray)
+    {
+        for (Fish *currentFish in fishesArray)
+        {
+            if ( ((abs(currentShark.position.x - currentFish.position.x)) < 70) && ((abs(currentShark.position.y - currentFish.position.y)) < 30) )
+            {
+                CCLOG(@"NYAM NYAM!");
+                
+                [currentShark eatingFish];
+                
+                [currentFish runAction: [CCScaleTo actionWithDuration: 0.5 scale: 0]];
+                
+                [fishToRemove addObject: currentFish];
+                
+                [self removeChild: currentFish cleanup: YES];
+                
+                fishCount--;
+            }
+        }
+    }
     
     if(IsHookActive == YES && IsFishCauth == NO)
     {

@@ -16,7 +16,7 @@
 #import "GLES-Render.h"
 
 
-
+@class Shark;
 @class Fish;
 @class Coco;
 
@@ -75,6 +75,7 @@
     float waveFrontOffSetX;
     
     NSMutableArray *fishesArray;
+    NSMutableArray *sharksArray;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
@@ -82,6 +83,7 @@
 
 - (void) spawnFish;
 - (void) removeFish: (Fish *) currentFish;
+- (void) removeShark: (Shark *) currentShark;
 - (void) updateIntervalForFishSpawn;
 
 - (void) startGame;

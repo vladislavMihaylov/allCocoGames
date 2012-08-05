@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041EE4A315CE383300EBE783 /* Shark.mm in Sources */ = {isa = PBXBuildFile; fileRef = 041EE4A215CE383300EBE783 /* Shark.mm */; };
 		047A538715C05541009D61A3 /* Box2DConfig.cmake in Resources */ = {isa = PBXBuildFile; fileRef = 047A532415C05540009D61A3 /* Box2DConfig.cmake */; };
 		047A538815C05541009D61A3 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 047A532515C05540009D61A3 /* CMakeLists.txt */; };
 		047A538915C05541009D61A3 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 047A532715C05540009D61A3 /* b2BroadPhase.cpp */; };
@@ -229,12 +230,18 @@
 		0486A68815C8E558008E730F /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0486A68215C8E558008E730F /* 5.png */; };
 		0487918C15C95A3200A1826A /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0487918B15C95A3200A1826A /* 3.png */; };
 		048A7C9415CC473C00363BA7 /* hook.png in Resources */ = {isa = PBXBuildFile; fileRef = 048A7C9315CC473C00363BA7 /* hook.png */; };
+		0492740415CE636E0088133A /* shark.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0492740215CE636E0088133A /* shark.plist */; };
+		0492740515CE636E0088133A /* shark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0492740315CE636E0088133A /* shark.png */; };
+		0492740915CE67090088133A /* eat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0492740715CE67090088133A /* eat.plist */; };
+		0492740A15CE67090088133A /* eat.png in Resources */ = {isa = PBXBuildFile; fileRef = 0492740815CE67090088133A /* eat.png */; };
 		04DC9A9015C3064E00FCE06F /* VPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9A8B15C3064E00FCE06F /* VPoint.m */; };
 		04DC9A9115C3064E00FCE06F /* VRope.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9A8D15C3064E00FCE06F /* VRope.mm */; };
 		04DC9A9215C3064E00FCE06F /* VStick.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9A8F15C3064E00FCE06F /* VStick.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041EE4A115CE383300EBE783 /* Shark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shark.h; sourceTree = "<group>"; };
+		041EE4A215CE383300EBE783 /* Shark.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Shark.mm; sourceTree = "<group>"; };
 		047A532315C05540009D61A3 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
 		047A532415C05540009D61A3 /* Box2DConfig.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Box2DConfig.cmake; sourceTree = "<group>"; };
 		047A532515C05540009D61A3 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
@@ -634,6 +641,10 @@
 		0486A68215C8E558008E730F /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		0487918B15C95A3200A1826A /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		048A7C9315CC473C00363BA7 /* hook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hook.png; sourceTree = "<group>"; };
+		0492740215CE636E0088133A /* shark.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = shark.plist; sourceTree = "<group>"; };
+		0492740315CE636E0088133A /* shark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shark.png; sourceTree = "<group>"; };
+		0492740715CE67090088133A /* eat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = eat.plist; sourceTree = "<group>"; };
+		0492740815CE67090088133A /* eat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eat.png; sourceTree = "<group>"; };
 		04DC9A8A15C3064E00FCE06F /* VPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPoint.h; sourceTree = "<group>"; };
 		04DC9A8B15C3064E00FCE06F /* VPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPoint.m; sourceTree = "<group>"; };
 		04DC9A8C15C3064E00FCE06F /* VRope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRope.h; sourceTree = "<group>"; };
@@ -1253,6 +1264,8 @@
 				0480552715C4F2B20030F1D5 /* Fish.mm */,
 				04823F1415C7A61300405F4E /* Coco.h */,
 				04823F1515C7A61300405F4E /* Coco.mm */,
+				041EE4A115CE383300EBE783 /* Shark.h */,
+				041EE4A215CE383300EBE783 /* Shark.mm */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -1333,6 +1346,10 @@
 			isa = PBXGroup;
 			children = (
 				0485244115CA6CD5002DCE78 /* walkAnimation.plist */,
+				0492740715CE67090088133A /* eat.plist */,
+				0492740815CE67090088133A /* eat.png */,
+				0492740215CE636E0088133A /* shark.plist */,
+				0492740315CE636E0088133A /* shark.png */,
 				0485242D15CA6C02002DCE78 /* 00fChase.plist */,
 				0485242E15CA6C02002DCE78 /* 00fChase.png */,
 				0485244315CA70CA002DCE78 /* 01fChase.plist */,
@@ -1470,6 +1487,10 @@
 				048A7C9415CC473C00363BA7 /* hook.png in Resources */,
 				0486882515CCEBC00046E5C1 /* boat.png in Resources */,
 				04852AB615CD47B900463960 /* rod.png in Resources */,
+				0492740415CE636E0088133A /* shark.plist in Resources */,
+				0492740515CE636E0088133A /* shark.png in Resources */,
+				0492740915CE67090088133A /* eat.plist in Resources */,
+				0492740A15CE67090088133A /* eat.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1638,6 +1659,7 @@
 				04823F1615C7A61300405F4E /* Coco.mm in Sources */,
 				0485C4D915C9A46E009C68DA /* Settings.m in Sources */,
 				0485242A15CA5FFF002DCE78 /* Common.mm in Sources */,
+				041EE4A315CE383300EBE783 /* Shark.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
