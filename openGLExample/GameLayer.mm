@@ -16,7 +16,7 @@
 #import "MyContactListener.h"
 #import "Settings.h"
 #import "Common.h"
-
+#import "SimpleAudioEngine.h"
 #import "VRope.h"
 #import <vector>
 
@@ -74,10 +74,11 @@ enum {
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) 
     {
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic: @"FishMusic.mp3"];
         
         //////// BackGround
         
-        CCSprite *bg = [CCSprite spriteWithFile: @"bg.png"];
+        CCSprite *bg = [CCSprite spriteWithFile: @"FishBg.png"];
         bg.position = ccp(GameCenterX, GameCenterY);
         //[bg setOpacity: 100];
         [self addChild: bg z: kZBackGroundPic];
@@ -188,6 +189,8 @@ enum {
         fishesArray = [[NSMutableArray alloc] init];
         sharksArray = [[NSMutableArray alloc] init];
         curFishesArray = [[NSMutableArray alloc] init];
+        AninatedFishesArray = [[NSMutableArray alloc] init];
+        AnimatedFishesForRemoveArray = [[NSMutableArray alloc] init];
         
         self.isTouchEnabled = YES;
         
@@ -466,16 +469,16 @@ enum {
 {
     time--;
     
-    if(CurrentDifficulty == 2)
+    if(CurrentDifficulty == 2 || CurrentDifficulty == 1)
     {
-        if(time != 90 && time % 15 == 0)
+        if(time != 90 && time != 0 && time % 15 == 0)
         {
             [self spawnShark];
         }
     }
     
-    if(CurrentDifficulty == 1 || CurrentDifficulty == 2)
-    {
+    //if(CurrentDifficulty == 1 || CurrentDifficulty == 2)
+    //{
         if(time <= 0)
         {
             time = 0;
@@ -493,7 +496,7 @@ enum {
         }
         
         [guiLayer formatCurrentTime: time];
-    }
+    //}
 }
 
 
@@ -595,11 +598,11 @@ enum {
                 
                 if(currentFish.type == 0)
                 {
-                    curFish = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%i%i.png", currentFish.type, currentFish.randFish]];
+                    curFish = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%i%ifish.png", currentFish.type, currentFish.randFish]];
                 }
                 else
                 {
-                    curFish = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%i.png", currentFish.type]];
+                    curFish = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%ifish.png", currentFish.type]];
                 }
                 
                 //[curFishesArray addObject: curFish];
@@ -681,6 +684,8 @@ enum {
     {
         //for(CCSprite *curFishSprite in curFishesArray)
         //{
+        if(CurrentDifficulty == 2)
+        {
             if(curFish.position.y > 250)
             {
                 IsFishCauth = NO;
@@ -703,14 +708,63 @@ enum {
                 curFishAnimated.position = curFish.position;
                 [self addChild: curFishAnimated];
                 
+                [AninatedFishesArray addObject: curFishAnimated];
+                
                 [self removeChild: curFish cleanup: YES];
-                [self fishAnimation];
+                
+                for (CCSprite *currentAnimatedSprite in AninatedFishesArray)
+                {
+                    [self fishAnimation: currentAnimatedSprite];
+                }
                 
                 fishCount--;
                 score++;
                 
                 [guiLayer updateScoreLabel: score];
             }
+        }
+        else
+        {
+            IsFishCauth = NO;
+            IsHookActive = YES;
+            
+            if (_revolJoint) 
+            {
+                world->DestroyJoint(_revolJoint);
+                _revolJoint = NULL;
+            } 
+            
+            if(fishBody)
+            {
+                world->DestroyBody(fishBody);
+                fishBody = NULL;
+            }
+            
+            curFishAnimated = [CCSprite spriteWithTexture: [curFish texture]];
+            
+            b2Vec2 hookPos = coco.hook -> GetPosition();
+            CGPoint picPosition = ccp(hookPos.x * 32, hookPos.y * 32);
+            //CCLOG(@"PositionX; %f PositionY: %f", picPosition.x, picPosition.y);
+            
+            curFishAnimated.position = picPosition;
+            [self addChild: curFishAnimated];
+            
+            [AninatedFishesArray addObject: curFishAnimated];
+            
+            [self removeChild: curFish cleanup: YES];
+            
+            for (CCSprite *currentAnimatedSprite in AninatedFishesArray)
+            {
+                [self fishAnimation: currentAnimatedSprite];
+            }
+            
+            fishCount--;
+            score++;
+            
+            [guiLayer updateScoreLabel: score];
+            
+            
+        }
         //}
     }
     
@@ -748,11 +802,11 @@ enum {
 
 }
 
-- (void) fishAnimation
+- (void) fishAnimation: (CCSprite *) fishSprite
 {
     //CCAction *moveFishAction = 
     
-    [curFishAnimated runAction: 
+    [fishSprite runAction: 
                     [CCSequence actions: 
                                     [CCScaleTo actionWithDuration: 0.4 scale: 1.5], 
                                     [CCSpawn actions: 
@@ -762,14 +816,19 @@ enum {
                                                                     position: ccp(50, GameHeight - 20)],
                                      nil], 
                      
-                                    [CCCallFunc actionWithTarget: self selector: @selector(removeFishSprite)],
+                     //[CCCallFunc actionWithTarget: self selector: @selector(removeFishSprite)],
+                     [CCCallFuncO actionWithTarget: self selector: @selector(removeFishSprite:) object: fishSprite],
                      nil]
      ];
+    
+    
 }
 
-- (void) removeFishSprite
+- (void) removeFishSprite: (CCSprite *) fishSprite
 {
-    [self removeChild: curFishAnimated cleanup: YES];
+    //[self removeChild: curFishAnimated cleanup: YES];
+    [self removeChild: fishSprite cleanup: YES];
+    [AninatedFishesArray removeObject: fishSprite];
 }
 
 

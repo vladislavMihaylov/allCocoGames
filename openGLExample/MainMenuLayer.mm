@@ -38,7 +38,7 @@
     {
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"bg.mp3" loop:YES];
         [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:0.5f];
-        
+        //[[SimpleAudioEngine sharedEngine] preloadBackgroundMusic: @"FishMusic.mp3"];
         
         CCSprite *menuBackground = [CCSprite spriteWithFile:@"menuBg.png"];
         menuBackground.position = ccp(GameCenterX, GameCenterY);
@@ -56,17 +56,18 @@
                                                                         selector:@selector(play:)
                                             ];
         
-        playItemMenu.position = ccp(GameWidth * 1.7, GameCenterY + 30);
+        playItemMenu.scale = 0.65;
+        playItemMenu.position = ccp(GameWidth * 1.7, GameCenterY - 50);
         settingsItemMenu.position = ccp(GameWidth * 1.7, GameCenterY - 80);
         
-        CCMenu *mainMenu = [CCMenu menuWithItems: settingsItemMenu, playItemMenu, nil];
+        CCMenu *mainMenu = [CCMenu menuWithItems: playItemMenu, nil];
         mainMenu.position = ccp(0, 0);
         [self addChild:mainMenu];
         
         
         [playItemMenu runAction: [CCEaseBackOut actionWithAction:
                                         [CCMoveTo actionWithDuration: 0.8f 
-                                                            position: ccp(GameWidth * 0.7, GameCenterY + 30)
+                                                            position: ccp(GameWidth * 0.7, GameCenterY - 30)
                                         ]
                                  ]
         ];
@@ -75,7 +76,7 @@
                                         [CCDelayTime actionWithDuration:0.3], 
                                         [CCEaseBackOut actionWithAction:
                                                 [CCMoveTo actionWithDuration: 0.8f 
-                                                                    position: ccp(GameWidth * 0.7, GameCenterY - 80)
+                                                                    position: ccp(GameWidth * 0.7, GameCenterY - 30)
                                                  ]
                                         ],nil
                                       ]

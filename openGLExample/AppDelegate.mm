@@ -54,7 +54,7 @@
 	CCDirector *director = [CCDirector sharedDirector];
 	
 	// Init the View Controller
-	viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
+	viewController = [[RootViewController alloc] initWithNibName: nil bundle: nil];
 	viewController.wantsFullScreenLayout = YES;
 	
 	//
@@ -85,7 +85,7 @@
 	// Edit the RootViewController.m file to edit the supported orientations.
 	//
 #if GAME_AUTOROTATION == kGameAutorotationUIViewController
-	[director setDeviceOrientation:kCCDeviceOrientationPortrait];
+	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft]; //Portrait];
 #else
 	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
 #endif

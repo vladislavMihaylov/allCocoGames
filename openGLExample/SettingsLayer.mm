@@ -12,16 +12,20 @@
 #import "SelectGameLayer.h"
 #import "SimpleAudioEngine.h"
 
+#import "CocoGameLayer.h"
+#import "GameLayer.h"
+#import "MorphMainMenu.h"
+
 
 @implementation SettingsLayer
 
-+(CCScene *) scene
++(CCScene *) sceneWithNumberOfGame: (NSInteger) number
 {
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	SettingsLayer *layer = [SettingsLayer node];
+	SettingsLayer *layer = [[[SettingsLayer alloc] initWithNumberOfGame: number] autorelease];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -30,16 +34,39 @@
 	return scene;
 }
 
--(id) init
+-(id) initWithNumberOfGame: (NSInteger) number
 {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) {
         
-        CCSprite *background = [CCSprite spriteWithFile:@"settingsBg.jpg"];
+        NSString *bgName;
+        NSInteger bgOpacity;
+        
+        if(number == 10)
+        {
+            bgName = @"FishBg.png";
+            bgOpacity = 70;
+            
+        }
+        if(number == 11)
+        {
+            bgName = @"settingsBg.jpg";
+            bgOpacity = 0;
+        }
+        if(number == 12)
+        {
+            bgName = @"morphBg.png";
+            bgOpacity = 0;
+        }
+        
+        CCSprite *background = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%@", bgName]];
         background.position = ccp(GameCenterX, GameCenterY);
         [self addChild:background];
         
+        CCLayerColor *shadowLayer = [CCLayerColor layerWithColor: ccc4(200, 200, 255, bgOpacity)];
+        shadowLayer.position = ccp(0,0);
+        [self addChild: shadowLayer];
         //////////////// difficulty
         
         CCSprite *selectDifficulty = [CCSprite spriteWithFile:@"selectDif.png"];
@@ -101,11 +128,31 @@
         
         ////////////////
         
-        CCMenuItemImage *back = [CCMenuItemImage itemFromNormalImage:@"playMenuBtn.png" 
-                                                       selectedImage:@"playMenuBtnOn.png"
-                                                              target:self 
-                                                            selector:@selector(showMainMenu:)
+        CCMenuItemImage *BackToMainMenu = [CCMenuItemImage itemFromNormalImage: @"backBtn.png" 
+                                                                 selectedImage: @"backBtnOn.png"
+                                                                        target: self 
+                                                                      selector: @selector(goToSelectGameMenu:)];
+        NSString *gameName = @"";
+        
+        if(number == 10)
+        {
+            gameName = @"Fish";
+        }
+        if(number == 11)
+        {
+            gameName = @"Coco";
+        }
+        if (number == 12)
+        {
+            gameName = @"Coco";
+        }
+            CCMenuItemImage *play = [CCMenuItemImage itemFromNormalImage: [NSString stringWithFormat: @"playBtn%@.png", gameName]
+                                                           selectedImage: [NSString stringWithFormat: @"playBtnOn%@.png", gameName]
+                                                                  target:self 
+                                                                selector:@selector(showMainMenu:)
                                  ];
+        play.tag = number;
+        
         
         
         
@@ -144,15 +191,17 @@
                                   ];
         span.tag = kLangSpan;
         
-        back.scale = 0.9;
-        back.position = ccp(GameWidth * 0.85, GameHeight * 0.205f);
+        BackToMainMenu.scale = 0.85;
+        play.scale = 0.7;
+        BackToMainMenu.position = ccp(GameWidth * 0.14, GameHeight * 0.15);
+        play.position = ccp(GameWidth * 0.85, GameHeight * 0.19f);
         eng.position  = ccp(GameCenterX, GameHeight * 0.7);
         fr.position   = ccp(GameWidth * 0.20, GameHeight * 0.80);
         ger.position  = ccp(GameWidth * 0.80, GameHeight * 0.80);
         man.position  = ccp(GameWidth * 0.20, GameHeight * 0.50);
         span.position = ccp(GameWidth * 0.80, GameHeight * 0.50);
 
-        CCMenu *menu = [CCMenu menuWithItems:back, eng, fr, ger, man, span, nil];
+        CCMenu *menu = [CCMenu menuWithItems: BackToMainMenu, play, eng, fr, ger, man, span, nil];
         menu.position = ccp(0, 0);
         [self addChild:menu];
         
@@ -177,18 +226,51 @@
             }
         }
         
-        
+
     }
 	return self;
 }
 
--(void)showMainMenu:(id)sender
+- (void) goToSelectGameMenu: (id) sender
 {
-    [[SimpleAudioEngine sharedEngine] playEffect:@"tap.mp3"];
-    [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration:1.0f 
-                                                                                  scene: [SelectGameLayer scene] 
-                                               ]
-    ];
+    [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [SelectGameLayer scene]]];
+}
+
+-(void)showMainMenu: (CCMenuItem *) send
+{
+    
+    if(send.tag == 10)
+    {
+        [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [GameLayer scene]]];
+    }
+    if(send.tag == 11)
+    {
+        [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [CocoGameLayer scene]]];
+    }
+    if(send.tag == 12)
+    {
+        [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [MorphMainMenu scene]]];
+        //[self selectHero];
+    }
+}
+
+- (void) selectHero
+{
+    CCLayerColor *selectLayer = [CCLayerColor layerWithColor: ccc4( 0, 0, 0, 240)];
+    selectLayer.position = ccp(0, 0);
+    [self addChild: selectLayer];
+    
+    CCMenuItemImage *cocoBtn = [CCMenuItemImage itemFromNormalImage: @"PlayWithCocoBtn.png" selectedImage: @"PlayWithCocoBtnTap.png"];
+    cocoBtn.position = ccp(GameWidth * 0.3, GameHeight * 1.5);
+    
+    CCMenuItemImage *francoisBtn = [CCMenuItemImage itemFromNormalImage: @"PlayWithFrancoisBtn.png" selectedImage: @"PlayWithFrancoisBtnTap.png"];
+    francoisBtn.position = ccp(GameWidth * 0.7, GameHeight * 1.5);
+    
+    CCMenu *heroMenu = [CCMenu menuWithItems: cocoBtn, francoisBtn, nil];
+    heroMenu.position = ccp(0, GameHeight);
+    [self addChild: heroMenu];
+    
+    [heroMenu runAction: [CCEaseBackInOut actionWithAction: [CCMoveTo actionWithDuration: 0.5 position: ccp(0, -320)]]];
 }
 
 - (void) selectLang: (CCMenuItem *) sender

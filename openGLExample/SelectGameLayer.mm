@@ -11,7 +11,9 @@
 #import "MainMenuLayer.h"
 #import "GameConfig.h"
 #import "GameLayer.h"
+#import "SettingsLayer.h"
 
+#import "MorphMainMenu.h"
 
 @implementation SelectGameLayer
 
@@ -40,18 +42,27 @@
         [self addChild: bgSprite];
         
         labelSprite = [CCSprite spriteWithFile: @"selectGameLogo.png"];
-        labelSprite.position = ccp(GameCenterX, GameHeight - 50);
+        labelSprite.position = ccp(GameCenterX, GameHeight - 30);
         [self addChild: labelSprite];
         
         CCMenuItemImage *fishingGame = [CCMenuItemImage itemFromNormalImage: @"cocoFishingPlayBtn.png" 
                                                               selectedImage: @"cocoFishingPlayBtnTap.png"
                                                                      target: self 
-                                                                   selector: @selector(playFishingGame:)];
+                                                                   selector: @selector(playGame:)];
+        fishingGame.tag = 10;
         
         CCMenuItemImage *catchCocoGame = [CCMenuItemImage itemFromNormalImage: @"catchCocoPlayBtn.png" 
                                                                 selectedImage: @"catchCocoPlayBtnTap.png"
                                                                        target: self 
-                                                                     selector: @selector(playCatchCocoGame:)];
+                                                                     selector: @selector(playGame:)];
+        catchCocoGame.tag = 11;
+        
+        CCMenuItemImage *morphingGame = [CCMenuItemImage itemFromNormalImage: @"CocoFrancoisPlayBtn.png"
+                                                               selectedImage: @"CocoFrancoisPlayBtnTap.png"
+                                                                        target: self
+                                                                      selector: @selector(playGame:)];
+        
+        morphingGame.tag = 12;
         
         CCMenuItemImage *BackToMainMenu = [CCMenuItemImage itemFromNormalImage: @"backBtn.png" 
                                                                  selectedImage: @"backBtnOn.png"
@@ -59,11 +70,12 @@
                                                                       selector: @selector(goToMainMenu:)];
         
         
-        fishingGame.position = ccp(GameCenterX, GameCenterY + 40);
-        catchCocoGame.position = ccp(GameCenterX, GameCenterY - 80);
+        fishingGame.position = ccp(GameCenterX, GameCenterY + 90);
+        catchCocoGame.position = ccp(GameCenterX, GameCenterY - 20);
+        morphingGame.position = ccp(GameCenterX, GameCenterY - 130);
         BackToMainMenu.position = ccp(GameWidth * 0.04, GameHeight * 0.05);
         
-        selectGameMenu = [CCMenu menuWithItems: fishingGame, catchCocoGame, BackToMainMenu, nil];
+        selectGameMenu = [CCMenu menuWithItems: fishingGame, catchCocoGame, morphingGame, BackToMainMenu, nil];
         selectGameMenu.position = ccp(0,0);
         selectGameMenu.scale = 0.8;
         [self addChild: selectGameMenu];
@@ -72,14 +84,9 @@
     return self;
 }
 
-- (void) playFishingGame: (id) sender
+- (void) playGame: (CCMenuItem *) sender
 {
-    [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [GameLayer scene]]];
-}
-
-- (void) playCatchCocoGame: (id) sender
-{
-    [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [CocoGameLayer scene]]];
+    [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [SettingsLayer sceneWithNumberOfGame: sender.tag]]];
 }
 
 - (void) goToMainMenu: (id) sender

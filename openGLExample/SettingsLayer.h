@@ -16,6 +16,7 @@
     
 }
 
-+(CCScene *) scene;
+-(id) initWithNumberOfGame: (NSInteger) number;
++(CCScene *) sceneWithNumberOfGame: (NSInteger) number;
 
 @end
