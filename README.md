@@ -1,4 +1,4 @@
-allCocoGames
-============
+coco
+====
 
-AllCocoGames
+a game about coco
