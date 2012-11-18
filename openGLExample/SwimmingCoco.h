@@ -15,10 +15,13 @@
 {
     AnimationNode *body;
     AnimationNode *head;
+    AnimationNode *tail;
     AnimationNode *rightHand;
     AnimationNode *leftHand;
-    AnimationNode *rightFoot;
-    AnimationNode *leftFoot;
+    AnimationNode *rightFootUp;
+    AnimationNode *rightFootDown;
+    AnimationNode *leftFootUp;
+    AnimationNode *leftFootDown;
     
     float currentSpeed;
 }
@@ -26,5 +29,8 @@
 + (SwimmingCoco *) createWithSpeed: (float) speed;
 - (void) increaseSpeed;
 - (float) getCurrentCocoSpeed;
+
+- (void) showTransitionAnimation;
+
 
 @end

@@ -350,10 +350,41 @@
 		04DC9A9015C3064E00FCE06F /* VPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9A8B15C3064E00FCE06F /* VPoint.m */; };
 		04DC9A9115C3064E00FCE06F /* VRope.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9A8D15C3064E00FCE06F /* VRope.mm */; };
 		04DC9A9215C3064E00FCE06F /* VStick.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9A8F15C3064E00FCE06F /* VStick.m */; };
+		F5002FA716494F4900397E5E /* CocoBody.png in Resources */ = {isa = PBXBuildFile; fileRef = F5002FA316494F4900397E5E /* CocoBody.png */; };
+		F5002FA816494F4900397E5E /* CocoLeftFootDown.png in Resources */ = {isa = PBXBuildFile; fileRef = F5002FA416494F4900397E5E /* CocoLeftFootDown.png */; };
+		F5002FA916494F4900397E5E /* CocoLeftFootUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F5002FA516494F4900397E5E /* CocoLeftFootUp.png */; };
+		F5002FAA16494F4900397E5E /* CocoTail.png in Resources */ = {isa = PBXBuildFile; fileRef = F5002FA616494F4900397E5E /* CocoTail.png */; };
+		F5002FAC16496BAF00397E5E /* CocoRightHand.png in Resources */ = {isa = PBXBuildFile; fileRef = F5002FAB16496BAF00397E5E /* CocoRightHand.png */; };
+		F5002FAE16496F2600397E5E /* CocoLeftHand.png in Resources */ = {isa = PBXBuildFile; fileRef = F5002FAD16496F2600397E5E /* CocoLeftHand.png */; };
+		F5002FB0164973BD00397E5E /* CocoHead.png in Resources */ = {isa = PBXBuildFile; fileRef = F5002FAF164973BD00397E5E /* CocoHead.png */; };
+		F50087F71658AD5700251994 /* CocoSwimLeftFootDown.png in Resources */ = {isa = PBXBuildFile; fileRef = F50087F61658AD5700251994 /* CocoSwimLeftFootDown.png */; };
+		F50088041658B95D00251994 /* jumpBtnOn.png in Resources */ = {isa = PBXBuildFile; fileRef = F50087FA1658B95D00251994 /* jumpBtnOn.png */; };
+		F50088051658B95D00251994 /* upBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F50087FB1658B95D00251994 /* upBtn.png */; };
+		F50088061658B95D00251994 /* upBtnOn.png in Resources */ = {isa = PBXBuildFile; fileRef = F50087FC1658B95D00251994 /* upBtnOn.png */; };
+		F50088071658B95D00251994 /* downBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F50087FD1658B95D00251994 /* downBtn.png */; };
+		F50088081658B95D00251994 /* downBtnOn.png in Resources */ = {isa = PBXBuildFile; fileRef = F50087FE1658B95D00251994 /* downBtnOn.png */; };
+		F50088091658B95D00251994 /* runBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F50087FF1658B95D00251994 /* runBtn.png */; };
+		F500880A1658B95D00251994 /* runBtnOn.png in Resources */ = {isa = PBXBuildFile; fileRef = F50088001658B95D00251994 /* runBtnOn.png */; };
+		F500880B1658B95D00251994 /* swimBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F50088011658B95D00251994 /* swimBtn.png */; };
+		F500880C1658B95D00251994 /* swimBtnOn.png in Resources */ = {isa = PBXBuildFile; fileRef = F50088021658B95D00251994 /* swimBtnOn.png */; };
+		F500880D1658B95D00251994 /* jumpBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F50088031658B95D00251994 /* jumpBtn.png */; };
+		F50088101658C00F00251994 /* universalBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F500880E1658C00F00251994 /* universalBtn.png */; };
+		F50088111658C00F00251994 /* universalBtnOn.png in Resources */ = {isa = PBXBuildFile; fileRef = F500880F1658C00F00251994 /* universalBtnOn.png */; };
+		F504475516592D0C00E37A7C /* backgroundSprites.png in Resources */ = {isa = PBXBuildFile; fileRef = F504475316592D0C00E37A7C /* backgroundSprites.png */; };
+		F504475616592D0C00E37A7C /* backgroundSprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F504475416592D0C00E37A7C /* backgroundSprites.plist */; };
+		F5044758165932EB00E37A7C /* allBack.png in Resources */ = {isa = PBXBuildFile; fileRef = F5044757165932EB00E37A7C /* allBack.png */; };
+		F504475A1659505400E37A7C /* 1000to1007.png in Resources */ = {isa = PBXBuildFile; fileRef = F50447591659505400E37A7C /* 1000to1007.png */; };
+		F50692331649EDD000CBC5D7 /* CocoSwimHead.png in Resources */ = {isa = PBXBuildFile; fileRef = F50692311649EDD000CBC5D7 /* CocoSwimHead.png */; };
+		F5098A59164E58AC00D52ECD /* 1000to1001.png in Resources */ = {isa = PBXBuildFile; fileRef = F5098A53164E58AC00D52ECD /* 1000to1001.png */; };
+		F5098A5A164E58AC00D52ECD /* 1000to1002.png in Resources */ = {isa = PBXBuildFile; fileRef = F5098A54164E58AC00D52ECD /* 1000to1002.png */; };
+		F5098A5B164E58AC00D52ECD /* 1000to1003.png in Resources */ = {isa = PBXBuildFile; fileRef = F5098A55164E58AC00D52ECD /* 1000to1003.png */; };
+		F5098A5C164E58AC00D52ECD /* texture1000.png in Resources */ = {isa = PBXBuildFile; fileRef = F5098A56164E58AC00D52ECD /* texture1000.png */; };
 		F509A5BB164277AC00076441 /* body.png in Resources */ = {isa = PBXBuildFile; fileRef = F509A5B9164277AC00076441 /* body.png */; };
 		F509A5BC164277AC00076441 /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = F509A5BA164277AC00076441 /* head.png */; };
 		F509A5BF164278AF00076441 /* leftFoot.png in Resources */ = {isa = PBXBuildFile; fileRef = F509A5BD164278AF00076441 /* leftFoot.png */; };
 		F509A5C0164278AF00076441 /* rightFoot.png in Resources */ = {isa = PBXBuildFile; fileRef = F509A5BE164278AF00076441 /* rightFoot.png */; };
+		F509BDB11652633000C799E4 /* 1000to1005.png in Resources */ = {isa = PBXBuildFile; fileRef = F509BDB01652633000C799E4 /* 1000to1005.png */; };
+		F509BDB31652633900C799E4 /* texture1001.png in Resources */ = {isa = PBXBuildFile; fileRef = F509BDB21652633900C799E4 /* texture1001.png */; };
 		F50B113C16404779004BF562 /* MorphFrancois.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B113316404779004BF562 /* MorphFrancois.mm */; };
 		F50B113D16404779004BF562 /* RunningFrancois.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B113516404779004BF562 /* RunningFrancois.mm */; };
 		F50B113E16404779004BF562 /* SwimmingFrancois.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B113716404779004BF562 /* SwimmingFrancois.mm */; };
@@ -365,24 +396,28 @@
 		F50B114E1640478D004BF562 /* GoingDownCoco.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B11481640478D004BF562 /* GoingDownCoco.mm */; };
 		F50B114F1640478D004BF562 /* MorphCoco.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B114A1640478D004BF562 /* MorphCoco.mm */; };
 		F50B11541640479E004BF562 /* AnimationNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B11511640479E004BF562 /* AnimationNode.mm */; };
-		F50B11551640479E004BF562 /* Ground.m in Sources */ = {isa = PBXBuildFile; fileRef = F50B11531640479E004BF562 /* Ground.m */; };
+		F50B11551640479E004BF562 /* Ground.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B11531640479E004BF562 /* Ground.mm */; };
 		F50B1160164047B0004BF562 /* MorphMainMenu.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B1157164047B0004BF562 /* MorphMainMenu.mm */; };
 		F50B1161164047B0004BF562 /* MorphGameLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B1159164047B0004BF562 /* MorphGameLayer.mm */; };
 		F50B1162164047B0004BF562 /* MorphGUILayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B115B164047B0004BF562 /* MorphGUILayer.mm */; };
 		F50B1163164047B0004BF562 /* MorphGameConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F50B115D164047B0004BF562 /* MorphGameConfig.m */; };
 		F50B1164164047B0004BF562 /* MorphCommon.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B115F164047B0004BF562 /* MorphCommon.mm */; };
-		F5CFE8FF1641468A0070150F /* texture1000.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE8F71641468A0070150F /* texture1000.png */; };
-		F5CFE9001641468A0070150F /* texture1001.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE8F81641468A0070150F /* texture1001.png */; };
-		F5CFE9011641468A0070150F /* texture1002.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE8F91641468A0070150F /* texture1002.png */; };
-		F5CFE9021641468A0070150F /* texture1003.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE8FA1641468A0070150F /* texture1003.png */; };
-		F5CFE9031641468A0070150F /* texture1004.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE8FB1641468A0070150F /* texture1004.png */; };
-		F5CFE9041641468A0070150F /* texture1005.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE8FC1641468A0070150F /* texture1005.png */; };
-		F5CFE9051641468A0070150F /* texture1006.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE8FD1641468A0070150F /* texture1006.png */; };
+		F545476F164FF5FD0066B159 /* 1000to1004.png in Resources */ = {isa = PBXBuildFile; fileRef = F545476E164FF5FD0066B159 /* 1000to1004.png */; };
+		F5454771164FF71D0066B159 /* texture1004.png in Resources */ = {isa = PBXBuildFile; fileRef = F5454770164FF71D0066B159 /* texture1004.png */; };
 		F5CFE9061641468A0070150F /* texture1007.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE8FE1641468A0070150F /* texture1007.png */; };
 		F5CFE910164146940070150F /* leftHand.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE90A164146940070150F /* leftHand.png */; };
 		F5CFE912164146940070150F /* rightHand.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE90C164146940070150F /* rightHand.png */; };
 		F5CFE914164146C80070150F /* restartBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE913164146C80070150F /* restartBtn.png */; };
 		F5CFE917164146F00070150F /* pauseMenuBg.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE916164146F00070150F /* pauseMenuBg.png */; };
+		F5F6963E164EA86700081CAD /* texture1002.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F6963D164EA86600081CAD /* texture1002.png */; };
+		F5F69640164EBE9A00081CAD /* texture1003.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F6963F164EBE9A00081CAD /* texture1003.png */; };
+		F5F69648164ECB4700081CAD /* texture1005.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F69647164ECB4700081CAD /* texture1005.png */; };
+		F5F6964D164ECDEF00081CAD /* 1000to1006.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F6964B164ECDEF00081CAD /* 1000to1006.png */; };
+		F5F6964E164ECDEF00081CAD /* texture1006.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F6964C164ECDEF00081CAD /* texture1006.png */; };
+		F5F848B0164BF6E3002F916B /* CocoLeftFootDown.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F848AE164BF6E3002F916B /* CocoLeftFootDown.png */; };
+		F5F848B1164BF6E3002F916B /* CocoLeftFootMiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F848AF164BF6E3002F916B /* CocoLeftFootMiddle.png */; };
+		F5F848B4164C1811002F916B /* CocoLeftHandDown.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F848B2164C1811002F916B /* CocoLeftHandDown.png */; };
+		F5F848B5164C1811002F916B /* CocoLeftHandUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F848B3164C1811002F916B /* CocoLeftHandUp.png */; };
 		F5FF5C331641601200E8FA97 /* morphBg.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C321641601200E8FA97 /* morphBg.png */; };
 		F5FF5C3716416A8B00E8FA97 /* CocoFrancoisPlayBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3516416A8B00E8FA97 /* CocoFrancoisPlayBtn.png */; };
 		F5FF5C3816416A8B00E8FA97 /* CocoFrancoisPlayBtnTap.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3616416A8B00E8FA97 /* CocoFrancoisPlayBtnTap.png */; };
@@ -920,10 +955,41 @@
 		04DC9A8D15C3064E00FCE06F /* VRope.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VRope.mm; sourceTree = "<group>"; };
 		04DC9A8E15C3064E00FCE06F /* VStick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VStick.h; sourceTree = "<group>"; };
 		04DC9A8F15C3064E00FCE06F /* VStick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VStick.m; sourceTree = "<group>"; };
+		F5002FA316494F4900397E5E /* CocoBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoBody.png; sourceTree = "<group>"; };
+		F5002FA416494F4900397E5E /* CocoLeftFootDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoLeftFootDown.png; sourceTree = "<group>"; };
+		F5002FA516494F4900397E5E /* CocoLeftFootUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoLeftFootUp.png; sourceTree = "<group>"; };
+		F5002FA616494F4900397E5E /* CocoTail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoTail.png; sourceTree = "<group>"; };
+		F5002FAB16496BAF00397E5E /* CocoRightHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoRightHand.png; sourceTree = "<group>"; };
+		F5002FAD16496F2600397E5E /* CocoLeftHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoLeftHand.png; sourceTree = "<group>"; };
+		F5002FAF164973BD00397E5E /* CocoHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoHead.png; sourceTree = "<group>"; };
+		F50087F61658AD5700251994 /* CocoSwimLeftFootDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoSwimLeftFootDown.png; sourceTree = "<group>"; };
+		F50087FA1658B95D00251994 /* jumpBtnOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpBtnOn.png; sourceTree = "<group>"; };
+		F50087FB1658B95D00251994 /* upBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upBtn.png; sourceTree = "<group>"; };
+		F50087FC1658B95D00251994 /* upBtnOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upBtnOn.png; sourceTree = "<group>"; };
+		F50087FD1658B95D00251994 /* downBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downBtn.png; sourceTree = "<group>"; };
+		F50087FE1658B95D00251994 /* downBtnOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downBtnOn.png; sourceTree = "<group>"; };
+		F50087FF1658B95D00251994 /* runBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runBtn.png; sourceTree = "<group>"; };
+		F50088001658B95D00251994 /* runBtnOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runBtnOn.png; sourceTree = "<group>"; };
+		F50088011658B95D00251994 /* swimBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swimBtn.png; sourceTree = "<group>"; };
+		F50088021658B95D00251994 /* swimBtnOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swimBtnOn.png; sourceTree = "<group>"; };
+		F50088031658B95D00251994 /* jumpBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpBtn.png; sourceTree = "<group>"; };
+		F500880E1658C00F00251994 /* universalBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = universalBtn.png; sourceTree = "<group>"; };
+		F500880F1658C00F00251994 /* universalBtnOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = universalBtnOn.png; sourceTree = "<group>"; };
+		F504475316592D0C00E37A7C /* backgroundSprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundSprites.png; sourceTree = "<group>"; };
+		F504475416592D0C00E37A7C /* backgroundSprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = backgroundSprites.plist; sourceTree = "<group>"; };
+		F5044757165932EB00E37A7C /* allBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = allBack.png; sourceTree = "<group>"; };
+		F50447591659505400E37A7C /* 1000to1007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1000to1007.png; sourceTree = "<group>"; };
+		F50692311649EDD000CBC5D7 /* CocoSwimHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoSwimHead.png; sourceTree = "<group>"; };
+		F5098A53164E58AC00D52ECD /* 1000to1001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1000to1001.png; sourceTree = "<group>"; };
+		F5098A54164E58AC00D52ECD /* 1000to1002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1000to1002.png; sourceTree = "<group>"; };
+		F5098A55164E58AC00D52ECD /* 1000to1003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1000to1003.png; sourceTree = "<group>"; };
+		F5098A56164E58AC00D52ECD /* texture1000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1000.png; sourceTree = "<group>"; };
 		F509A5B9164277AC00076441 /* body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = body.png; sourceTree = "<group>"; };
 		F509A5BA164277AC00076441 /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head.png; sourceTree = "<group>"; };
 		F509A5BD164278AF00076441 /* leftFoot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftFoot.png; sourceTree = "<group>"; };
 		F509A5BE164278AF00076441 /* rightFoot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightFoot.png; sourceTree = "<group>"; };
+		F509BDB01652633000C799E4 /* 1000to1005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1000to1005.png; sourceTree = "<group>"; };
+		F509BDB21652633900C799E4 /* texture1001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1001.png; sourceTree = "<group>"; };
 		F50B113216404779004BF562 /* MorphFrancois.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphFrancois.h; sourceTree = "<group>"; };
 		F50B113316404779004BF562 /* MorphFrancois.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MorphFrancois.mm; sourceTree = "<group>"; };
 		F50B113416404779004BF562 /* RunningFrancois.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunningFrancois.h; sourceTree = "<group>"; };
@@ -947,7 +1013,7 @@
 		F50B11501640479E004BF562 /* AnimationNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationNode.h; sourceTree = "<group>"; };
 		F50B11511640479E004BF562 /* AnimationNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AnimationNode.mm; sourceTree = "<group>"; };
 		F50B11521640479E004BF562 /* Ground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ground.h; sourceTree = "<group>"; };
-		F50B11531640479E004BF562 /* Ground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ground.m; sourceTree = "<group>"; };
+		F50B11531640479E004BF562 /* Ground.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Ground.mm; sourceTree = "<group>"; };
 		F50B1156164047B0004BF562 /* MorphMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphMainMenu.h; sourceTree = "<group>"; };
 		F50B1157164047B0004BF562 /* MorphMainMenu.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MorphMainMenu.mm; sourceTree = "<group>"; };
 		F50B1158164047B0004BF562 /* MorphGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphGameLayer.h; sourceTree = "<group>"; };
@@ -958,18 +1024,22 @@
 		F50B115D164047B0004BF562 /* MorphGameConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorphGameConfig.m; sourceTree = "<group>"; };
 		F50B115E164047B0004BF562 /* MorphCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphCommon.h; sourceTree = "<group>"; };
 		F50B115F164047B0004BF562 /* MorphCommon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MorphCommon.mm; sourceTree = "<group>"; };
-		F5CFE8F71641468A0070150F /* texture1000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1000.png; sourceTree = "<group>"; };
-		F5CFE8F81641468A0070150F /* texture1001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1001.png; sourceTree = "<group>"; };
-		F5CFE8F91641468A0070150F /* texture1002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1002.png; sourceTree = "<group>"; };
-		F5CFE8FA1641468A0070150F /* texture1003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1003.png; sourceTree = "<group>"; };
-		F5CFE8FB1641468A0070150F /* texture1004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1004.png; sourceTree = "<group>"; };
-		F5CFE8FC1641468A0070150F /* texture1005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1005.png; sourceTree = "<group>"; };
-		F5CFE8FD1641468A0070150F /* texture1006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1006.png; sourceTree = "<group>"; };
+		F545476E164FF5FD0066B159 /* 1000to1004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1000to1004.png; sourceTree = "<group>"; };
+		F5454770164FF71D0066B159 /* texture1004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1004.png; sourceTree = "<group>"; };
 		F5CFE8FE1641468A0070150F /* texture1007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1007.png; sourceTree = "<group>"; };
 		F5CFE90A164146940070150F /* leftHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftHand.png; sourceTree = "<group>"; };
 		F5CFE90C164146940070150F /* rightHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightHand.png; sourceTree = "<group>"; };
 		F5CFE913164146C80070150F /* restartBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restartBtn.png; sourceTree = "<group>"; };
 		F5CFE916164146F00070150F /* pauseMenuBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseMenuBg.png; sourceTree = "<group>"; };
+		F5F6963D164EA86600081CAD /* texture1002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1002.png; sourceTree = "<group>"; };
+		F5F6963F164EBE9A00081CAD /* texture1003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1003.png; sourceTree = "<group>"; };
+		F5F69647164ECB4700081CAD /* texture1005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1005.png; sourceTree = "<group>"; };
+		F5F6964B164ECDEF00081CAD /* 1000to1006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1000to1006.png; sourceTree = "<group>"; };
+		F5F6964C164ECDEF00081CAD /* texture1006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1006.png; sourceTree = "<group>"; };
+		F5F848AE164BF6E3002F916B /* CocoLeftFootDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoLeftFootDown.png; sourceTree = "<group>"; };
+		F5F848AF164BF6E3002F916B /* CocoLeftFootMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoLeftFootMiddle.png; sourceTree = "<group>"; };
+		F5F848B2164C1811002F916B /* CocoLeftHandDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoLeftHandDown.png; sourceTree = "<group>"; };
+		F5F848B3164C1811002F916B /* CocoLeftHandUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoLeftHandUp.png; sourceTree = "<group>"; };
 		F5FF5C321641601200E8FA97 /* morphBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = morphBg.png; sourceTree = "<group>"; };
 		F5FF5C3516416A8B00E8FA97 /* CocoFrancoisPlayBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoFrancoisPlayBtn.png; sourceTree = "<group>"; };
 		F5FF5C3616416A8B00E8FA97 /* CocoFrancoisPlayBtnTap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoFrancoisPlayBtnTap.png; sourceTree = "<group>"; };
@@ -1956,6 +2026,45 @@
 			name = CatchCocoGame;
 			sourceTree = "<group>";
 		};
+		F5002FA116494F0300397E5E /* CocoSprites */ = {
+			isa = PBXGroup;
+			children = (
+				F50087F61658AD5700251994 /* CocoSwimLeftFootDown.png */,
+				F5F848AE164BF6E3002F916B /* CocoLeftFootDown.png */,
+				F5F848AF164BF6E3002F916B /* CocoLeftFootMiddle.png */,
+				F50692311649EDD000CBC5D7 /* CocoSwimHead.png */,
+				F5002FA316494F4900397E5E /* CocoBody.png */,
+				F5002FAF164973BD00397E5E /* CocoHead.png */,
+				F5002FAD16496F2600397E5E /* CocoLeftHand.png */,
+				F5F848B2164C1811002F916B /* CocoLeftHandDown.png */,
+				F5F848B3164C1811002F916B /* CocoLeftHandUp.png */,
+				F5002FAB16496BAF00397E5E /* CocoRightHand.png */,
+				F5002FA416494F4900397E5E /* CocoLeftFootDown.png */,
+				F5002FA516494F4900397E5E /* CocoLeftFootUp.png */,
+				F5002FA616494F4900397E5E /* CocoTail.png */,
+			);
+			name = CocoSprites;
+			sourceTree = "<group>";
+		};
+		F50087F91658B94E00251994 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				F500880E1658C00F00251994 /* universalBtn.png */,
+				F500880F1658C00F00251994 /* universalBtnOn.png */,
+				F50087FB1658B95D00251994 /* upBtn.png */,
+				F50087FC1658B95D00251994 /* upBtnOn.png */,
+				F50087FD1658B95D00251994 /* downBtn.png */,
+				F50087FE1658B95D00251994 /* downBtnOn.png */,
+				F50087FF1658B95D00251994 /* runBtn.png */,
+				F50088001658B95D00251994 /* runBtnOn.png */,
+				F50088011658B95D00251994 /* swimBtn.png */,
+				F50088021658B95D00251994 /* swimBtnOn.png */,
+				F50088031658B95D00251994 /* jumpBtn.png */,
+				F50087FA1658B95D00251994 /* jumpBtnOn.png */,
+			);
+			name = buttons;
+			sourceTree = "<group>";
+		};
 		F50B112F16403DEA004BF562 /* MountainGame */ = {
 			isa = PBXGroup;
 			children = (
@@ -1972,7 +2081,7 @@
 				F50B11501640479E004BF562 /* AnimationNode.h */,
 				F50B11511640479E004BF562 /* AnimationNode.mm */,
 				F50B11521640479E004BF562 /* Ground.h */,
-				F50B11531640479E004BF562 /* Ground.m */,
+				F50B11531640479E004BF562 /* Ground.mm */,
 				F50B11311640475B004BF562 /* CocoClasses */,
 				F50B11301640474C004BF562 /* FrancoisClasses */,
 			);
@@ -2016,6 +2125,11 @@
 		F5CFE8F5164145F50070150F /* MorphingSprites */ = {
 			isa = PBXGroup;
 			children = (
+				F5044757165932EB00E37A7C /* allBack.png */,
+				F504475316592D0C00E37A7C /* backgroundSprites.png */,
+				F504475416592D0C00E37A7C /* backgroundSprites.plist */,
+				F50087F91658B94E00251994 /* buttons */,
+				F5002FA116494F0300397E5E /* CocoSprites */,
 				F5FF5C321641601200E8FA97 /* morphBg.png */,
 				F5CFE916164146F00070150F /* pauseMenuBg.png */,
 				F5CFE913164146C80070150F /* restartBtn.png */,
@@ -2025,13 +2139,20 @@
 				F509A5BE164278AF00076441 /* rightFoot.png */,
 				F5CFE90A164146940070150F /* leftHand.png */,
 				F5CFE90C164146940070150F /* rightHand.png */,
-				F5CFE8F71641468A0070150F /* texture1000.png */,
-				F5CFE8F81641468A0070150F /* texture1001.png */,
-				F5CFE8F91641468A0070150F /* texture1002.png */,
-				F5CFE8FA1641468A0070150F /* texture1003.png */,
-				F5CFE8FB1641468A0070150F /* texture1004.png */,
-				F5CFE8FC1641468A0070150F /* texture1005.png */,
-				F5CFE8FD1641468A0070150F /* texture1006.png */,
+				F5098A53164E58AC00D52ECD /* 1000to1001.png */,
+				F5098A54164E58AC00D52ECD /* 1000to1002.png */,
+				F5098A55164E58AC00D52ECD /* 1000to1003.png */,
+				F545476E164FF5FD0066B159 /* 1000to1004.png */,
+				F509BDB01652633000C799E4 /* 1000to1005.png */,
+				F5F6964B164ECDEF00081CAD /* 1000to1006.png */,
+				F50447591659505400E37A7C /* 1000to1007.png */,
+				F5098A56164E58AC00D52ECD /* texture1000.png */,
+				F509BDB21652633900C799E4 /* texture1001.png */,
+				F5F6963D164EA86600081CAD /* texture1002.png */,
+				F5F6963F164EBE9A00081CAD /* texture1003.png */,
+				F5454770164FF71D0066B159 /* texture1004.png */,
+				F5F69647164ECB4700081CAD /* texture1005.png */,
+				F5F6964C164ECDEF00081CAD /* texture1006.png */,
 				F5CFE8FE1641468A0070150F /* texture1007.png */,
 			);
 			name = MorphingSprites;
@@ -2260,13 +2381,6 @@
 				0484A1A8160F078F006BDD43 /* playBtnFish.png in Resources */,
 				0484A1A9160F078F006BDD43 /* playBtnOnCoco.png in Resources */,
 				0484A1AA160F078F006BDD43 /* playBtnOnFish.png in Resources */,
-				F5CFE8FF1641468A0070150F /* texture1000.png in Resources */,
-				F5CFE9001641468A0070150F /* texture1001.png in Resources */,
-				F5CFE9011641468A0070150F /* texture1002.png in Resources */,
-				F5CFE9021641468A0070150F /* texture1003.png in Resources */,
-				F5CFE9031641468A0070150F /* texture1004.png in Resources */,
-				F5CFE9041641468A0070150F /* texture1005.png in Resources */,
-				F5CFE9051641468A0070150F /* texture1006.png in Resources */,
 				F5CFE9061641468A0070150F /* texture1007.png in Resources */,
 				F5CFE910164146940070150F /* leftHand.png in Resources */,
 				F5CFE912164146940070150F /* rightHand.png in Resources */,
@@ -2283,6 +2397,48 @@
 				F509A5BC164277AC00076441 /* head.png in Resources */,
 				F509A5BF164278AF00076441 /* leftFoot.png in Resources */,
 				F509A5C0164278AF00076441 /* rightFoot.png in Resources */,
+				F5002FA716494F4900397E5E /* CocoBody.png in Resources */,
+				F5002FA816494F4900397E5E /* CocoLeftFootDown.png in Resources */,
+				F5002FA916494F4900397E5E /* CocoLeftFootUp.png in Resources */,
+				F5002FAA16494F4900397E5E /* CocoTail.png in Resources */,
+				F5002FAC16496BAF00397E5E /* CocoRightHand.png in Resources */,
+				F5002FAE16496F2600397E5E /* CocoLeftHand.png in Resources */,
+				F5002FB0164973BD00397E5E /* CocoHead.png in Resources */,
+				F50692331649EDD000CBC5D7 /* CocoSwimHead.png in Resources */,
+				F5F848B0164BF6E3002F916B /* CocoLeftFootDown.png in Resources */,
+				F5F848B1164BF6E3002F916B /* CocoLeftFootMiddle.png in Resources */,
+				F5F848B4164C1811002F916B /* CocoLeftHandDown.png in Resources */,
+				F5F848B5164C1811002F916B /* CocoLeftHandUp.png in Resources */,
+				F5098A59164E58AC00D52ECD /* 1000to1001.png in Resources */,
+				F5098A5A164E58AC00D52ECD /* 1000to1002.png in Resources */,
+				F5098A5B164E58AC00D52ECD /* 1000to1003.png in Resources */,
+				F5098A5C164E58AC00D52ECD /* texture1000.png in Resources */,
+				F5F6963E164EA86700081CAD /* texture1002.png in Resources */,
+				F5F69640164EBE9A00081CAD /* texture1003.png in Resources */,
+				F5F69648164ECB4700081CAD /* texture1005.png in Resources */,
+				F5F6964D164ECDEF00081CAD /* 1000to1006.png in Resources */,
+				F5F6964E164ECDEF00081CAD /* texture1006.png in Resources */,
+				F545476F164FF5FD0066B159 /* 1000to1004.png in Resources */,
+				F5454771164FF71D0066B159 /* texture1004.png in Resources */,
+				F509BDB11652633000C799E4 /* 1000to1005.png in Resources */,
+				F509BDB31652633900C799E4 /* texture1001.png in Resources */,
+				F50087F71658AD5700251994 /* CocoSwimLeftFootDown.png in Resources */,
+				F50088041658B95D00251994 /* jumpBtnOn.png in Resources */,
+				F50088051658B95D00251994 /* upBtn.png in Resources */,
+				F50088061658B95D00251994 /* upBtnOn.png in Resources */,
+				F50088071658B95D00251994 /* downBtn.png in Resources */,
+				F50088081658B95D00251994 /* downBtnOn.png in Resources */,
+				F50088091658B95D00251994 /* runBtn.png in Resources */,
+				F500880A1658B95D00251994 /* runBtnOn.png in Resources */,
+				F500880B1658B95D00251994 /* swimBtn.png in Resources */,
+				F500880C1658B95D00251994 /* swimBtnOn.png in Resources */,
+				F500880D1658B95D00251994 /* jumpBtn.png in Resources */,
+				F50088101658C00F00251994 /* universalBtn.png in Resources */,
+				F50088111658C00F00251994 /* universalBtnOn.png in Resources */,
+				F504475516592D0C00E37A7C /* backgroundSprites.png in Resources */,
+				F504475616592D0C00E37A7C /* backgroundSprites.plist in Resources */,
+				F5044758165932EB00E37A7C /* allBack.png in Resources */,
+				F504475A1659505400E37A7C /* 1000to1007.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2466,7 +2622,7 @@
 				F50B114E1640478D004BF562 /* GoingDownCoco.mm in Sources */,
 				F50B114F1640478D004BF562 /* MorphCoco.mm in Sources */,
 				F50B11541640479E004BF562 /* AnimationNode.mm in Sources */,
-				F50B11551640479E004BF562 /* Ground.m in Sources */,
+				F50B11551640479E004BF562 /* Ground.mm in Sources */,
 				F50B1160164047B0004BF562 /* MorphMainMenu.mm in Sources */,
 				F50B1161164047B0004BF562 /* MorphGameLayer.mm in Sources */,
 				F50B1162164047B0004BF562 /* MorphGUILayer.mm in Sources */,

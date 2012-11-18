@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
+@class MorphGameLayer;
+
 @interface Ground: CCNode
 {
+    MorphGameLayer *gameLayer;
     
     CCSprite *ground;
     CCSprite *firstSpriteOfGround;
@@ -30,7 +33,7 @@
     NSInteger currentGroundType;
     NSInteger globalCount;
         
-    float distance;
+    //float distance;
 
     BOOL isCanAddGroundTexture;
     BOOL isTransferGround;
@@ -46,8 +49,11 @@
 - (void) restart;
 
 - (void) increaseSpeedAnimation: (float) speed;
-- (NSInteger) getCurrentDistance;
+//- (NSInteger) getCurrentDistance;
 - (NSInteger) getCurrentActionNumber;
 - (void) showNewGround: (NSInteger) groundType;
+
+@property (nonatomic, assign) MorphGameLayer *gameLayer;
+
 
 @end

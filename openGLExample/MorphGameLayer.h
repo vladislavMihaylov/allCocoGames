@@ -33,6 +33,8 @@
 + (CCScene *) scene;
 
 - (void) restartGame;
+- (void) showAnimationOfTransition;
+- (void) finishGame;
 
 - (void) doAction: (NSInteger) numberOfAction;
 

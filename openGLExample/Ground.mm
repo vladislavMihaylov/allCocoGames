@@ -8,10 +8,12 @@
 
 #import "Ground.h"
 #import "MorphGameConfig.h"
-
+#import "MorphGameLayer.h"
 #import "MorphGUILayer.h"
 
 @implementation Ground
+
+@synthesize gameLayer;
 
 - (void) dealloc
 {
@@ -41,7 +43,7 @@
         for (int i = 0; i < 6; i++)
         {
             ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
-            ground.position = ccp(240 + 480 * i, 0);
+            ground.position = ccp(240 + 480 * i, 120);
             [self addChild: ground];
             
             [groundsArray addObject: ground];
@@ -83,7 +85,7 @@
     for (int i = 0; i < 6; i++)
     {
         ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
-        ground.position = ccp(240 + 480 * i, 0);
+        ground.position = ccp(240 + 480 * i, 120);
         [self addChild: ground];
         
         [groundsArray addObject: ground];
@@ -124,10 +126,10 @@
     //isTransferGround = YES;
 }
 
-- (NSInteger) getCurrentDistance
-{
-    return distance;
-}
+//- (NSInteger) getCurrentDistance
+//{
+//    return distance;
+//}
 
 - (NSInteger) getCurrentActionNumber
 {
@@ -138,34 +140,12 @@
 {
     if(IsMorphGameActive)
     {
-    
-        //CCLOG(@"Count groundsArray: %i , count arrayToRemove: %i", groundsArray.count, groundsToRemove.count);
-        
-        //CCLOG(@"Current ground: %i, Current Action: %i", currentGroundType, currentAction);
-        
-       /* if(IsMoveUp)
-        {
-            placeForNewSprite = ccp(480, 480);
-        }
-        else if(IsMoveRight)
-        {
-            placeForNewSprite = ccp(720, 0);
-        }*/
         
         speed -= 1.5 * dt;
         
         if(speed < 0)
         {
             speed = 0;
-        }
-        
-        distance += speed / 5;
-        
-        if(distance > 500)
-        {
-            distance = 0;
-            //currentGroundType += 1;
-            //[self showNewGround: currentGroundType];
         }
         
         if(speed <= 0)
@@ -245,23 +225,30 @@
                 
                     for (int i = 1; i < 6; i++)
                     {
-                        ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
-                        
+                        if(i == 1)
+                        {
+                            ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"1000to%i.png", currentGroundType]];
+                        }
+                        else
+                        {
+                            ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
+                        }
+                            
                         if(currentGroundType == kIsGoUpMountain)
                         {
-                            yPositionForSprites = 160;
+                            yPositionForSprites = 120;
                             
                             ground.position = ccp(720, yPositionForSprites + (320 * (i-1)));
                         }
                         else if(currentGroundType == kIsRunOnMountain)
                         {
-                            yPositionForSprites = 480;
+                            yPositionForSprites = 430;
                             
-                            ground.position = ccp(480 + 480 * (i - 1), yPositionForSprites);
+                            ground.position = ccp(240 + 480 * (i - 1), yPositionForSprites);
                         }
                         else if(currentGroundType == kIsGoDownMountain)
                         {
-                            yPositionForSprites = 0;
+                            yPositionForSprites = 160;
                             
                             ground.position = ccp(720, yPositionForSprites - (320 * (i-1)));
                         }
@@ -273,15 +260,15 @@
                         }
                         else if(currentGroundType == 1007)
                         {
-                            yPositionForSprites = 160;
+                            yPositionForSprites = 120;
                             
                             ground.position = ccp(240 + 480 * i, yPositionForSprites);
                         }
                         else
                         {
-                            yPositionForSprites = 0;
+                            yPositionForSprites = 120;
                             
-                            ground.position = ccp(240 + 480 * i, yPositionForSprites);
+                            ground.position = ccp(238 + 480 * i, yPositionForSprites);
                         }
                         
                         [self addChild: ground];
@@ -300,7 +287,7 @@
             
             if(IsMoveRight)
             {
-                if(currentGroundType == kIsGoDownMountain)
+                if(currentGroundType == kIsGoDownMountain || currentGroundType == 1003)
                 {
                     xPositionForSprites = 240;
                 }
@@ -316,6 +303,7 @@
                     if(currentGroundType == 1007)
                     {
                         CCLOG(@"FINISH");
+                        [gameLayer finishGame];
                     }
                     
                     if(currentGroundType == kIsGoDownMountain)
@@ -336,7 +324,8 @@
                         }
                     }
                     
-                    CCLOG(@"OPA");
+                    //CCLOG(@"OPA");
+                    [gameLayer showAnimationOfTransition];
                     
                     
                 }
@@ -354,11 +343,14 @@
                         IsMoveRight = YES;
                         IsMoveUp = NO;
                     }
+                    
+                    [gameLayer showAnimationOfTransition];
+
                 }
             }
             if(IsMoveDown)
             {
-                if(firstSprite.position.y > 0)
+                if(firstSprite.position.y > 120)
                 {
                     INeedNextAction = NO;
                     currentAction = kIsGround;
@@ -369,246 +361,14 @@
                         IsMoveRight = YES;
                         IsMoveDown = NO;
                     }
-                }
-            }
-        }
-    }
-    
-    /*if([self getChildByTag: kFirstSpriteTag])
-    {
-        if(IsMoveRight)
-        {
-            //firstSpriteOfGround.position = ccp(firstSpriteOfGround.position.x - multiplier, firstSpriteOfGround.position.y);
-        
-            if(firstSpriteOfGround.position.x < 480)
-            {
-                if(ItsNewGround == YES)
-                {
-                    if(currentGroundType == kIsGoUpMountain)
-                    {
-                        IsMoveRight = NO;
-                        IsMoveDown = NO;
-                        IsMoveUp = YES;
-                        
-                        ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
-                        ground.position = ccp(480, 480);
-                        [self addChild: ground];
-                        
-                        [groundsArray addObject: ground];
-
-                    }
-
                     
-                    currentAction++;
-                    ItsNewGround = NO;
-                    CCLOG(@"Next action");
-                }
-            }
-            
-            //if(firstSpriteOfGround.position.x < -240)
-            //{
-            //    [self removeChildByTag: kFirstSpriteTag cleanup: YES];
-            //    CCLOG(@"First sprite deleted");
-            //}
-        }
+                    [gameLayer showAnimationOfTransition];
 
-        else if (IsMoveUp)
-        {
-            //firstSpriteOfGround.position = ccp(firstSpriteOfGround.position.x, firstSpriteOfGround.position.y - multiplier);
-            
-            if(firstSpriteOfGround.position.y < 160)
-            {
-                if(ItsNewGround == YES)
-                {
-                    if(currentGroundType == kIsRunOnMountain)
-                    {
-                        IsMoveRight = YES;
-                        IsMoveDown = NO;
-                        IsMoveUp = NO;
-                        
-                        ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
-                        ground.scale = 1.5;
-                        ground.position = ccp(480, 160);
-                        [self addChild: ground];
-                        
-                        [groundsArray addObject: ground];
-                    }
-                    
-                    
-                    currentAction++;
-                    ItsNewGround = NO;
-                    CCLOG(@"Next action");
                 }
             }
-            
-            //if(firstSpriteOfGround.position.y < -160)
-            //{
-            //    [self removeChildByTag: kFirstSpriteTag cleanup: YES];
-            //    CCLOG(@"First sprite deleted");
-            //}
-        }
-
-    }
-    
-            
-    
-    for(CCSprite *currentSprite in groundsArray)
-    {
-        if(IsMoveRight == YES)
-        {
-            currentSprite.position = ccp(currentSprite.position.x - multiplier, currentSprite.position.y);
-        }
-        else if (IsMoveUp == YES)
-        {
-            currentSprite.position = ccp(currentSprite.position.x, currentSprite.position.y - multiplier);
-        }
-        else if (IsMoveDown == YES)
-        {
-            
-        }
-        
-        if(currentSprite.position.y < -160)
-        {
-            
-            [groundsToRemove addObject: currentSprite];
-            [self removeChild: currentSprite cleanup: YES];
-        }
-        
-        if(currentSprite.position.x < -240)
-        {
-            [groundsToRemove addObject: currentSprite];
-            [self removeChild: currentSprite cleanup: YES];
-        }
-        
-    }
-    
-    for(CCSprite *currentSprite in groundsToRemove)
-    {
-        [groundsArray removeObject: currentSprite];
-        
-        if(groundsArray.count < 4)
-        {
-            ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
-            ground.position = placeForNewSprite;
-            [self addChild: ground];
-            
-            [groundsArray addObject: ground];
         }
     }
     
-    [groundsToRemove removeAllObjects];*/
-    
-     /*if([self getChildByTag: kFirstSpriteTag])
-    {
-        if(currentGroundType != kIsScrambleMountain + 1)
-        {
-            borderForSprite = -240;
-        }
-        else
-        {
-            borderForSprite = 480;
-        }
-    }
-    
-    if (firstSpriteOfGround.position.x < borderForSprite)
-    {
-        if(currentGroundType == kIsScrambleMountain + 1)
-        {
-            IsMoveUp = YES;
-            
-            //firstSpriteOfGround.position = ccp(borderForSprite, firstSpriteOfGround.position.y - multiplier);
-        }
-        else
-        {
-            [self removeChild: firstSpriteOfGround cleanup: YES];
-        }
-    }
-    
-    if(firstSpriteOfGround.position.x < 480 && isTransferGround == YES)
-    {
-        currentAction += 1;
-        isTransferGround = NO;
-    }
-    
-            firstSpriteOfGround.position = ccp(firstSpriteOfGround.position.x - multiplier, firstSpriteOfGround.position.y);
-            
-            if(firstSpriteOfGround.position.x < 480 && isTransferGround == YES)
-            {
-                currentAction += 1;
-                isTransferGround = NO;
-            }
-            
-            if (firstSpriteOfGround.position.x < borderForSprite)
-            {
-                if(currentGroundType == kIsScrambleMountain + 1)
-                {
-                    IsMoveUp = YES;
-                                        
-                    firstSpriteOfGround.position = ccp(borderForSprite, firstSpriteOfGround.position.y - multiplier);
-                }
-                else
-                {
-                    [self removeChild: firstSpriteOfGround cleanup: YES];
-                }
-            }
-        
-    }*/
-    
-    /*for (CCSprite *currentSprite in groundsArray)
-    {
-        if(IsMoveUp)
-        {
-            currentSprite.position = ccp(currentSprite.position.x, currentSprite.position.y - multiplier);
-            
-            if(currentSprite.position.y < -160)
-            {
-                [groundsToRemove addObject: currentSprite];
-                isCanAddGroundTexture = YES;
-            }
-
-        }
-        else if(IsMoveDown)
-        {
-            currentSprite.position = ccp(currentSprite.position.x, currentSprite.position.y + multiplier);
-            
-            if(currentSprite.position.y < -160)
-            {
-                [groundsToRemove addObject: currentSprite];
-                isCanAddGroundTexture = YES;
-            }
-        }
-        else
-        {
-            currentSprite.position = ccp(currentSprite.position.x - multiplier, currentSprite.position.y);
-            
-            if(currentSprite.position.x < -240)
-            {
-                [groundsToRemove addObject: currentSprite];
-                isCanAddGroundTexture = YES;
-            }
-        }
-        
-        
-    }
-    
-    for (CCSprite *spriteGroundToRemove in groundsToRemove)
-    {
-        if(isCanAddGroundTexture == YES)
-        {
-            isCanAddGroundTexture = NO;
-            
-            ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
-            ground.position = placeForNewSprite;
-            [self addChild: ground];
-            
-            [groundsArray addObject: ground];
-        }
-        
-        [self removeChild: spriteGroundToRemove cleanup: YES];
-        [groundsArray removeObject: spriteGroundToRemove];
-    }
-    
-    [groundsToRemove removeAllObjects];*/
 }
 
 

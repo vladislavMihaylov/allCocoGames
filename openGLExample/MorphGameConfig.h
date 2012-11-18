@@ -1,4 +1,4 @@
-//
+/*//
 //  GameConfig.h
 //  testApp
 //
@@ -39,7 +39,7 @@
 
 #else
 #error(unknown architecture)
-#endif
+#endif*/
 
 #define kSwimmingCocoTag      10
 #define kRunningCocoTag       11
@@ -74,5 +74,5 @@ extern BOOL ItsNewGround;
 extern BOOL INeedNextAction;
 extern BOOL IsMorphGameActive;
 
-#endif // __GAME_CONFIG_H
+//#endif // __GAME_CONFIG_H
 

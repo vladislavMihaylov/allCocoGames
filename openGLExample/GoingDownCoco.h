@@ -16,10 +16,17 @@
 {
     AnimationNode *body;
     AnimationNode *head;
-    AnimationNode *rightHand;
-    AnimationNode *leftHand;
-    AnimationNode *rightFoot;
-    AnimationNode *leftFoot;
+    AnimationNode *tail;
+    AnimationNode *rightHandUp;
+    AnimationNode *rightHandDown;
+    AnimationNode *leftHandUp;
+    AnimationNode *leftHandDown;
+    AnimationNode *rightFootUp;
+    AnimationNode *rightFootMiddle;
+    AnimationNode *rightFootDown;
+    AnimationNode *leftFootUp;
+    AnimationNode *leftFootMiddle;
+    AnimationNode *leftFootDown;
     
     float currentSpeed;
 }
@@ -27,5 +34,10 @@
 + (GoingDownCoco *) createWithSpeed: (float) speed;
 - (void) increaseSpeed;
 - (float) getCurrentCocoSpeed;
+- (void) setSpeed: (float) speedParam;
+- (void) jumpFromMountain;
+- (void) jumpOnAGround;
+
+
 
 @end

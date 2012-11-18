@@ -30,6 +30,7 @@
     AnimationNode *rightFoot;
     AnimationNode *leftFoot;
     
+    NSInteger groundSpeed;
     NSInteger currentAction;
     float currentGroundSpeed;
 }
@@ -39,6 +40,10 @@
 - (void) doAction: (NSInteger) numberOfAction withSpeed: (float) speed;
 - (float) getCurrentGroundSpeed;
 - (void) stopCoco;
+- (void) rotate: (NSInteger) type andCurrentGround: (NSInteger) curGround;
+- (void) hideCoco;
+- (void) stopRun;
+- (void) pauseAll;
 
 
 @end

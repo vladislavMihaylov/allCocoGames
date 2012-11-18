@@ -45,14 +45,99 @@
     return self;
 }
 
+- (void) hideCoco
+{
+    [runningCoco hide];
+}
+
+- (void) rotate: (NSInteger) type andCurrentGround: (NSInteger) curGround
+{
+    CCLOG(@"Type: %i", type);
+    if(type == 1000)
+    {
+        if(curGround == 1004)
+        {
+            [goingDownCoco jumpFromMountain];
+            [goingDownCoco setSpeed: currentGroundSpeed];
+
+            //[runningCoco jumpFromMountain];
+        }
+        else
+        {
+            [runningCoco showTransitionAnimation];
+        }
+                //[self runAction: [CCSequence actions: [CCDelayTime actionWithDuration: 2], [CCCallFunc actionWithTarget: self selector: @selector(setNormalCocoOrientation)], nil]];
+    }
+    if(type == 1001)
+    {
+        [runningCoco hide];
+        [swimmingCoco showTransitionAnimation];
+        [self runAction:
+                [CCSequence actions:
+                        [CCDelayTime actionWithDuration: 2],
+                        [CCCallFunc actionWithTarget: self
+                                            selector: @selector(setNormalCocoOrientation)],
+                        [CCDelayTime actionWithDuration: 0.02],
+                        [CCCallFunc actionWithTarget: self
+                                            selector: @selector(doVisibleCoco)],
+                 nil]
+         ];
+    }
+    if(type == 1002)
+    {
+        
+        [scramblingCoco showTransitionAnimation];
+        [scramblingCoco setSpeed: currentGroundSpeed];
+        //[self runAction: [CCSequence actions: [CCDelayTime actionWithDuration: 2], [CCCallFunc actionWithTarget: self selector: @selector(setNormalCocoOrientation)], nil]];
+    }
+    if(type == 1003)
+    {
+        [scramblingCoco jumpOnMountain];
+    }
+    if(curGround == 1004)
+    {
+        //[runningCoco jumpFromMountain];
+        //[goingDownCoco jumpFromMountain];
+        //[goingDownCoco setSpeed: currentGroundSpeed];
+    }
+    if(type == 1004)
+    {
+        [goingDownCoco jumpOnAGround];
+        [runningCoco setLastYPosition];
+    }
+
+}
+
+- (void) runScramblCoco
+{
+    //[goingDownCoco setSpeed: groundSpeed];
+}
+
+- (void) setNormalCocoOrientation
+{
+    [runningCoco setNormalOrientation];
+}
+
+- (void) doVisibleCoco
+{
+    [runningCoco show];
+}
+
+- (void) stopRun
+{
+    [runningCoco setSpeed: 0];
+}
+
 - (void) doAction: (NSInteger) numberOfAction withSpeed: (float) speed
 {
+    groundSpeed = currentGroundSpeed;
+    
     if(numberOfAction == 0)
     {
         if(currentAction != kRunningAction)
         {
             [self removeChildByTag: currentAction cleanup: NO];
-            [self addChild: runningCoco];
+            [self addChild: runningCoco z: 2];
             currentAction = kRunningAction;
         }
         
@@ -65,8 +150,9 @@
     {        
         if(currentAction != kSwimmingAction)
         {
+            
             [self removeChildByTag: currentAction cleanup: NO];
-            [self addChild: swimmingCoco];
+            [self addChild: swimmingCoco z: -5];
             currentAction = kSwimmingAction;
         }
         
@@ -80,7 +166,7 @@
         if(currentAction == kRunningAction)
         {
             ICanJump = NO;
-            currentGroundSpeed = 5;//[runningCoco getCurrentCocoSpeed];
+            currentGroundSpeed = 7;//[runningCoco getCurrentCocoSpeed];
             [runningCoco setSpeed: currentGroundSpeed];
             [self runAction: [CCJumpTo actionWithDuration: 0.7 position: self.position height: 50 jumps: 1]];
             [self runAction:
@@ -97,7 +183,7 @@
         if(currentAction != kScramblingAction)
         {
             [self removeChildByTag: currentAction cleanup: NO];
-            [self addChild: scramblingCoco];
+            [self addChild: scramblingCoco z: 2];
             currentAction = kScramblingAction;
         }
         
@@ -111,16 +197,24 @@
         if(currentAction != kGoingDownAction)
         {
             [self removeChildByTag: currentAction cleanup: NO];
-            [self addChild: goingDownCoco];
+            [self addChild: goingDownCoco z: 2];
             currentAction = kGoingDownAction;
         }
-        
+        //[goingDownCoco setSpeed: groundSpeed];
         [goingDownCoco increaseSpeed];
         currentGroundSpeed = [goingDownCoco getCurrentCocoSpeed];
         
         //[currentCoco increaseSpeed];
     }
 
+}
+
+- (void) pauseAll
+{
+    [runningCoco pauseSchedulerAndActions];
+    [swimmingCoco pauseSchedulerAndActions];
+    [scramblingCoco pauseSchedulerAndActions];
+    [goingDownCoco pauseSchedulerAndActions];
 }
 
 - (float) getCurrentGroundSpeed

@@ -20,9 +20,24 @@
     CCSprite *menuBg;
     
     CCLayerColor *pauseLayer;
+    
+    CCMenuItemImage *runBtn;
+    CCMenuItemImage *swimBtn;
+    CCMenuItemImage *jumpBtn;
+    CCMenuItemImage *scramblBtn;
+    CCMenuItemImage *goDownBtn;
+    CCMenuItemImage *universalBtn;
+    
+    NSInteger mistakes;
+    
+    NSMutableArray *mistakesSpritesArray;
 }
 
 - (void) updateDistanceLabel: (NSInteger) distance;
+- (void) blockAllButtons;
+- (void) unlockAllButtons;
+- (void) increaseMistake;
+- (void) showGameOverMenu;
 
 @property (nonatomic, assign) MorphGameLayer *gameLayer;
 

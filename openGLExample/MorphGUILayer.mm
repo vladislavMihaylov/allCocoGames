@@ -10,7 +10,7 @@
 #import "MorphGameConfig.h"
 #import "MorphGameLayer.h"
 #import "MorphMainMenu.h"
-
+#import "GameConfig.h"
 #import "MainMenuLayer.h"
 
 @implementation MorphGUILayer
@@ -19,6 +19,8 @@
 
 - (void) dealloc
 {
+    [mistakesSpritesArray release];
+    
     [super dealloc];
 }
 
@@ -26,6 +28,10 @@
 {
     if(self = [super init])
     {
+        mistakes = 0;
+        
+        mistakesSpritesArray = [[NSMutableArray alloc] init];
+        
         CCMenuItemImage *pauseBtn = [CCMenuItemImage itemFromNormalImage: @"pauseBtn.png"
                                                            selectedImage: @"pauseBtn.png"
                                                                   target: self
@@ -47,60 +53,135 @@
         remainingDistance.position = ccp(240, 240);
         [self addChild: remainingDistance];
         
-        CCMenuItemFont *runBtn = [CCMenuItemFont itemFromString: @"Run!"
+        runBtn = [CCMenuItemImage itemFromNormalImage: @"runBtn.png" selectedImage: @"runBtnOn.png"
                                                          target: self
                                                        selector: @selector(transmitNumberOfAction:)
                                   ];
         
-        runBtn.position = ccp(50, 30);
+        runBtn.position = ccp(50, 50);
         runBtn.tag = 0;
         
-        CCMenuItemFont *swimBtn = [CCMenuItemFont itemFromString: @"Swim!"
+        swimBtn = [CCMenuItemImage itemFromNormalImage: @"swimBtn.png" selectedImage: @"swimBtnOn.png"
                                                           target: self
                                                         selector: @selector(transmitNumberOfAction:)
                                    ];
         
-        swimBtn.position = ccp(130, 30);
+        swimBtn.position = ccp(145, 50);
         swimBtn.tag = 1;
         
-        CCMenuItemFont *jumpBtn = [CCMenuItemFont itemFromString: @"Jump!"
+        jumpBtn = [CCMenuItemImage itemFromNormalImage: @"jumpBtn.png" selectedImage: @"jumpBtnOn.png"
                                                           target: self
                                                         selector: @selector(transmitNumberOfAction:)
                                    ];
         
-        jumpBtn.position = ccp(210, 30);
+        jumpBtn.position = ccp(240, 50);
         jumpBtn.tag = 2;
         
-        CCMenuItemFont *scramblBtn = [CCMenuItemFont itemFromString: @"Scrambl!"
+        scramblBtn = [CCMenuItemImage itemFromNormalImage: @"upBtn.png" selectedImage: @"upBtnOn.png"
                                                              target: self
                                                            selector: @selector(transmitNumberOfAction:)
                                       ];
         
-        scramblBtn.position = ccp(310, 30);
+        scramblBtn.position = ccp(335, 50);
         scramblBtn.tag = 3;
         
-        CCMenuItemFont *goDownBtn = [CCMenuItemFont itemFromString: @"Go down!"
+        goDownBtn = [CCMenuItemImage itemFromNormalImage: @"downBtn.png" selectedImage: @"downBtnOn.png"
                                                             target: self
                                                           selector: @selector(transmitNumberOfAction:)
                                      ];
         
-        goDownBtn.position = ccp(400, 30);
+        goDownBtn.position = ccp(430, 50);
         goDownBtn.tag = 4;
         
-        CCMenuItemFont *universalBtn = [CCMenuItemFont itemFromString: @"Action!"
+        universalBtn = [CCMenuItemImage itemFromNormalImage: @"universalBtn.png" selectedImage: @"universalBtnOn.png"
                                                                target: self
                                                              selector: @selector(transmitNumberOfAction:)
                                         ];
         
-        universalBtn.position = ccp(240, 280);
+        universalBtn.position = ccp(380, 50);
         universalBtn.tag = 999;
+        universalBtn.scale = 0.7;
         
-        CCMenu *buttonsMenu = [CCMenu menuWithItems: runBtn, swimBtn, jumpBtn, scramblBtn, goDownBtn, universalBtn, nil];
-        buttonsMenu.position = ccp(0,0);
-        [self addChild: buttonsMenu];
+        if(CurrentDifficulty == 0)
+        {
+        
+        CCMenu *buttonsMenu = [CCMenu menuWithItems: universalBtn, nil];
+            buttonsMenu.position = ccp(0,0);
+            [self addChild: buttonsMenu];
+        }
+        if(CurrentDifficulty == 1 || CurrentDifficulty == 2)
+        {
+            
+            CCMenu *buttonsMenu = [CCMenu menuWithItems: runBtn, swimBtn, jumpBtn, scramblBtn, goDownBtn, nil];
+            buttonsMenu.position = ccp(0,0);
+            [self addChild: buttonsMenu];
+        }
+        
     }
     
     return self;
+}
+
+- (void) increaseMistake
+{
+    mistakes++;
+    
+    CCSprite *mistakeSprite = [CCSprite spriteWithFile: @"mistake.png"];
+    mistakeSprite.position = ccp(35 * mistakes - 10 , 290);
+    mistakeSprite.scale = 0.2;
+    [self addChild: mistakeSprite];
+    
+    [mistakesSpritesArray addObject: mistakeSprite];
+    
+    if(mistakes == 3)
+    {
+        [self removeAllMistakeSprites];
+        mistakes = 0;
+        [self showGameOverMenu];
+    }
+}
+
+- (void) removeAllMistakeSprites
+{
+    for(CCSprite *curMistSprite in mistakesSpritesArray)
+    {
+        [self removeChild: curMistSprite cleanup: YES];
+    }
+    
+    [mistakesSpritesArray removeAllObjects];
+}
+
+- (void) blockAllButtons
+{
+    if(CurrentDifficulty == 1 || CurrentDifficulty == 2)
+    {
+    runBtn.isEnabled = NO;
+    swimBtn.isEnabled = NO;
+    jumpBtn.isEnabled = NO;
+    scramblBtn.isEnabled = NO;
+    goDownBtn.isEnabled = NO;
+    }
+    else if(CurrentDifficulty == 0)
+    {
+    universalBtn.isEnabled = NO;
+    }
+}
+
+- (void) unlockAllButtons
+{
+    if(CurrentDifficulty == 1 || CurrentDifficulty == 2)
+    {
+    runBtn.isEnabled = YES;
+    swimBtn.isEnabled = YES;
+    jumpBtn.isEnabled = YES;
+    scramblBtn.isEnabled = YES;
+    goDownBtn.isEnabled = YES;
+    }
+    else if(CurrentDifficulty == 0)
+    {
+    universalBtn.isEnabled = YES;
+    }
+
 }
 
 - (void) showPauseMenu
@@ -141,10 +222,51 @@
                                            ];
         
         exitMenuBtn.position = ccp(75, 40);
-        playMenuBtn.position = ccp(175, 40);
-        restartGameBtn.position = ccp(275, 40);
+        playMenuBtn.position = ccp(275, 40);
+        restartGameBtn.position = ccp(175, 40);
         
         CCMenu *menu = [CCMenu menuWithItems: exitMenuBtn, playMenuBtn, restartGameBtn, nil];
+        menu.position = ccp(0,0);
+        
+        [menuBg addChild: menu];
+        
+        
+        [menuBg runAction: [CCEaseBackInOut actionWithAction: [CCMoveTo actionWithDuration: 0.5 position: ccp(240, 160)] ]];
+    }
+}
+
+- (void) showGameOverMenu
+{
+    if(IsMorphGameActive)
+    {
+        IsMorphGameActive = NO;
+        
+        pauseLayer = [CCLayerColor layerWithColor: ccc4(0, 0, 0, 200)];
+        pauseLayer.position = ccp(0,0);
+        [self addChild: pauseLayer];
+        
+        menuBg = [CCSprite spriteWithFile: @"pauseMenuBg.png"];
+        menuBg.position = ccp(240, 480);
+        [self addChild: menuBg];
+
+        
+        CCMenuItemImage *exitMenuBtn = [CCMenuItemImage itemFromNormalImage: @"exitBtn.png"
+                                                              selectedImage: @"exitBtn.png"
+                                                                      block: ^(id sender) {
+                                                                          [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1 scene: [MainMenuLayer scene]]];
+                                                                      }
+                                        ];
+        
+        CCMenuItemImage *restartGameBtn = [CCMenuItemImage itemFromNormalImage: @"replayBtn.png"
+                                                                 selectedImage: @"replayBtn.png"
+                                                                        target: self
+                                                                      selector: @selector(restartGame)
+                                           ];
+        
+        exitMenuBtn.position = ccp(120, 40);
+        restartGameBtn.position = ccp(240, 40);
+        
+        CCMenu *menu = [CCMenu menuWithItems: exitMenuBtn, restartGameBtn, nil];
         menu.position = ccp(0,0);
         
         [menuBg addChild: menu];
