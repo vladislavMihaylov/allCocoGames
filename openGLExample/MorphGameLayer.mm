@@ -97,6 +97,7 @@
     //[coco hideCoco];
     
     //CCLOG(@"curAction: %i curGround: %i", curAction, currentGround);
+    [guiLayer showCurrentActionLabel: curAction];
     
     if(curAction == 1002)
     {
@@ -167,6 +168,8 @@
             coco.position =ccp(0, 0);
             
             [coco doAction: 0 withSpeed: 0];
+            
+            coco.gameLayer = self;
         }
         else if(typeCharacter == 1)
         {
@@ -189,7 +192,7 @@
         
         // Buttons 
         
-       
+        [guiLayer showCurrentActionLabel: 1000];
         
         [self scheduleUpdate];
     }
@@ -199,6 +202,7 @@
 
 - (void) restartGame
 {
+    [guiLayer showCurrentActionLabel: 1000];
     //[self removeChild: ground cleanup: YES];
     [ground restart];
     

@@ -384,7 +384,6 @@
 		F509A5BF164278AF00076441 /* leftFoot.png in Resources */ = {isa = PBXBuildFile; fileRef = F509A5BD164278AF00076441 /* leftFoot.png */; };
 		F509A5C0164278AF00076441 /* rightFoot.png in Resources */ = {isa = PBXBuildFile; fileRef = F509A5BE164278AF00076441 /* rightFoot.png */; };
 		F509BDB11652633000C799E4 /* 1000to1005.png in Resources */ = {isa = PBXBuildFile; fileRef = F509BDB01652633000C799E4 /* 1000to1005.png */; };
-		F509BDB31652633900C799E4 /* texture1001.png in Resources */ = {isa = PBXBuildFile; fileRef = F509BDB21652633900C799E4 /* texture1001.png */; };
 		F50B113C16404779004BF562 /* MorphFrancois.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B113316404779004BF562 /* MorphFrancois.mm */; };
 		F50B113D16404779004BF562 /* RunningFrancois.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B113516404779004BF562 /* RunningFrancois.mm */; };
 		F50B113E16404779004BF562 /* SwimmingFrancois.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B113716404779004BF562 /* SwimmingFrancois.mm */; };
@@ -402,6 +401,7 @@
 		F50B1162164047B0004BF562 /* MorphGUILayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B115B164047B0004BF562 /* MorphGUILayer.mm */; };
 		F50B1163164047B0004BF562 /* MorphGameConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F50B115D164047B0004BF562 /* MorphGameConfig.m */; };
 		F50B1164164047B0004BF562 /* MorphCommon.mm in Sources */ = {isa = PBXBuildFile; fileRef = F50B115F164047B0004BF562 /* MorphCommon.mm */; };
+		F50BF007165A86D8006E2B10 /* texture1001.png in Resources */ = {isa = PBXBuildFile; fileRef = F50BF006165A86D8006E2B10 /* texture1001.png */; };
 		F545476F164FF5FD0066B159 /* 1000to1004.png in Resources */ = {isa = PBXBuildFile; fileRef = F545476E164FF5FD0066B159 /* 1000to1004.png */; };
 		F5454771164FF71D0066B159 /* texture1004.png in Resources */ = {isa = PBXBuildFile; fileRef = F5454770164FF71D0066B159 /* texture1004.png */; };
 		F5CFE9061641468A0070150F /* texture1007.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE8FE1641468A0070150F /* texture1007.png */; };
@@ -989,7 +989,6 @@
 		F509A5BD164278AF00076441 /* leftFoot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftFoot.png; sourceTree = "<group>"; };
 		F509A5BE164278AF00076441 /* rightFoot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightFoot.png; sourceTree = "<group>"; };
 		F509BDB01652633000C799E4 /* 1000to1005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1000to1005.png; sourceTree = "<group>"; };
-		F509BDB21652633900C799E4 /* texture1001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1001.png; sourceTree = "<group>"; };
 		F50B113216404779004BF562 /* MorphFrancois.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphFrancois.h; sourceTree = "<group>"; };
 		F50B113316404779004BF562 /* MorphFrancois.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MorphFrancois.mm; sourceTree = "<group>"; };
 		F50B113416404779004BF562 /* RunningFrancois.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunningFrancois.h; sourceTree = "<group>"; };
@@ -1024,6 +1023,7 @@
 		F50B115D164047B0004BF562 /* MorphGameConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorphGameConfig.m; sourceTree = "<group>"; };
 		F50B115E164047B0004BF562 /* MorphCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphCommon.h; sourceTree = "<group>"; };
 		F50B115F164047B0004BF562 /* MorphCommon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MorphCommon.mm; sourceTree = "<group>"; };
+		F50BF006165A86D8006E2B10 /* texture1001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1001.png; sourceTree = "<group>"; };
 		F545476E164FF5FD0066B159 /* 1000to1004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1000to1004.png; sourceTree = "<group>"; };
 		F5454770164FF71D0066B159 /* texture1004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1004.png; sourceTree = "<group>"; };
 		F5CFE8FE1641468A0070150F /* texture1007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1007.png; sourceTree = "<group>"; };
@@ -2147,7 +2147,7 @@
 				F5F6964B164ECDEF00081CAD /* 1000to1006.png */,
 				F50447591659505400E37A7C /* 1000to1007.png */,
 				F5098A56164E58AC00D52ECD /* texture1000.png */,
-				F509BDB21652633900C799E4 /* texture1001.png */,
+				F50BF006165A86D8006E2B10 /* texture1001.png */,
 				F5F6963D164EA86600081CAD /* texture1002.png */,
 				F5F6963F164EBE9A00081CAD /* texture1003.png */,
 				F5454770164FF71D0066B159 /* texture1004.png */,
@@ -2421,7 +2421,6 @@
 				F545476F164FF5FD0066B159 /* 1000to1004.png in Resources */,
 				F5454771164FF71D0066B159 /* texture1004.png in Resources */,
 				F509BDB11652633000C799E4 /* 1000to1005.png in Resources */,
-				F509BDB31652633900C799E4 /* texture1001.png in Resources */,
 				F50087F71658AD5700251994 /* CocoSwimLeftFootDown.png in Resources */,
 				F50088041658B95D00251994 /* jumpBtnOn.png in Resources */,
 				F50088051658B95D00251994 /* upBtn.png in Resources */,
@@ -2439,6 +2438,7 @@
 				F504475616592D0C00E37A7C /* backgroundSprites.plist in Resources */,
 				F5044758165932EB00E37A7C /* allBack.png in Resources */,
 				F504475A1659505400E37A7C /* 1000to1007.png in Resources */,
+				F50BF007165A86D8006E2B10 /* texture1001.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

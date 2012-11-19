@@ -7,10 +7,12 @@
 //
 
 #import "MorphCoco.h"
-
+#import "MorphGameLayer.h"
 #import "MorphGameConfig.h"
 
 @implementation MorphCoco
+
+@synthesize gameLayer;
 
 - (void) dealloc
 {
@@ -140,7 +142,6 @@
             [self addChild: runningCoco z: 2];
             currentAction = kRunningAction;
         }
-        
         [runningCoco increaseSpeed];
         currentGroundSpeed = [runningCoco getCurrentCocoSpeed];
         

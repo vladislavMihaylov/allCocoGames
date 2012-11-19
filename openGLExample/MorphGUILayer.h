@@ -16,6 +16,7 @@
     MorphGameLayer *gameLayer;
     
     CCLabelTTF *remainingDistance;
+    CCLabelBMFont *currentActionLabel;
     
     CCSprite *menuBg;
     
@@ -38,6 +39,7 @@
 - (void) unlockAllButtons;
 - (void) increaseMistake;
 - (void) showGameOverMenu;
+- (void) showCurrentActionLabel: (NSInteger) numb;
 
 @property (nonatomic, assign) MorphGameLayer *gameLayer;
 

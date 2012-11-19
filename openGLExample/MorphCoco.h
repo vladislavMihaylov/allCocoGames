@@ -16,8 +16,12 @@
 #import "ScramblingCoco.h"
 #import "GoingDownCoco.h"
 
+@class MorphGameLayer;
+
 @interface MorphCoco : CCNode
 {
+    MorphGameLayer *gameLayer;
+    
     RunningCoco *runningCoco;
     SwimmingCoco *swimmingCoco;
     ScramblingCoco *scramblingCoco;
@@ -34,6 +38,8 @@
     NSInteger currentAction;
     float currentGroundSpeed;
 }
+
+@property (nonatomic, assign) MorphGameLayer *gameLayer;
 
 + (MorphCoco *) createWithSpeed: (float) speed;
 

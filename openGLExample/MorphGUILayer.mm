@@ -117,9 +117,55 @@
             [self addChild: buttonsMenu];
         }
         
+        currentActionLabel = [CCLabelBMFont labelWithString: @"" fntFile: @"font20.fnt"];
+        currentActionLabel.position = ccp(240, 160);
+        [currentActionLabel setOpacity: 0];
+        [self addChild: currentActionLabel z: 20];
+        
     }
     
     return self;
+}
+
+- (void) showCurrentActionLabel:(NSInteger)numb
+{
+    if(IsMorphGameActive == YES)
+    {
+        id spawnAction = [CCSpawn actions: [CCFadeTo actionWithDuration: 2 opacity: 255],
+                          [CCScaleTo actionWithDuration: 2 scale: 1.5],
+                          nil];
+        
+        id spawnActionTwo = [CCSpawn actions: [CCFadeTo actionWithDuration: 2 opacity: 0],
+                             [CCScaleTo actionWithDuration: 2 scale: 1],
+                             nil];
+
+        
+        if(numb == 1000)
+        {
+            currentActionLabel.string = @"Run, Coco! Run!";
+        }
+        if(numb == 1001)
+        {
+            currentActionLabel.string = @"Swim!!! Faster!!!";
+        }
+        if(numb == 1002)
+        {
+            currentActionLabel.string = @"Jump!!! Up!!!";
+        }
+        if(numb == 1003)
+        {
+            currentActionLabel.string = @"Scramble!!! Up!!!";
+        }
+        if(numb == 1004)
+        {
+            currentActionLabel.string = @"Get down!!!";
+        }
+        
+        [currentActionLabel runAction:
+                                    [CCSequence actions:
+                                                spawnAction, spawnActionTwo,
+                                     nil]];
+    }
 }
 
 - (void) increaseMistake
