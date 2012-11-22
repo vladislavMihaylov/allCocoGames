@@ -408,7 +408,6 @@
 		F5CFE910164146940070150F /* leftHand.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE90A164146940070150F /* leftHand.png */; };
 		F5CFE912164146940070150F /* rightHand.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE90C164146940070150F /* rightHand.png */; };
 		F5CFE914164146C80070150F /* restartBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE913164146C80070150F /* restartBtn.png */; };
-		F5CFE917164146F00070150F /* pauseMenuBg.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CFE916164146F00070150F /* pauseMenuBg.png */; };
 		F5F6963E164EA86700081CAD /* texture1002.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F6963D164EA86600081CAD /* texture1002.png */; };
 		F5F69640164EBE9A00081CAD /* texture1003.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F6963F164EBE9A00081CAD /* texture1003.png */; };
 		F5F69648164ECB4700081CAD /* texture1005.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F69647164ECB4700081CAD /* texture1005.png */; };
@@ -418,7 +417,9 @@
 		F5F848B1164BF6E3002F916B /* CocoLeftFootMiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F848AF164BF6E3002F916B /* CocoLeftFootMiddle.png */; };
 		F5F848B4164C1811002F916B /* CocoLeftHandDown.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F848B2164C1811002F916B /* CocoLeftHandDown.png */; };
 		F5F848B5164C1811002F916B /* CocoLeftHandUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F848B3164C1811002F916B /* CocoLeftHandUp.png */; };
-		F5FF5C331641601200E8FA97 /* morphBg.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C321641601200E8FA97 /* morphBg.png */; };
+		F5FE0213165E529200794777 /* morphBg.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FE0212165E529200794777 /* morphBg.png */; };
+		F5FE0215165E54BF00794777 /* pauseMenuBg.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FE0214165E54BF00794777 /* pauseMenuBg.png */; };
+		F5FE0219165E596B00794777 /* roosterMinerHead.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FE0218165E596B00794777 /* roosterMinerHead.png */; };
 		F5FF5C3716416A8B00E8FA97 /* CocoFrancoisPlayBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3516416A8B00E8FA97 /* CocoFrancoisPlayBtn.png */; };
 		F5FF5C3816416A8B00E8FA97 /* CocoFrancoisPlayBtnTap.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3616416A8B00E8FA97 /* CocoFrancoisPlayBtnTap.png */; };
 		F5FF5C3D16416E5C00E8FA97 /* PlayWithCocoBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3916416E5C00E8FA97 /* PlayWithCocoBtn.png */; };
@@ -1030,7 +1031,6 @@
 		F5CFE90A164146940070150F /* leftHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftHand.png; sourceTree = "<group>"; };
 		F5CFE90C164146940070150F /* rightHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightHand.png; sourceTree = "<group>"; };
 		F5CFE913164146C80070150F /* restartBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restartBtn.png; sourceTree = "<group>"; };
-		F5CFE916164146F00070150F /* pauseMenuBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseMenuBg.png; sourceTree = "<group>"; };
 		F5F6963D164EA86600081CAD /* texture1002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1002.png; sourceTree = "<group>"; };
 		F5F6963F164EBE9A00081CAD /* texture1003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1003.png; sourceTree = "<group>"; };
 		F5F69647164ECB4700081CAD /* texture1005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture1005.png; sourceTree = "<group>"; };
@@ -1040,7 +1040,9 @@
 		F5F848AF164BF6E3002F916B /* CocoLeftFootMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoLeftFootMiddle.png; sourceTree = "<group>"; };
 		F5F848B2164C1811002F916B /* CocoLeftHandDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoLeftHandDown.png; sourceTree = "<group>"; };
 		F5F848B3164C1811002F916B /* CocoLeftHandUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoLeftHandUp.png; sourceTree = "<group>"; };
-		F5FF5C321641601200E8FA97 /* morphBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = morphBg.png; sourceTree = "<group>"; };
+		F5FE0212165E529200794777 /* morphBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = morphBg.png; sourceTree = "<group>"; };
+		F5FE0214165E54BF00794777 /* pauseMenuBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseMenuBg.png; sourceTree = "<group>"; };
+		F5FE0218165E596B00794777 /* roosterMinerHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roosterMinerHead.png; sourceTree = "<group>"; };
 		F5FF5C3516416A8B00E8FA97 /* CocoFrancoisPlayBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoFrancoisPlayBtn.png; sourceTree = "<group>"; };
 		F5FF5C3616416A8B00E8FA97 /* CocoFrancoisPlayBtnTap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoFrancoisPlayBtnTap.png; sourceTree = "<group>"; };
 		F5FF5C3916416E5C00E8FA97 /* PlayWithCocoBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayWithCocoBtn.png; sourceTree = "<group>"; };
@@ -2029,6 +2031,9 @@
 		F5002FA116494F0300397E5E /* CocoSprites */ = {
 			isa = PBXGroup;
 			children = (
+				F5FE0214165E54BF00794777 /* pauseMenuBg.png */,
+				F5FE0212165E529200794777 /* morphBg.png */,
+				F5FE0218165E596B00794777 /* roosterMinerHead.png */,
 				F50087F61658AD5700251994 /* CocoSwimLeftFootDown.png */,
 				F5F848AE164BF6E3002F916B /* CocoLeftFootDown.png */,
 				F5F848AF164BF6E3002F916B /* CocoLeftFootMiddle.png */,
@@ -2125,13 +2130,12 @@
 		F5CFE8F5164145F50070150F /* MorphingSprites */ = {
 			isa = PBXGroup;
 			children = (
+				F5FE0210165E516200794777 /* textures */,
 				F5044757165932EB00E37A7C /* allBack.png */,
 				F504475316592D0C00E37A7C /* backgroundSprites.png */,
 				F504475416592D0C00E37A7C /* backgroundSprites.plist */,
 				F50087F91658B94E00251994 /* buttons */,
 				F5002FA116494F0300397E5E /* CocoSprites */,
-				F5FF5C321641601200E8FA97 /* morphBg.png */,
-				F5CFE916164146F00070150F /* pauseMenuBg.png */,
 				F5CFE913164146C80070150F /* restartBtn.png */,
 				F509A5B9164277AC00076441 /* body.png */,
 				F509A5BA164277AC00076441 /* head.png */,
@@ -2139,6 +2143,13 @@
 				F509A5BE164278AF00076441 /* rightFoot.png */,
 				F5CFE90A164146940070150F /* leftHand.png */,
 				F5CFE90C164146940070150F /* rightHand.png */,
+			);
+			name = MorphingSprites;
+			sourceTree = "<group>";
+		};
+		F5FE0210165E516200794777 /* textures */ = {
+			isa = PBXGroup;
+			children = (
 				F5098A53164E58AC00D52ECD /* 1000to1001.png */,
 				F5098A54164E58AC00D52ECD /* 1000to1002.png */,
 				F5098A55164E58AC00D52ECD /* 1000to1003.png */,
@@ -2155,7 +2166,7 @@
 				F5F6964C164ECDEF00081CAD /* texture1006.png */,
 				F5CFE8FE1641468A0070150F /* texture1007.png */,
 			);
-			name = MorphingSprites;
+			name = textures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2385,8 +2396,6 @@
 				F5CFE910164146940070150F /* leftHand.png in Resources */,
 				F5CFE912164146940070150F /* rightHand.png in Resources */,
 				F5CFE914164146C80070150F /* restartBtn.png in Resources */,
-				F5CFE917164146F00070150F /* pauseMenuBg.png in Resources */,
-				F5FF5C331641601200E8FA97 /* morphBg.png in Resources */,
 				F5FF5C3716416A8B00E8FA97 /* CocoFrancoisPlayBtn.png in Resources */,
 				F5FF5C3816416A8B00E8FA97 /* CocoFrancoisPlayBtnTap.png in Resources */,
 				F5FF5C3D16416E5C00E8FA97 /* PlayWithCocoBtn.png in Resources */,
@@ -2439,6 +2448,9 @@
 				F5044758165932EB00E37A7C /* allBack.png in Resources */,
 				F504475A1659505400E37A7C /* 1000to1007.png in Resources */,
 				F50BF007165A86D8006E2B10 /* texture1001.png in Resources */,
+				F5FE0213165E529200794777 /* morphBg.png in Resources */,
+				F5FE0215165E54BF00794777 /* pauseMenuBg.png in Resources */,
+				F5FE0219165E596B00794777 /* roosterMinerHead.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

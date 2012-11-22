@@ -35,6 +35,9 @@
 - (void) restartGame;
 - (void) showAnimationOfTransition;
 - (void) finishGame;
+- (void) fuckingJump;
+- (void) runGround;
+
 
 - (void) doAction: (NSInteger) numberOfAction;
 

@@ -23,7 +23,7 @@
     {
         CGPoint positionBody = ccp(210, 155);
         CGPoint anchorBody = ccp(0.5, 0.4);
-        NSInteger zBody = 2;
+        //NSInteger zBody = 2;
         
         CGPoint positionHead = ccp(15, 65);
         CGPoint anchorHead = ccp(0.5, 0.3);
@@ -68,7 +68,7 @@
         [body addFrame: AFrame(3, 15)];
         [body addFrame: AFrame(4, 18)];
         
-        head = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"CocoHead.png"]  position: positionHead anchorPoint: anchorHead andSpeed: speed];
+        head = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"roosterMinerHead.png"]  position: positionHead anchorPoint: anchorHead andSpeed: speed];
         [head addFrame: AFrame(0, 0)];
         [head addFrame: AFrame(1, 5)];
         [head addFrame: AFrame(2, 0)];

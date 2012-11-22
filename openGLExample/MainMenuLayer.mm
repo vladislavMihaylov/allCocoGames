@@ -99,9 +99,9 @@
 {
     [[SimpleAudioEngine sharedEngine] playEffect:@"tap.mp3"];
     [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration:1.0f 
-                                                                                  scene: [SettingsLayer scene] 
-                                               ]
-    ];
+                                                                                  scene: [SettingsLayer scene]
+                                              ]
+   ];
 }
 
 - (void) dealloc

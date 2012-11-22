@@ -40,6 +40,8 @@
 - (void) increaseMistake;
 - (void) showGameOverMenu;
 - (void) showCurrentActionLabel: (NSInteger) numb;
+- (void) removeAllMistakeSprites;
+
 
 @property (nonatomic, assign) MorphGameLayer *gameLayer;
 

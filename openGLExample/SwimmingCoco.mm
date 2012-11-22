@@ -21,7 +21,7 @@
     if(self = [super init])
     {CGPoint positionBody = ccp(210, 105);
         CGPoint anchorBody = ccp(0.5, 0.4);
-        NSInteger zBody = 2;
+        //NSInteger zBody = 2;
         
         CGPoint positionHead = ccp(25, 50);
         CGPoint anchorHead = ccp(0.5, 0.3);

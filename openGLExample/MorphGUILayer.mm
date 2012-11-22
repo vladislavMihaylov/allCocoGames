@@ -267,9 +267,9 @@
                                                                       selector: @selector(restartGame)
                                            ];
         
-        exitMenuBtn.position = ccp(75, 40);
-        playMenuBtn.position = ccp(275, 40);
-        restartGameBtn.position = ccp(175, 40);
+        exitMenuBtn.position = ccp(75, 100);
+        playMenuBtn.position = ccp(275, 100);
+        restartGameBtn.position = ccp(175, 100);
         
         CCMenu *menu = [CCMenu menuWithItems: exitMenuBtn, playMenuBtn, restartGameBtn, nil];
         menu.position = ccp(0,0);
@@ -309,8 +309,8 @@
                                                                       selector: @selector(restartGame)
                                            ];
         
-        exitMenuBtn.position = ccp(120, 40);
-        restartGameBtn.position = ccp(240, 40);
+        exitMenuBtn.position = ccp(120, 100);
+        restartGameBtn.position = ccp(240, 100);
         
         CCMenu *menu = [CCMenu menuWithItems: exitMenuBtn, restartGameBtn, nil];
         menu.position = ccp(0,0);
