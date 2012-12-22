@@ -228,9 +228,9 @@
     [body runAction: [CCSpawn actions:
                       [CCJumpTo actionWithDuration: 2
                                           position: ccp(body.position.x + 15, 155)
-                                            height: 50
+                                            height: -50
                                              jumps: 1],
-                      [CCScaleTo actionWithDuration: 1.5 scaleX: -1
+                      [CCScaleTo actionWithDuration: 0.5 scaleX: -1
                                              scaleY: 1],
                       nil]
      
@@ -241,11 +241,11 @@
 - (void) jumpOnAGround
 {
     [body runAction: [CCSpawn actions:
-                      [CCJumpTo actionWithDuration: 2
+                      [CCJumpTo actionWithDuration: 1
                                           position: ccp(body.position.x - 15, 105)
-                                            height: 100
+                                            height: 50
                                              jumps: 1],
-                      [CCScaleTo actionWithDuration: 1.5 scaleX: 1
+                      [CCScaleTo actionWithDuration: 0.5 scaleX: 1
                                              scaleY: 1],
                       nil]
      

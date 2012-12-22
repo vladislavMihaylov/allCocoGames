@@ -55,6 +55,8 @@
         
         isMoveUpBackGround = NO;
         
+        moveBG = YES;
+        
         bushesArray = [[NSMutableArray alloc] init];
         treesArray = [[NSMutableArray alloc] init];
         farTreesArray = [[NSMutableArray alloc] init];
@@ -247,6 +249,17 @@
     if(curAction == 1002 || [ground getCurrentActionNumber] == 1004 || [ground getCurrentActionNumber] == 1005 )
     {
         delayTime = 0;
+    }
+    else if(curAction == 1004)
+    {
+        if(typeCharacter == 0)
+        {
+            delayTime = 1;
+        }
+        else
+        {
+            delayTime = 2;
+        }
     }
     else
     {
@@ -668,7 +681,7 @@
 
 - (void) update: (float) dt
 {
-    CCLOG(@"franco pos = %f and %f" , francois.runningFrancois.body.position.y, francois.runningFrancois.position.y);
+    //CCLOG(@"franco pos = %f and %f" , francois.runningFrancois.body.position.y, francois.runningFrancois.position.y);
     
     [self checkStoneCollisions];
     

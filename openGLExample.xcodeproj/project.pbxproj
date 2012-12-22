@@ -411,6 +411,8 @@
 		F50584221671DA3100CE1F1E /* 1coco3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F505841C1671DA3100CE1F1E /* 1coco3.mp3 */; };
 		F50584231671DA3100CE1F1E /* 1coco4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F505841D1671DA3100CE1F1E /* 1coco4.mp3 */; };
 		F50584241671DA3100CE1F1E /* 1finish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F505841E1671DA3100CE1F1E /* 1finish.mp3 */; };
+		F5065F301685AF53001C844B /* CocoFrancoisPlayBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5065F2E1685AF53001C844B /* CocoFrancoisPlayBtn.png */; };
+		F5065F311685AF53001C844B /* CocoFrancoisPlayBtnTap.png in Resources */ = {isa = PBXBuildFile; fileRef = F5065F2F1685AF53001C844B /* CocoFrancoisPlayBtnTap.png */; };
 		F50692331649EDD000CBC5D7 /* CocoSwimHead.png in Resources */ = {isa = PBXBuildFile; fileRef = F50692311649EDD000CBC5D7 /* CocoSwimHead.png */; };
 		F509A5BB164277AC00076441 /* body.png in Resources */ = {isa = PBXBuildFile; fileRef = F509A5B9164277AC00076441 /* body.png */; };
 		F509A5BC164277AC00076441 /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = F509A5BA164277AC00076441 /* head.png */; };
@@ -469,8 +471,6 @@
 		F5F848B5164C1811002F916B /* CocoLeftHandUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F848B3164C1811002F916B /* CocoLeftHandUp.png */; };
 		F5FE0215165E54BF00794777 /* pauseMenuBg.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FE0214165E54BF00794777 /* pauseMenuBg.png */; };
 		F5FE0219165E596B00794777 /* roosterMinerHead.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FE0218165E596B00794777 /* roosterMinerHead.png */; };
-		F5FF5C3716416A8B00E8FA97 /* CocoFrancoisPlayBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3516416A8B00E8FA97 /* CocoFrancoisPlayBtn.png */; };
-		F5FF5C3816416A8B00E8FA97 /* CocoFrancoisPlayBtnTap.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3616416A8B00E8FA97 /* CocoFrancoisPlayBtnTap.png */; };
 		F5FF5C3D16416E5C00E8FA97 /* PlayWithCocoBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3916416E5C00E8FA97 /* PlayWithCocoBtn.png */; };
 		F5FF5C3E16416E5C00E8FA97 /* PlayWithCocoBtnTap.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3A16416E5C00E8FA97 /* PlayWithCocoBtnTap.png */; };
 		F5FF5C3F16416E5C00E8FA97 /* PlayWithFrancoisBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3B16416E5C00E8FA97 /* PlayWithFrancoisBtn.png */; };
@@ -1081,6 +1081,8 @@
 		F505841C1671DA3100CE1F1E /* 1coco3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1coco3.mp3; sourceTree = "<group>"; };
 		F505841D1671DA3100CE1F1E /* 1coco4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1coco4.mp3; sourceTree = "<group>"; };
 		F505841E1671DA3100CE1F1E /* 1finish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1finish.mp3; sourceTree = "<group>"; };
+		F5065F2E1685AF53001C844B /* CocoFrancoisPlayBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoFrancoisPlayBtn.png; sourceTree = "<group>"; };
+		F5065F2F1685AF53001C844B /* CocoFrancoisPlayBtnTap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoFrancoisPlayBtnTap.png; sourceTree = "<group>"; };
 		F50692311649EDD000CBC5D7 /* CocoSwimHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoSwimHead.png; sourceTree = "<group>"; };
 		F509A5B9164277AC00076441 /* body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = body.png; sourceTree = "<group>"; };
 		F509A5BA164277AC00076441 /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head.png; sourceTree = "<group>"; };
@@ -1156,8 +1158,6 @@
 		F5F848B3164C1811002F916B /* CocoLeftHandUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoLeftHandUp.png; sourceTree = "<group>"; };
 		F5FE0214165E54BF00794777 /* pauseMenuBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseMenuBg.png; sourceTree = "<group>"; };
 		F5FE0218165E596B00794777 /* roosterMinerHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roosterMinerHead.png; sourceTree = "<group>"; };
-		F5FF5C3516416A8B00E8FA97 /* CocoFrancoisPlayBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoFrancoisPlayBtn.png; sourceTree = "<group>"; };
-		F5FF5C3616416A8B00E8FA97 /* CocoFrancoisPlayBtnTap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoFrancoisPlayBtnTap.png; sourceTree = "<group>"; };
 		F5FF5C3916416E5C00E8FA97 /* PlayWithCocoBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayWithCocoBtn.png; sourceTree = "<group>"; };
 		F5FF5C3A16416E5C00E8FA97 /* PlayWithCocoBtnTap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayWithCocoBtnTap.png; sourceTree = "<group>"; };
 		F5FF5C3B16416E5C00E8FA97 /* PlayWithFrancoisBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayWithFrancoisBtn.png; sourceTree = "<group>"; };
@@ -2117,8 +2117,8 @@
 				F5FF5C3A16416E5C00E8FA97 /* PlayWithCocoBtnTap.png */,
 				F5FF5C3B16416E5C00E8FA97 /* PlayWithFrancoisBtn.png */,
 				F5FF5C3C16416E5C00E8FA97 /* PlayWithFrancoisBtnTap.png */,
-				F5FF5C3516416A8B00E8FA97 /* CocoFrancoisPlayBtn.png */,
-				F5FF5C3616416A8B00E8FA97 /* CocoFrancoisPlayBtnTap.png */,
+				F5065F2E1685AF53001C844B /* CocoFrancoisPlayBtn.png */,
+				F5065F2F1685AF53001C844B /* CocoFrancoisPlayBtnTap.png */,
 				0484A1A3160F078F006BDD43 /* playBtnCoco.png */,
 				0484A1A4160F078F006BDD43 /* playBtnFish.png */,
 				0484A1A5160F078F006BDD43 /* playBtnOnCoco.png */,
@@ -2699,8 +2699,6 @@
 				F5CFE910164146940070150F /* leftHand.png in Resources */,
 				F5CFE912164146940070150F /* rightHand.png in Resources */,
 				F5CFE914164146C80070150F /* restartBtn.png in Resources */,
-				F5FF5C3716416A8B00E8FA97 /* CocoFrancoisPlayBtn.png in Resources */,
-				F5FF5C3816416A8B00E8FA97 /* CocoFrancoisPlayBtnTap.png in Resources */,
 				F5FF5C3D16416E5C00E8FA97 /* PlayWithCocoBtn.png in Resources */,
 				F5FF5C3E16416E5C00E8FA97 /* PlayWithCocoBtnTap.png in Resources */,
 				F5FF5C3F16416E5C00E8FA97 /* PlayWithFrancoisBtn.png in Resources */,
@@ -2819,6 +2817,8 @@
 				F50AAB201684B495008E46BD /* morphBgJPG.jpg in Resources */,
 				F50AAB231684D110008E46BD /* textures.plist in Resources */,
 				F50AAB241684D110008E46BD /* textures.png in Resources */,
+				F5065F301685AF53001C844B /* CocoFrancoisPlayBtn.png in Resources */,
+				F5065F311685AF53001C844B /* CocoFrancoisPlayBtnTap.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

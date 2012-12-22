@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377708094.429877"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "326"
-         endingLineNumber = "326"
+         startingLineNumber = "339"
+         endingLineNumber = "339"
          landmarkName = "-doNextAction"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377805868.28556"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "592"
-         endingLineNumber = "592"
+         startingLineNumber = "605"
+         endingLineNumber = "605"
          landmarkName = "-doAction:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377708094.429877"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "296"
-         endingLineNumber = "296"
+         startingLineNumber = "309"
+         endingLineNumber = "309"
          landmarkName = "-doNextAction"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377805868.28556"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "573"
-         endingLineNumber = "573"
+         startingLineNumber = "586"
+         endingLineNumber = "586"
          landmarkName = "-doAction:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377805868.28556"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "433"
-         endingLineNumber = "433"
+         startingLineNumber = "446"
+         endingLineNumber = "446"
          landmarkName = "-runGround"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377708094.429877"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "333"
-         endingLineNumber = "333"
+         startingLineNumber = "346"
+         endingLineNumber = "346"
          landmarkName = "-doNextAction"
          landmarkType = "5">
       </FileBreakpoint>
@@ -294,11 +294,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377708094.429877"
+         timestampString = "377855323.741284"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "249"
-         endingLineNumber = "249"
+         startingLineNumber = "251"
+         endingLineNumber = "251"
          landmarkName = "-showAnimationOfTransition"
          landmarkType = "5">
       </FileBreakpoint>
@@ -359,11 +359,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377708094.429877"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "290"
-         endingLineNumber = "290"
+         startingLineNumber = "303"
+         endingLineNumber = "303"
          landmarkName = "-doNextAction"
          landmarkType = "5">
       </FileBreakpoint>
@@ -372,11 +372,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377805868.28556"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "460"
-         endingLineNumber = "460"
+         startingLineNumber = "473"
+         endingLineNumber = "473"
          landmarkName = "-doAction:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -398,11 +398,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377708094.429877"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "314"
-         endingLineNumber = "314"
+         startingLineNumber = "327"
+         endingLineNumber = "327"
          landmarkName = "-doNextAction"
          landmarkType = "5">
       </FileBreakpoint>
@@ -424,11 +424,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377805868.28556"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "472"
-         endingLineNumber = "472"
+         startingLineNumber = "485"
+         endingLineNumber = "485"
          landmarkName = "-doAction:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -437,11 +437,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377805868.28556"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "470"
-         endingLineNumber = "470"
+         startingLineNumber = "483"
+         endingLineNumber = "483"
          landmarkName = "-doAction:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -450,11 +450,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377805868.28556"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "481"
-         endingLineNumber = "481"
+         startingLineNumber = "494"
+         endingLineNumber = "494"
          landmarkName = "-doAction:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -502,11 +502,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377708094.429877"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "318"
-         endingLineNumber = "318"
+         startingLineNumber = "331"
+         endingLineNumber = "331"
          landmarkName = "-doNextAction"
          landmarkType = "5">
       </FileBreakpoint>
@@ -554,11 +554,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377708094.429877"
+         timestampString = "377855323.741284"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "240"
-         endingLineNumber = "240"
+         startingLineNumber = "242"
+         endingLineNumber = "242"
          landmarkName = "-showAnimationOfTransition"
          landmarkType = "5">
       </FileBreakpoint>
@@ -593,11 +593,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377808565.099235"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "722"
-         endingLineNumber = "722"
+         startingLineNumber = "735"
+         endingLineNumber = "735"
          landmarkName = "-update:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -606,11 +606,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377573564.016346"
+         timestampString = "377855323.741284"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -632,11 +632,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377808565.099235"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "822"
-         endingLineNumber = "822"
+         startingLineNumber = "835"
+         endingLineNumber = "835"
          landmarkName = "-update:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -645,11 +645,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "openGLExample/MorphGameLayer.mm"
-         timestampString = "377808565.099235"
+         timestampString = "377855918.625855"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "820"
-         endingLineNumber = "820"
+         startingLineNumber = "833"
+         endingLineNumber = "833"
          landmarkName = "-update:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -729,6 +729,19 @@
          startingLineNumber = "119"
          endingLineNumber = "119"
          landmarkName = "-jumpOnAGround"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "openGLExample/MorphGameLayer.mm"
+         timestampString = "377855918.625855"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "266"
+         endingLineNumber = "266"
+         landmarkName = "-showAnimationOfTransition"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
