@@ -7,7 +7,7 @@
 //
 
 #import "GoingDownCoco.h"
-
+#import "MorphGameConfig.h"
 
 @implementation GoingDownCoco
 
@@ -20,7 +20,7 @@
 {
     if(self = [super init])
     {
-        CGPoint positionBody = ccp(250, 155);
+        CGPoint positionBody = ccp(235, 140);
         CGPoint anchorBody = ccp(0.5, 0.4);
         NSInteger zBody = 2;
         
@@ -67,7 +67,7 @@
         [body addFrame: AFrame(3, 10)];
         [body addFrame: AFrame(4, 13)];
         
-        head = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"CocoHead.png"]  position: positionHead anchorPoint: anchorHead andSpeed: speed];
+        head = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"roosterMinerHead.png"]  position: positionHead anchorPoint: anchorHead andSpeed: speed];
         [head addFrame: AFrame(0, 0)];
         [head addFrame: AFrame(1, 5)];
         [head addFrame: AFrame(2, 0)];
@@ -223,11 +223,16 @@
 
 - (void) jumpFromMountain
 {
+    body.scaleX = 1;
+       
     [body runAction: [CCSpawn actions:
                       [CCJumpTo actionWithDuration: 2
-                                          position: ccp(body.position.x, 155)
-                                            height: 100
-                                             jumps: 1],                      nil]
+                                          position: ccp(body.position.x + 15, 155)
+                                            height: 50
+                                             jumps: 1],
+                      [CCScaleTo actionWithDuration: 1.5 scaleX: -1
+                                             scaleY: 1],
+                      nil]
      
      ];
     
@@ -237,12 +242,16 @@
 {
     [body runAction: [CCSpawn actions:
                       [CCJumpTo actionWithDuration: 2
-                                          position: ccp(body.position.x, 105)
+                                          position: ccp(body.position.x - 15, 105)
                                             height: 100
                                              jumps: 1],
+                      [CCScaleTo actionWithDuration: 1.5 scaleX: 1
+                                             scaleY: 1],
                       nil]
      
      ];
+    
+    isMoveDownBackGround = YES;
 }
 
 - (float) getCurrentCocoSpeed
@@ -252,6 +261,18 @@
     
     return currentSpeed;
     
+}
+
+- (void) pauseAllActions
+{
+    [body pauseSchedulerAndActions];
+    [head pauseSchedulerAndActions];
+}
+
+- (void) unPauseAllActions
+{
+    [body resumeSchedulerAndActions];
+    [head resumeSchedulerAndActions];
 }
 
 + (GoingDownCoco *) createWithSpeed: (float) speed

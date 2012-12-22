@@ -11,6 +11,7 @@
 #import "MorphMainMenu.h"
 #import "MorphCommon.h"
 #import "MorphGameLayer.h"
+#import "SimpleAudioEngine.h"
 //#import "Coco.h"
 
 #import "MorphGameConfig.h"
@@ -42,7 +43,7 @@
 {
 	if( (self=[super init]))
     {
-        CCSprite *bg = [CCSprite spriteWithFile: @"morphBg.png"];
+        CCSprite *bg = [CCSprite spriteWithFile: @"morphBgJPG.jpg"];
         bg.position = ccp(240, 160);
         [self addChild: bg];
         
@@ -74,6 +75,7 @@
 
 - (void) play: (CCMenuItemFont *) sender
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"tap.mp3"];
     typeCharacter = sender.tag;
     [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1 scene: [MorphGameLayer scene]]];
 }

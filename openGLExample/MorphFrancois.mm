@@ -1,16 +1,19 @@
 //
-//  Francois.m
-//  morphing
+//  Coco.m
+//  testApp
 //
-//  Created by Vlad on 14.10.12.
+//  Created by Mac on 30.09.12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "MorphFrancois.h"
-
+#import "MorphGameLayer.h"
 #import "MorphGameConfig.h"
 
 @implementation MorphFrancois
+
+@synthesize gameLayer;
+@synthesize runningFrancois;
 
 - (void) dealloc
 {
@@ -37,7 +40,7 @@
         
         [goingDownFrancois retain];
         goingDownFrancois.tag = kGoingDownAction;
-        goingDownFrancois.scaleX = -1;
+        //goingDownCoco.scaleX = -1;
         
         currentGroundSpeed = 0;
     }
@@ -45,33 +48,130 @@
     return self;
 }
 
+- (void) hideCoco
+{
+    [runningFrancois hide];
+}
+
+- (void) rotate: (NSInteger) type andCurrentGround: (NSInteger) curGround
+{
+    CCLOG(@"Type: %i", type);
+    if(type == 1000)
+    {
+        if(curGround == 1004)
+        {
+            if(iCanDown)
+            {
+                [goingDownFrancois jumpFromMountain];
+                [goingDownFrancois setSpeed: currentGroundSpeed];
+                
+                iCanDown = NO;
+            }
+            
+            //[runningCoco jumpFromMountain];
+        }
+        else
+        {
+            if(iCanDown)
+            {
+                [runningFrancois showTransitionAnimation];
+            }
+        }
+        //[self runAction: [CCSequence actions: [CCDelayTime actionWithDuration: 2], [CCCallFunc actionWithTarget: self selector: @selector(setNormalCocoOrientation)], nil]];
+    }
+    if(type == 1001)
+    {
+        [runningFrancois hide];
+        [swimmingFrancois showTransitionAnimation];
+        [self runAction:
+         [CCSequence actions:
+          [CCDelayTime actionWithDuration: 2],
+          [CCCallFunc actionWithTarget: self
+                              selector: @selector(setNormalCocoOrientation)],
+          [CCDelayTime actionWithDuration: 0.02],
+          [CCCallFunc actionWithTarget: self
+                              selector: @selector(doVisibleCoco)],
+          nil]
+         ];
+    }
+    if(type == 1002)
+    {
+        
+        [scramblingFrancois showTransitionAnimation];
+        [scramblingFrancois setSpeed: currentGroundSpeed];
+        //[self runAction: [CCSequence actions: [CCDelayTime actionWithDuration: 2], [CCCallFunc actionWithTarget: self selector: @selector(setNormalCocoOrientation)], nil]];
+    }
+    if(type == 1003)
+    {
+        [scramblingFrancois jumpOnMountain];
+    }
+    if(curGround == 1004)
+    {
+        //[runningFrancois jumpFromMountain];
+        //[goingDownFrancois jumpFromMountain];
+        //[goingDownFrancois setSpeed: currentGroundSpeed];
+    }
+    if(type == 1004)
+    {
+        [goingDownFrancois jumpOnAGround];
+        [runningFrancois setLastYPosition];
+    }
+    
+}
+
+- (void) runScramblCoco
+{
+    //[goingDownCoco setSpeed: groundSpeed];
+}
+
+- (void) setNormalCocoOrientation
+{
+    [runningFrancois setNormalOrientation];
+}
+
+- (void) doVisibleCoco
+{
+    [runningFrancois show];
+}
+
+- (void) stopRun
+{
+    [runningFrancois setSpeed: 0];
+}
+
 - (void) doAction: (NSInteger) numberOfAction withSpeed: (float) speed
 {
+    groundSpeed = currentGroundSpeed;
+    
     if(numberOfAction == 0)
     {
         if(currentAction != kRunningAction)
         {
             [self removeChildByTag: currentAction cleanup: NO];
-            [self addChild: runningFrancois];
+            [self addChild: runningFrancois z: 2];
             currentAction = kRunningAction;
+            francoisPosition = runningFrancois.body.position;
         }
         
         [runningFrancois increaseSpeed];
         currentGroundSpeed = [runningFrancois getCurrentCocoSpeed];
-        
+        //[currentCoco increaseSpeed];
     }
     else if(numberOfAction == 1)
     {
         if(currentAction != kSwimmingAction)
         {
+            
             [self removeChildByTag: currentAction cleanup: NO];
-            [self addChild: swimmingFrancois];
+            [self addChild: swimmingFrancois z: -5];
             currentAction = kSwimmingAction;
+            francoisPosition = swimmingFrancois.body.position;
         }
         
         [swimmingFrancois increaseSpeed];
         currentGroundSpeed = [swimmingFrancois getCurrentCocoSpeed];
         
+        //[currentCoco increaseSpeed];
     }
     else if(numberOfAction == 2)
     {
@@ -79,7 +179,10 @@
         {
             ICanJump = NO;
             
-            [self runAction: [CCJumpTo actionWithDuration: 0.7 position: self.position height: 50 jumps: 1]];
+            currentGroundSpeed = 7;//[runningCoco getCurrentCocoSpeed];
+            [runningFrancois reorderTo: 2];
+            [runningFrancois setSpeed: currentGroundSpeed];
+            [runningFrancois runAction: [CCJumpTo actionWithDuration: 0.7 position: self.position height: 50 jumps: 1]];
             [self runAction:
              [CCSequence actions:
               [CCDelayTime actionWithDuration: 0.7],
@@ -94,7 +197,7 @@
         if(currentAction != kScramblingAction)
         {
             [self removeChildByTag: currentAction cleanup: NO];
-            [self addChild: scramblingFrancois];
+            [self addChild: scramblingFrancois z: 2];
             currentAction = kScramblingAction;
         }
         
@@ -108,16 +211,40 @@
         if(currentAction != kGoingDownAction)
         {
             [self removeChildByTag: currentAction cleanup: NO];
-            [self addChild: goingDownFrancois];
+            [self addChild: goingDownFrancois z: 2];
             currentAction = kGoingDownAction;
         }
-        
+        //[goingDownCoco setSpeed: groundSpeed];
         [goingDownFrancois increaseSpeed];
         currentGroundSpeed = [goingDownFrancois getCurrentCocoSpeed];
         
         //[currentCoco increaseSpeed];
     }
     
+}
+
+- (void) pauseAll
+{
+    [runningFrancois pauseSchedulerAndActions];
+    [swimmingFrancois pauseSchedulerAndActions];
+    [scramblingFrancois pauseSchedulerAndActions];
+    [goingDownFrancois pauseSchedulerAndActions];
+}
+
+- (void) transitionsPause
+{
+    [runningFrancois pauseAllActions];
+    [swimmingFrancois pauseAllActions];
+    [scramblingFrancois pauseAllActions];
+    [goingDownFrancois pauseAllActions];
+}
+
+- (void) transitionsUnPause
+{
+    [runningFrancois unPauseAllActions];
+    [swimmingFrancois unPauseAllActions];
+    [scramblingFrancois unPauseAllActions];
+    [goingDownFrancois unPauseAllActions];
 }
 
 - (float) getCurrentGroundSpeed
@@ -139,6 +266,17 @@
     [rightFoot increaseSpeedAnimation];
     [leftFoot increaseSpeedAnimation];
 }
+
+- (void) stopCoco
+{
+    [body setSpeed: 0];
+    [head setSpeed: 0];
+    [rightHand setSpeed: 0];
+    [leftHand setSpeed: 0];
+    [rightFoot setSpeed: 0];
+    [leftFoot setSpeed: 0];
+}
+
 
 + (MorphFrancois *) createWithSpeed: (float) speed
 {

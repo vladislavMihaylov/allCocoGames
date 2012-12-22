@@ -1,15 +1,18 @@
 //
-//  RunningFrancois.m
-//  morphing
+//  RunningCoco.m
+//  testApp
 //
-//  Created by Vlad on 14.10.12.
+//  Created by Mac on 29.09.12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "RunningFrancois.h"
+#import "MorphGameConfig.h"
 
 
 @implementation RunningFrancois
+
+@synthesize body;
 
 - (void) dealloc
 {
@@ -20,77 +23,184 @@
 {
     if(self = [super init])
     {
-        CGPoint positionBody = ccp(160, 240);
-        CGPoint anchorBody = ccp(0.5, 0.4);
+        CGPoint positionBody = ccp(210, 110);
+        //CGPoint positionBody = ccp(0, 0);
+        CGPoint anchorBody = ccp(0.5, 0.5);
         NSInteger zBody = 2;
         
-        CGPoint positionHead = ccp(75, 200);
-        CGPoint anchorHead = ccp(0.5, 0.0);
+        CGPoint positionPanzer = ccp(25, 33);
+        CGPoint anchorPanzer = ccp(0.5, 0.5);
         
-        CGPoint positionRightFoot = ccp(75, 50);
-        CGPoint anchorRightFoot = ccp(0.5, 1.0);
+        CGPoint positionLeftEye = ccp(40, 50);
+        CGPoint anchorLeftEye = ccp(0.5, 0);
         
-        CGPoint positionLeftFoot = ccp(75, 50);
-        CGPoint anchorLeftFoot = ccp(0.5, 1.0);
+        CGPoint positionRightEye = ccp(58, 48);
+        CGPoint anchorRightEye = ccp(0.5, 0);
         
-        body = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"body.png"] position: positionBody anchorPoint: anchorBody andSpeed: speed];
+        
+        
+        body = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"francoisBody.png"] position: positionBody anchorPoint: anchorBody andSpeed: speed];
         [body addFrame: AFrame(0, 0)];
         [body addFrame: AFrame(1, 3)];
         [body addFrame: AFrame(2, 0)];
         [body addFrame: AFrame(3, -3)];
         [body addFrame: AFrame(4, 0)];
         
-        head = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"head.png"]  position: positionHead anchorPoint: anchorHead andSpeed: speed];
-        [head addFrame: AFrame(0, 0)];
-        [head addFrame: AFrame(1, 5)];
-        [head addFrame: AFrame(2, 0)];
-        [head addFrame: AFrame(3, -5)];
-        [head addFrame: AFrame(4, 0)];
+        panzer = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"francoisPanzer.png"]  position: positionPanzer anchorPoint: anchorPanzer andSpeed: speed];
+        [panzer addFrame: AFrame(0, 0)];
+        [panzer addFrame: AFrame(1, 5)];
+        [panzer addFrame: AFrame(2, 0)];
+        [panzer addFrame: AFrame(3, -5)];
+        [panzer addFrame: AFrame(4, 0)];
         
-        rightFoot = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"rightFoot.png"]  position: positionRightFoot anchorPoint: anchorRightFoot andSpeed: speed];
-        [rightFoot addFrame: AFrame(0, 0)];
-        [rightFoot addFrame: AFrame(1, 40)];
-        [rightFoot addFrame: AFrame(2, 0)];
-        [rightFoot addFrame: AFrame(3, -65)];
-        [rightFoot addFrame: AFrame(4, 0)];
+        leftEye = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"francoisEye.png"]  position: positionLeftEye anchorPoint: anchorLeftEye andSpeed: speed];
+        [leftEye addFrame: AFrame(0, -5)];
+        [leftEye addFrame: AFrame(1, -10)];
+        [leftEye addFrame: AFrame(2, -5)];
+        [leftEye addFrame: AFrame(3, 10)];
+        [leftEye addFrame: AFrame(4, -5)];
         
-        leftFoot = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"leftFoot.png"]  position: positionLeftFoot anchorPoint: anchorLeftFoot andSpeed: speed];
-        [leftFoot addFrame: AFrame(0, 0)];
-        [leftFoot addFrame: AFrame(1, -65)];
-        [leftFoot addFrame: AFrame(2, 0)];
-        [leftFoot addFrame: AFrame(3, 40)];
-        [leftFoot addFrame: AFrame(4, 0)];
         
+        rightEye = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"francoisEye.png"]  position: positionRightEye anchorPoint: anchorRightEye andSpeed: speed];
+        [rightEye addFrame: AFrame(0, 5)];
+        [rightEye addFrame: AFrame(1, -10)];
+        [rightEye addFrame: AFrame(2, 5)];
+        [rightEye addFrame: AFrame(3, 10)];
+        [rightEye addFrame: AFrame(4, 5)];
+       
+                
         body.position = positionBody;
-        head.position = positionHead;
-        rightFoot.position = positionRightFoot;
-        leftFoot.position = positionLeftFoot;
+        panzer.position = positionPanzer;
+        leftEye.position = positionLeftEye;
+        rightEye.position = positionRightEye;
         
         
         [self addChild: body z: zBody];
-        [body addChildToNode: head withZ: 1];
-        [body addChildToNode: rightFoot withZ: 1];
-        [body addChildToNode: leftFoot withZ: -1];
+        [body addChildToNode: panzer withZ: -1];
+        [body addChildToNode: leftEye withZ: -1];
+        [body addChildToNode: rightEye withZ: -1];
         
     }
     
     return self;
 }
 
+- (void) setSpeed: (float) speedParam
+{
+    [body setSpeedOfAnimation: speedParam];
+    [panzer setSpeedOfAnimation: speedParam];
+    [leftEye setSpeedOfAnimation: speedParam];
+    [rightEye setSpeedOfAnimation: speedParam];
+}
+
 - (void) increaseSpeed
 {
     [body increaseSpeedAnimation];
-    [head increaseSpeedAnimation];
-    [rightFoot increaseSpeedAnimation];
-    [leftFoot increaseSpeedAnimation];
-}
+    [panzer increaseSpeedAnimation];
+    [leftEye increaseSpeedAnimation];
+    [rightEye increaseSpeedAnimation];}
 
 - (float) getCurrentCocoSpeed
 {
     currentSpeed = [body getCurrentSpeed];
-    //CCLOG(@"currentSpeed = %f", currentSpeed);
     
     return currentSpeed;
+}
+
+- (void) hide
+{
+    [self runAction: [CCHide action]];
+}
+
+- (void) show
+{
+    [self runAction: [CCShow action]];
+}
+
+- (void) showTransitionAnimation
+{
+    if(IsMorphGameActive == YES)
+    {
+        [self reorderChild: body z: -2];
+        
+        [self runAction: [CCSequence actions:
+                          [CCSpawn actions:
+                           [CCJumpTo actionWithDuration: 1.5
+                                               position: ccp(self.position.x, self.position.y)
+                                                 height: 100
+                                                  jumps: 1],
+                           [CCRotateTo actionWithDuration: 1
+                                                    angle: 0],
+                           nil],
+                          [CCJumpTo actionWithDuration: 0.5
+                                              position: ccp(self.position.x, self.position.y)
+                                                height: -50
+                                                 jumps: 1],
+                          nil]
+        
+         ];
+        
+        
+        [self setSpeed: 5];
+    }
+}
+
+- (void) reorderTo: (NSInteger) order
+{
+    [self reorderChild: body z: order];
+}
+
+- (void) jumpFromMountain
+{
+    [body runAction: [CCSpawn actions:
+                      [CCJumpTo actionWithDuration: 2
+                                          position: ccp(250, 155)
+                                            height: 100
+                                             jumps: 1],
+                      [CCScaleTo actionWithDuration: 2
+                                             scaleX: -1
+                                             scaleY: 1],
+                      nil]
+     
+     ];
+    
+}
+
+- (void) setYposition
+{
+    [body setPosition: ccp(body.position.x, 180)];
+}
+
+- (void) setLastYPosition
+{
+    [body setPosition: ccp(body.position.x, 50)];
+    
+}
+
+- (void) doUnvisible
+{
+    [self setVisible: NO];
+}
+
+- (void) doVisible
+{
+    [self setVisible: YES];
+}
+
+- (void) setNormalOrientation
+{
+    [body setPosition: ccp(body.position.x, 110)];
+    [body runAction: [CCRotateTo actionWithDuration: 0 angle: 0]];
+}
+
+- (void) pauseAllActions
+{
+    [body pauseSchedulerAndActions];
+}
+
+- (void) unPauseAllActions
+{
+    [body resumeSchedulerAndActions];
 }
 
 + (RunningFrancois *) createWithSpeed: (float) speed
@@ -99,6 +209,5 @@
     
     return runningFrancois;
 }
-
 
 @end

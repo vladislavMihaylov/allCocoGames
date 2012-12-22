@@ -291,7 +291,14 @@
     }
     else
     {
-    [[SimpleAudioEngine sharedEngine] playEffect:[NSString stringWithFormat:@"%i%i.wav", CurrentLanguage, number]];
+        if(CurrentLanguage == 6)
+        {
+            [[SimpleAudioEngine sharedEngine] playEffect:[NSString stringWithFormat:@"%i%i.mp3", CurrentLanguage, number]];
+        }
+        else
+        {
+            [[SimpleAudioEngine sharedEngine] playEffect:[NSString stringWithFormat:@"%i%i.wav", CurrentLanguage, number]];
+        }
     }
 }
 

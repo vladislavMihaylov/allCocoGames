@@ -1,8 +1,8 @@
 //
-//  SwimmingFrancois.h
-//  morphing
+//  SwimmingCoco.h
+//  testApp
 //
-//  Created by Vlad on 14.10.12.
+//  Created by Mac on 30.09.12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -14,15 +14,24 @@
 @interface SwimmingFrancois : CCNode
 {
     AnimationNode *body;
-    AnimationNode *head;
-    AnimationNode *rightFoot;
-    AnimationNode *leftFoot;
+    AnimationNode *panzer;
+    AnimationNode *leftEye;
+    AnimationNode *rightEye;
     
     float currentSpeed;
 }
 
+@property (nonatomic, assign) AnimationNode *body;
+
 + (SwimmingFrancois *) createWithSpeed: (float) speed;
 - (void) increaseSpeed;
 - (float) getCurrentCocoSpeed;
+- (void) pauseAllActions;
+- (void) unPauseAllActions;
+
+
+
+- (void) showTransitionAnimation;
+
 
 @end

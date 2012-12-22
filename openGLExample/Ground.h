@@ -42,6 +42,8 @@
     
     NSInteger yPositionForSprites;
     NSInteger xPositionForSprites;
+    
+    CCSpriteBatchNode *texturesBatch;
 }
 
 + (Ground *) create;
@@ -52,6 +54,7 @@
 //- (NSInteger) getCurrentDistance;
 - (NSInteger) getCurrentActionNumber;
 - (void) showNewGround: (NSInteger) groundType;
+- (float) getCurrentSpeed;
 
 @property (nonatomic, assign) MorphGameLayer *gameLayer;
 

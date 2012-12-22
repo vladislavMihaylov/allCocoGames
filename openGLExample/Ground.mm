@@ -39,12 +39,18 @@
         
         globalCount = 0;
         
+        texturesBatch = [CCSpriteBatchNode batchNodeWithFile: @"textures.png"];
+        [self addChild: texturesBatch];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"textures.plist"];
         
         for (int i = 0; i < 6; i++)
         {
-            ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
+            //ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
+            ground = [CCSprite spriteWithSpriteFrameName: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
             ground.position = ccp(240 + 480 * i, 120);
-            [self addChild: ground];
+            ground.scaleX = 1.01;
+            //[self addChild: ground];
+            [texturesBatch addChild: ground];
             
             [groundsArray addObject: ground];
         }
@@ -64,11 +70,25 @@
 
 - (void) restart
 {
-    for(CCSprite *currentSprite in groundsArray)
-    {
-        //[groundsToRemove addObject: currentSprite];
-        [self removeChild: currentSprite cleanup: YES];
-    }
+//    for(CCSprite *currentSprite in groundsArray)
+//    {
+//        //[groundsToRemove addObject: currentSprite];
+//        [texturesBatch removeChild: currentSprite cleanup: YES];
+//    }
+    
+    [texturesBatch removeAllChildrenWithCleanup: YES];
+    
+    //[self removeChild: texturesBatch cleanup: YES];
+    
+    
+    //texturesBatch = [CCSpriteBatchNode batchNodeWithFile: @"textures.png"];
+    //[self addChild: texturesBatch];
+    
+    
+    
+    //CCLOG(@"%@", texturesBatch);
+    
+    
     
     [groundsArray removeAllObjects];
     
@@ -84,9 +104,13 @@
     
     for (int i = 0; i < 6; i++)
     {
-        ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
+        //ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
+        CCLOG(@" cur gr %i", currentGroundType);
+        ground = [CCSprite spriteWithSpriteFrameName: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
         ground.position = ccp(240 + 480 * i, 120);
-        [self addChild: ground];
+        ground.scaleX = 1.01;
+        //[self addChild: ground];
+        [texturesBatch addChild: ground];
         
         [groundsArray addObject: ground];
     }
@@ -136,10 +160,24 @@
     return currentAction;
 }
 
+- (float) getCurrentSpeed
+{
+    return speed;
+}
+
 - (void) update: (float) dt
 {
     if(IsMorphGameActive)
     {
+        
+        if(globalCount >= 14)
+        {
+            if(runStone)
+            {
+                [gameLayer stopStone];
+                runStone = NO;
+            }
+        }
         
         speed -= 1.5 * dt;
         
@@ -227,11 +265,20 @@
                     {
                         if(i == 1)
                         {
-                            ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"1000to%i.png", currentGroundType]];
+                            //ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"1000to%i.png", currentGroundType]];
+                            ground = [CCSprite spriteWithSpriteFrameName: [NSString stringWithFormat: @"1000to%i.png", currentGroundType]];
+                            ground.scaleX = 1.01;
                         }
                         else
                         {
-                            ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
+                            CCLOG(@" cur gr %i", currentGroundType);
+                            //ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
+                            ground = [CCSprite spriteWithSpriteFrameName: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
+                            ground.scaleX = 1.01;
+                            if(currentGroundType == 1005 && i == 5)
+                            {
+                                ground.scaleY = 1.05;
+                            }
                         }
                             
                         if(currentGroundType == kIsGoUpMountain)
@@ -271,7 +318,8 @@
                             ground.position = ccp(238 + 480 * i, yPositionForSprites);
                         }
                         
-                        [self addChild: ground];
+                        //[self addChild: ground];
+                        [texturesBatch addChild: ground];
                         
                         [groundsArray addObject: ground];
                     }

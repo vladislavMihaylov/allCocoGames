@@ -13,6 +13,7 @@
 @implementation MorphCoco
 
 @synthesize gameLayer;
+@synthesize runningCoco;
 
 - (void) dealloc
 {
@@ -42,6 +43,8 @@
         //goingDownCoco.scaleX = -1;
         
         currentGroundSpeed = 0;
+        
+        
     }
     
     return self;
@@ -169,7 +172,7 @@
             ICanJump = NO;
             currentGroundSpeed = 7;//[runningCoco getCurrentCocoSpeed];
             [runningCoco setSpeed: currentGroundSpeed];
-            [self runAction: [CCJumpTo actionWithDuration: 0.7 position: self.position height: 50 jumps: 1]];
+            [runningCoco runAction: [CCJumpTo actionWithDuration: 0.7 position: self.position height: 50 jumps: 1]];
             [self runAction:
                     [CCSequence actions:
                                 [CCDelayTime actionWithDuration: 0.7],
@@ -216,6 +219,22 @@
     [swimmingCoco pauseSchedulerAndActions];
     [scramblingCoco pauseSchedulerAndActions];
     [goingDownCoco pauseSchedulerAndActions];
+}
+
+- (void) transitionsPause
+{
+    [runningCoco pauseAllActions];
+    [swimmingCoco pauseAllActions];
+    [scramblingCoco pauseAllActions];
+    [goingDownCoco pauseAllActions];
+}
+
+- (void) transitionsUnPause
+{
+    [runningCoco unPauseAllActions];
+    [swimmingCoco unPauseAllActions];
+    [scramblingCoco unPauseAllActions];
+    [goingDownCoco unPauseAllActions];
 }
 
 - (float) getCurrentGroundSpeed

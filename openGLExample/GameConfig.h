@@ -62,6 +62,7 @@
 #define kLangMan        3
 #define kLangGer        4
 #define kLangSpan       5
+#define kLangArab       6
 
 #define kShadowTag      9
 

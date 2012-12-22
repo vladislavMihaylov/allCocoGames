@@ -29,6 +29,10 @@
 + (SwimmingCoco *) createWithSpeed: (float) speed;
 - (void) increaseSpeed;
 - (float) getCurrentCocoSpeed;
+- (void) pauseAllActions;
+- (void) unPauseAllActions;
+
+
 
 - (void) showTransitionAnimation;
 

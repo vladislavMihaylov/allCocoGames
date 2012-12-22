@@ -23,7 +23,7 @@
         CGPoint anchorBody = ccp(0.5, 0.4);
         //NSInteger zBody = 2;
         
-        CGPoint positionHead = ccp(25, 50);
+        CGPoint positionHead = ccp(23, 60);
         CGPoint anchorHead = ccp(0.5, 0.3);
         
         CGPoint positionTail = ccp(15, 13);
@@ -185,6 +185,20 @@
     return currentSpeed;
     
 }
+
+- (void) pauseAllActions
+{
+    [body pauseSchedulerAndActions];
+    [head pauseSchedulerAndActions];
+}
+
+- (void) unPauseAllActions
+{
+    [body resumeSchedulerAndActions];
+    [head resumeSchedulerAndActions];
+}
+
+
 
 + (SwimmingCoco *) createWithSpeed: (float) speed
 {

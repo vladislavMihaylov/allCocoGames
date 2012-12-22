@@ -13,6 +13,8 @@
 #import "GameConfig.h"
 #import "MainMenuLayer.h"
 
+#import "SimpleAudioEngine.h"
+
 @implementation MorphGUILayer
 
 @synthesize gameLayer;
@@ -118,7 +120,7 @@
         }
         
         currentActionLabel = [CCLabelBMFont labelWithString: @"" fntFile: @"font20.fnt"];
-        currentActionLabel.position = ccp(240, 160);
+        currentActionLabel.position = ccp(240, 280);
         [currentActionLabel setOpacity: 0];
         [self addChild: currentActionLabel z: 20];
         
@@ -131,18 +133,19 @@
 {
     if(IsMorphGameActive == YES)
     {
-        id spawnAction = [CCSpawn actions: [CCFadeTo actionWithDuration: 2 opacity: 255],
-                          [CCScaleTo actionWithDuration: 2 scale: 1.5],
+        id spawnAction = [CCSpawn actions: [CCFadeTo actionWithDuration: 1 opacity: 255],
+                          [CCScaleTo actionWithDuration: 1 scale: 1.5],
                           nil];
         
         id spawnActionTwo = [CCSpawn actions: [CCFadeTo actionWithDuration: 2 opacity: 0],
                              [CCScaleTo actionWithDuration: 2 scale: 1],
                              nil];
 
+        [[SimpleAudioEngine sharedEngine] playEffect: [NSString stringWithFormat: @"%icoco%i.mp3", CurrentLanguage, (numb - 1000)]];
         
-        if(numb == 1000)
+        if(numb == 1000 || numb == 666)
         {
-            currentActionLabel.string = @"Run, Coco! Run!";
+            currentActionLabel.string = @"Run! Run! Run!";
         }
         if(numb == 1001)
         {
@@ -234,7 +237,12 @@
 {
     if(IsMorphGameActive)
     {
+        [currentActionLabel pauseSchedulerAndActions];
+        
+        [self blockAllButtons];
         IsMorphGameActive = NO;
+        
+        [gameLayer pauseTransitions];
         
         pauseLayer = [CCLayerColor layerWithColor: ccc4(0, 0, 0, 200)];
         pauseLayer.position = ccp(0,0);
@@ -249,6 +257,9 @@
                                                               selectedImage: @"playBtn.png"
                                                                       block: ^(id sender) {
                                                                           IsMorphGameActive = YES;
+                                                                          [gameLayer unPauseTransitions];
+                                                                          [currentActionLabel resumeSchedulerAndActions];
+                                                                          [self unlockAllButtons];
                                                                           [self removeChild: menuBg cleanup: YES];
                                                                           [self removeChild: pauseLayer cleanup: YES];
                                                                       }
@@ -285,7 +296,9 @@
 {
     if(IsMorphGameActive)
     {
+        [self blockAllButtons];
         IsMorphGameActive = NO;
+        [gameLayer pauseTransitions];
         
         pauseLayer = [CCLayerColor layerWithColor: ccc4(0, 0, 0, 200)];
         pauseLayer.position = ccp(0,0);
@@ -324,11 +337,22 @@
 
 - (void) restartGame
 {
-    IsMorphGameActive = YES;
+    mistakes = 0;
     
+    for(CCSprite *curMistake in mistakesSpritesArray)
+    {
+        [self removeChild: curMistake cleanup: YES];
+    }
+    
+    [mistakesSpritesArray removeAllObjects];
+    
+    IsMorphGameActive = YES;
     [gameLayer restartGame];
     [self removeChild: menuBg cleanup: YES];
     [self removeChild: pauseLayer cleanup: YES];
+    [self unlockAllButtons];
+    [gameLayer unPauseTransitions];
+
 }
 
 - (void) updateDistanceLabel: (NSInteger) distance

@@ -19,6 +19,8 @@
 {
     MorphGUILayer *gui;
     
+    CCSprite *stone;
+    
     Ground *ground;
     MorphCoco *coco;
     MorphFrancois *francois;
@@ -28,6 +30,19 @@
     NSInteger curAction;
         
     CCLabelTTF *leftDistance;
+    
+    float time; 
+    
+    CCSpriteBatchNode *backGroundBatch;
+    
+    /*CCSprite *back;
+    CCSprite *trees;
+    CCSprite *farTrees;
+    CCSprite *bushes;*/
+    
+    NSMutableArray *bushesArray;
+    NSMutableArray *treesArray;
+    NSMutableArray *farTreesArray;
 }
 
 + (CCScene *) scene;
@@ -37,6 +52,11 @@
 - (void) finishGame;
 - (void) fuckingJump;
 - (void) runGround;
+- (void) showFirstActionLabel;
+- (void) pauseTransitions;
+- (void) unPauseTransitions;
+
+- (void) stopStone;
 
 
 - (void) doAction: (NSInteger) numberOfAction;

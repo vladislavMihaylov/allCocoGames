@@ -12,7 +12,7 @@
 #import "GameConfig.h"
 #import "GameLayer.h"
 #import "SettingsLayer.h"
-
+#import "SimpleAudioEngine.h"
 #import "MorphMainMenu.h"
 
 @implementation SelectGameLayer
@@ -86,11 +86,13 @@
 
 - (void) playGame: (CCMenuItem *) sender
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"tap.mp3"];
     [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [SettingsLayer sceneWithNumberOfGame: sender.tag]]];
 }
 
 - (void) goToMainMenu: (id) sender
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"tap.mp3"];
     [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [MainMenuLayer scene]]];
 }
 

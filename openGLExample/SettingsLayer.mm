@@ -56,7 +56,7 @@
         }
         if(number == 12)
         {
-            bgName = @"morphBg.png";
+            bgName = @"morphBgJPG.jpg";
             bgOpacity = 0;
         }
         
@@ -191,19 +191,29 @@
                                   ];
         span.tag = kLangSpan;
         
+        CCMenuItemImage *arabic = [CCMenuItemImage itemFromNormalImage: @"arabicLangNormal.png"
+                                                         selectedImage: @"arabicLangOn.png"
+                                                                target: self
+                                                              selector: @selector(selectLang:)
+                                  ];
+        
+        arabic.tag = kLangArab;
+        
+        
         BackToMainMenu.scale = 0.85;
         play.scale = 0.7;
         BackToMainMenu.position = ccp(GameWidth * 0.14, GameHeight * 0.15);
         play.position = ccp(GameWidth * 0.85, GameHeight * 0.19f);
-        eng.position  = ccp(GameCenterX, GameHeight * 0.7);
+        eng.position  = ccp(GameCenterX, GameHeight * 0.8);
+        arabic.position = ccp(GameCenterX, GameHeight * 0.5);
         fr.position   = ccp(GameWidth * 0.20, GameHeight * 0.80);
         ger.position  = ccp(GameWidth * 0.80, GameHeight * 0.80);
         man.position  = ccp(GameWidth * 0.20, GameHeight * 0.50);
         span.position = ccp(GameWidth * 0.80, GameHeight * 0.50);
 
-        CCMenu *menu = [CCMenu menuWithItems: BackToMainMenu, play, eng, fr, ger, man, span, nil];
+        CCMenu *menu = [CCMenu menuWithItems: BackToMainMenu, play, eng, fr, ger, man, span, arabic, nil];
         menu.position = ccp(0, 0);
-        [self addChild:menu];
+        [self addChild:menu z: kZSelection - 1];
         
         
         selection = [CCMenuItemImage itemFromNormalImage: @"selection.png" 
@@ -211,7 +221,7 @@
                      ];
         
         selection.scaleY = 0.95;
-        [menu addChild: selection z: kZSelection];
+        [menu addChild: selection z: kZSelection + 10];
         
         
         //apply current language to selection
@@ -233,11 +243,13 @@
 
 - (void) goToSelectGameMenu: (id) sender
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"tap.mp3"];
     [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [SelectGameLayer scene]]];
 }
 
 -(void)showMainMenu: (CCMenuItem *) send
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"tap.mp3"];
     
     if(send.tag == 10)
     {

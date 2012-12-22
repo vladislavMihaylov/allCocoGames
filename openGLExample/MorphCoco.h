@@ -37,9 +37,11 @@
     NSInteger groundSpeed;
     NSInteger currentAction;
     float currentGroundSpeed;
+   
 }
 
 @property (nonatomic, assign) MorphGameLayer *gameLayer;
+@property (nonatomic, assign) RunningCoco *runningCoco;
 
 + (MorphCoco *) createWithSpeed: (float) speed;
 
@@ -50,6 +52,7 @@
 - (void) hideCoco;
 - (void) stopRun;
 - (void) pauseAll;
-
+- (void) transitionsPause;
+- (void) transitionsUnPause;
 
 @end

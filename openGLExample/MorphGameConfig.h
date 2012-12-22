@@ -66,6 +66,7 @@
 
 extern NSInteger typeCharacter;
 extern BOOL ICanJump;
+extern BOOL iCanDown;
 extern BOOL IsMoveRight;
 extern BOOL IsMoveUp;
 extern BOOL IsMoveDown;
@@ -73,6 +74,15 @@ extern BOOL ItsNewGround;
 
 extern BOOL INeedNextAction;
 extern BOOL IsMorphGameActive;
+
+extern BOOL runStone;
+
+extern BOOL isCollision;
+
+extern BOOL isMoveUpBackGround;
+extern BOOL isMoveDownBackGround;
+
+extern BOOL moveBG;
 
 //#endif // __GAME_CONFIG_H
 

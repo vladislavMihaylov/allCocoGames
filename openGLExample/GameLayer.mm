@@ -596,6 +596,11 @@ enum {
                 IsFishCauth = YES;
                 IsHookActive = NO;
                 
+                CCLOG(@"cur lang: %i", CurrentLanguage);
+                
+                [[SimpleAudioEngine sharedEngine] playEffect: [NSString stringWithFormat: @"%if%i.mp3", CurrentLanguage, currentFish.type]];
+
+                
                 if(currentFish.type == 0)
                 {
                     curFish = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%i%ifish.png", currentFish.type, currentFish.randFish]];

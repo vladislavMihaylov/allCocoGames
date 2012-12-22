@@ -12,6 +12,7 @@
 
 @implementation RunningCoco
 
+@synthesize body;
 
 - (void) dealloc
 {
@@ -249,14 +250,26 @@
     {
     [self reorderChild: body z: -2];
     
-    [body runAction: [CCSpawn actions:
-     [CCJumpTo actionWithDuration: 2
-                         position: ccp(body.position.x, 105)
-                           height: 100
-                            jumps: 1],
-     [CCRotateTo actionWithDuration: 2 angle: 90], nil]
+    [body runAction: [CCSequence actions:
+                                [CCSpawn actions:
+                                            [CCJumpTo actionWithDuration: 1.5
+                                                                position: ccp(body.position.x, 105)
+                                                                  height: 100
+                                                                   jumps: 1],
+                                          [CCRotateTo actionWithDuration: 1
+                                                                   angle: 90],
+                                 nil],
+                                [CCJumpTo actionWithDuration: 0.5
+                                                    position: ccp(body.position.x, 105)
+                                                      height: -50
+                                                       jumps: 1],
+                      nil]
      
      ];
+        
+        [head runAction: [CCRotateTo actionWithDuration: 1 angle: -90]];
+        
+        [head runAction: [CCSequence actions: [CCDelayTime actionWithDuration: 1.97], [CCRotateTo actionWithDuration: 0 angle: 0], nil]];
     
     [self setSpeed: 5];
     }
@@ -303,6 +316,18 @@
 {
     [body setPosition: ccp(body.position.x, 155)];
     [body runAction: [CCRotateTo actionWithDuration: 0 angle: 0]];
+}
+
+- (void) pauseAllActions
+{
+    [body pauseSchedulerAndActions];
+    [head pauseSchedulerAndActions];
+}
+
+- (void) unPauseAllActions
+{
+    [body resumeSchedulerAndActions];
+    [head resumeSchedulerAndActions];
 }
 
 + (RunningCoco *) createWithSpeed: (float) speed

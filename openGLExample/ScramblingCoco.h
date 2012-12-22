@@ -38,4 +38,8 @@
 - (void) jumpOnMountain;
 - (void) setSpeed: (float) speedParam;
 
+- (void) pauseAllActions;
+- (void) unPauseAllActions;
+
+
 @end

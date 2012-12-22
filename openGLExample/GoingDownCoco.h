@@ -38,6 +38,8 @@
 - (void) jumpFromMountain;
 - (void) jumpOnAGround;
 
+- (void) pauseAllActions;
+- (void) unPauseAllActions;
 
 
 @end

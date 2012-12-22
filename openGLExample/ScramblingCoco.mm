@@ -225,7 +225,7 @@
 {
     [body runAction: [CCSpawn actions:
                       [CCJumpTo actionWithDuration: 2
-                                          position: ccp(body.position.x, 155)
+                                          position: ccp(body.position.x - 15, 155)
                                             height: 100
                                              jumps: 1],
                       //[CCRotateTo actionWithDuration: 2 angle: 90],
@@ -260,6 +260,19 @@
     return currentSpeed;
     
 }
+
+- (void) pauseAllActions
+{
+    [body pauseSchedulerAndActions];
+    [head pauseSchedulerAndActions];
+}
+
+- (void) unPauseAllActions
+{
+    [body resumeSchedulerAndActions];
+    [head resumeSchedulerAndActions];
+}
+
 
 + (ScramblingCoco *) createWithSpeed: (float) speed
 {

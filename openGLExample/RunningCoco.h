@@ -24,6 +24,8 @@
     float currentSpeed;
 }
 
+@property (nonatomic, assign) AnimationNode *body;
+
 + (RunningCoco *) createWithSpeed: (float) speed;
 - (void) increaseSpeed;
 - (void) setSpeed: (float) speedParam;
@@ -36,6 +38,8 @@
 - (void) show;
 - (void) jumpFromMountain;
 - (void) setLastYPosition;
+- (void) pauseAllActions;
+- (void) unPauseAllActions;
 
 
 
