@@ -230,7 +230,7 @@
                                           position: ccp(body.position.x + 15, 155)
                                             height: -50
                                              jumps: 1],
-                      [CCScaleTo actionWithDuration: 0.5 scaleX: -1
+                      [CCScaleTo actionWithDuration: 0.25 scaleX: -1
                                              scaleY: 1],
                       nil]
      
@@ -245,7 +245,7 @@
                                           position: ccp(body.position.x - 15, 105)
                                             height: 50
                                              jumps: 1],
-                      [CCScaleTo actionWithDuration: 0.5 scaleX: 1
+                      [CCScaleTo actionWithDuration: 0.25 scaleX: 1
                                              scaleY: 1],
                       nil]
      

@@ -28,7 +28,7 @@
 - (float) getCurrentCocoSpeed;
 - (void) pauseAllActions;
 - (void) unPauseAllActions;
-
+- (void) setFinishZZ;
 
 
 - (void) showTransitionAnimation;

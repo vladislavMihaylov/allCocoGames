@@ -84,5 +84,10 @@ extern BOOL isMoveDownBackGround;
 
 extern BOOL moveBG;
 
+extern BOOL afterJump;
+extern BOOL afterSwim;
+
+extern BOOL isMistake;
+
 //#endif // __GAME_CONFIG_H
 

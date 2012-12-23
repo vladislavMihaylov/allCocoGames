@@ -58,7 +58,7 @@
 
 - (void) increaseSpeedAnimation
 {
-    speed += 0.5;
+    speed += 0.8;
 }
 
 - (void) setSpeedOfAnimation: (float) speedParam

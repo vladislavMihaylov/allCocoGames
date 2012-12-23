@@ -7,7 +7,7 @@
 //
 
 #import "ScramblingFrancois.h"
-
+#import "MorphGameConfig.h"
 
 @implementation ScramblingFrancois
 
@@ -109,13 +109,15 @@
 {
     [body runAction: [CCSpawn actions:
                       [CCJumpTo actionWithDuration: 2
-                                          position: ccp(body.position.x - 15, 110)
+                                          position: ccp(body.position.x - 15, 155)
                                             height: 50
                                              jumps: 1],
                       [CCRotateTo actionWithDuration: 2 angle: 0],
                       nil]
      
      ];
+    
+    afterJump = YES;
     
 }
 

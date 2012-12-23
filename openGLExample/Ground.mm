@@ -351,7 +351,9 @@
                     if(currentGroundType == 1007)
                     {
                         CCLOG(@"FINISH");
+                        [self reorderChild: texturesBatch z: -100];
                         [gameLayer finishGame];
+                    
                     }
                     
                     if(currentGroundType == kIsGoDownMountain)

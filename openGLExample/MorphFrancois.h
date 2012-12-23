@@ -47,6 +47,7 @@
 
 + (MorphFrancois *) createWithSpeed: (float) speed;
 
+- (void) setFinishZ;
 - (void) doAction: (NSInteger) numberOfAction withSpeed: (float) speed;
 - (float) getCurrentGroundSpeed;
 - (void) stopCoco;

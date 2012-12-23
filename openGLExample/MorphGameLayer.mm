@@ -154,8 +154,9 @@
     {
         [francois stopAllActions];
         [francois pauseAll];
+        //[francois setFinishZ];
     }
-    
+    [self reorderChild: ground z: -10];
     [guiLayer showGameOverMenu];
     [[SimpleAudioEngine sharedEngine] playEffect: [NSString stringWithFormat: @"%ifinish.mp3", CurrentLanguage]];
     
@@ -379,7 +380,7 @@
 {
     iCanDown = YES;
    
-    
+    [self reorderChild: ground z: 0];
     
     if(runStone)
     {
@@ -505,7 +506,6 @@
                 
                 if(typeCharacter == 0)
                 {
-                    
                     [coco doAction: 0 withSpeed: currentSpeed];
                     [coco doAction: 2 withSpeed: currentSpeed];
                     [ground increaseSpeedAnimation: [coco getCurrentGroundSpeed]];
@@ -546,7 +546,11 @@
             if(CurrentDifficulty == 2)
             {
                 CCLOG(@"PZDC!!!");
-                [guiLayer increaseMistake];
+                if(!isMistake)
+                {
+                    [guiLayer increaseMistake];
+                    [guiLayer drawCross: numberOfAction];
+                }
             }
         }
         else

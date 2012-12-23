@@ -32,6 +32,8 @@
 - (void) pauseAllActions;
 - (void) unPauseAllActions;
 
+- (void) setFinishZZ;
+
 - (void) reorderTo: (NSInteger) order;
 
 

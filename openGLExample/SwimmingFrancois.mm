@@ -7,7 +7,7 @@
 //
 
 #import "SwimmingFrancois.h"
-
+#import "MorphGameConfig.h"
 
 @implementation SwimmingFrancois
 
@@ -36,7 +36,7 @@
         
         
         
-        body = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"francoisBody.png"] position: positionBody anchorPoint: anchorBody andSpeed: speed];
+        body = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"francoisBodySwim.png"] position: positionBody anchorPoint: anchorBody andSpeed: speed];
         [body addFrame: AFrame(0, 0)];
         [body addFrame: AFrame(1, 3)];
         [body addFrame: AFrame(2, 0)];
@@ -91,10 +91,16 @@
      
      ];
     
+    afterSwim = YES;
+    
     //[body runAction: [CCRotateTo actionWithDuration: 2 angle: -90]];
     //[head runAction: [CCRotateTo actionWithDuration: 2 angle: 90]];
 }
 
+- (void) setFinishZZ
+{
+    [self reorderChild: body z: 2000];
+}
 
 - (void) setSpeed: (float) speedParam
 {

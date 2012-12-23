@@ -85,6 +85,11 @@
     return self;
 }
 
+- (void) setFinishZZ
+{
+    [self reorderChild: body z: 2000];
+}
+
 - (void) setSpeed: (float) speedParam
 {
     [body setSpeedOfAnimation: speedParam];
@@ -121,7 +126,17 @@
 {
     if(IsMorphGameActive == YES)
     {
-        [self reorderChild: body z: -2];
+        CCLOG(@"%i", afterSwim);
+        if(!afterSwim)
+        {
+            [self reorderChild: body z: -2];
+            afterSwim = YES;
+        }
+        else
+        {
+            afterSwim = NO;
+        }
+        
         
         [self runAction: [CCSequence actions:
                           [CCSpawn actions:

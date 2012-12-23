@@ -414,6 +414,8 @@
 		F5065F301685AF53001C844B /* CocoFrancoisPlayBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5065F2E1685AF53001C844B /* CocoFrancoisPlayBtn.png */; };
 		F5065F311685AF53001C844B /* CocoFrancoisPlayBtnTap.png in Resources */ = {isa = PBXBuildFile; fileRef = F5065F2F1685AF53001C844B /* CocoFrancoisPlayBtnTap.png */; };
 		F50692331649EDD000CBC5D7 /* CocoSwimHead.png in Resources */ = {isa = PBXBuildFile; fileRef = F50692311649EDD000CBC5D7 /* CocoSwimHead.png */; };
+		F50783C816873506008EB4C8 /* francoisBodySwim.png in Resources */ = {isa = PBXBuildFile; fileRef = F50783C716873506008EB4C8 /* francoisBodySwim.png */; };
+		F50783CD16876BE2008EB4C8 /* francoisHead.png in Resources */ = {isa = PBXBuildFile; fileRef = F50783CC16876BE1008EB4C8 /* francoisHead.png */; };
 		F509A5BB164277AC00076441 /* body.png in Resources */ = {isa = PBXBuildFile; fileRef = F509A5B9164277AC00076441 /* body.png */; };
 		F509A5BC164277AC00076441 /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = F509A5BA164277AC00076441 /* head.png */; };
 		F509A5BF164278AF00076441 /* leftFoot.png in Resources */ = {isa = PBXBuildFile; fileRef = F509A5BD164278AF00076441 /* leftFoot.png */; };
@@ -1084,6 +1086,8 @@
 		F5065F2E1685AF53001C844B /* CocoFrancoisPlayBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoFrancoisPlayBtn.png; sourceTree = "<group>"; };
 		F5065F2F1685AF53001C844B /* CocoFrancoisPlayBtnTap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoFrancoisPlayBtnTap.png; sourceTree = "<group>"; };
 		F50692311649EDD000CBC5D7 /* CocoSwimHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoSwimHead.png; sourceTree = "<group>"; };
+		F50783C716873506008EB4C8 /* francoisBodySwim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = francoisBodySwim.png; sourceTree = "<group>"; };
+		F50783CC16876BE1008EB4C8 /* francoisHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = francoisHead.png; sourceTree = "<group>"; };
 		F509A5B9164277AC00076441 /* body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = body.png; sourceTree = "<group>"; };
 		F509A5BA164277AC00076441 /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head.png; sourceTree = "<group>"; };
 		F509A5BD164278AF00076441 /* leftFoot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftFoot.png; sourceTree = "<group>"; };
@@ -2429,6 +2433,8 @@
 			children = (
 				F5FF8AAC16653FA70080E1CE /* stone.png */,
 				F5FF8A8D1664CB0C0080E1CE /* francoisBody.png */,
+				F50783CC16876BE1008EB4C8 /* francoisHead.png */,
+				F50783C716873506008EB4C8 /* francoisBodySwim.png */,
 				F5FF8A8E1664CB0C0080E1CE /* francoisEye.png */,
 				F5FF8A8F1664CB0C0080E1CE /* francoisPanzer.png */,
 			);
@@ -2819,6 +2825,8 @@
 				F50AAB241684D110008E46BD /* textures.png in Resources */,
 				F5065F301685AF53001C844B /* CocoFrancoisPlayBtn.png in Resources */,
 				F5065F311685AF53001C844B /* CocoFrancoisPlayBtnTap.png in Resources */,
+				F50783C816873506008EB4C8 /* francoisBodySwim.png in Resources */,
+				F50783CD16876BE2008EB4C8 /* francoisHead.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

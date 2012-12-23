@@ -48,6 +48,12 @@
     return self;
 }
 
+- (void) setFinishZ
+{
+    [runningFrancois setFinishZZ];
+    [swimmingFrancois setFinishZZ];
+}
+
 - (void) hideCoco
 {
     [runningFrancois hide];
@@ -151,6 +157,12 @@
             [self addChild: runningFrancois z: 2];
             currentAction = kRunningAction;
             francoisPosition = runningFrancois.body.position;
+            
+            if(afterJump)
+            {
+                afterJump = NO;
+                runningFrancois.body.position = ccp(runningFrancois.body.position.x, 155);
+            }
         }
         
         [runningFrancois increaseSpeed];

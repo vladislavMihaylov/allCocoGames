@@ -19,3 +19,8 @@ BOOL isMoveUpBackGround = NO;
 BOOL isMoveDownBackGround = NO;
 
 BOOL moveBG = YES;
+
+BOOL afterJump = NO;
+BOOL afterSwim = NO;
+
+BOOL isMistake = NO;

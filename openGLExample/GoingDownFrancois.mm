@@ -7,7 +7,7 @@
 //
 
 #import "GoingDownFrancois.h"
-
+#import "MorphGameConfig.h"
 
 @implementation GoingDownFrancois
 
@@ -22,7 +22,7 @@
 {
     if(self = [super init])
     {
-        CGPoint positionBody = ccp(210, 110);
+        CGPoint positionBody = ccp(210, 155);
         //CGPoint positionBody = ccp(0, 0);
         CGPoint anchorBody = ccp(0.5, 0.5);
         
@@ -103,7 +103,7 @@
     [body runAction: [CCSpawn actions:
                       [CCJumpTo actionWithDuration: 2
                                           position: ccp(body.position.x + 20, 155)
-                                            height: 100
+                                            height: 10
                                              jumps: 1],
                       [CCRotateTo actionWithDuration: 2 angle: 90],
                       nil]
@@ -124,6 +124,9 @@
                       nil]
      
      ];
+    
+    //afterJump = YES;
+    isMoveDownBackGround = YES;
 }
 
 - (float) getCurrentCocoSpeed

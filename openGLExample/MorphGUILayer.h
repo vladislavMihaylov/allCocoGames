@@ -31,7 +31,11 @@
     
     NSInteger mistakes;
     
+    CCMenu *buttonsMenu;
+    
     NSMutableArray *mistakesSpritesArray;
+    
+    NSMutableArray *crossesArray;
 }
 
 - (void) updateDistanceLabel: (NSInteger) distance;
@@ -41,7 +45,8 @@
 - (void) showGameOverMenu;
 - (void) showCurrentActionLabel: (NSInteger) numb;
 - (void) removeAllMistakeSprites;
-
+- (void) addMistakesSprites;
+- (void) drawCross: (NSInteger) num;
 
 @property (nonatomic, assign) MorphGameLayer *gameLayer;
 

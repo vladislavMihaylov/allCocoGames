@@ -7,7 +7,7 @@
 //
 
 #import "SwimmingCoco.h"
-
+#import "MorphGameConfig.h"
 
 @implementation SwimmingCoco
 
@@ -148,6 +148,8 @@
     
     [body runAction: [CCRotateTo actionWithDuration: 2 angle: -90]];
     [head runAction: [CCRotateTo actionWithDuration: 2 angle: 90]];
+    
+    afterSwim = YES;
 }
 
 

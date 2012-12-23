@@ -248,7 +248,15 @@
 {
     if(IsMorphGameActive == YES)
     {
+        CCLOG(@"%i", afterSwim);
+        if(!afterSwim)
+        {
     [self reorderChild: body z: -2];
+        }
+        else
+        {
+            afterSwim = NO;
+        }
     
     [body runAction: [CCSequence actions:
                                 [CCSpawn actions:

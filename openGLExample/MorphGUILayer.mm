@@ -21,9 +21,10 @@
 
 - (void) dealloc
 {
-    [mistakesSpritesArray release];
     
     [super dealloc];
+    [mistakesSpritesArray release];
+    [crossesArray release];
 }
 
 - (id) init
@@ -33,7 +34,11 @@
         mistakes = 0;
         
         mistakesSpritesArray = [[NSMutableArray alloc] init];
+        crossesArray = [[NSMutableArray alloc] init];
         
+        [self addMistakesSprites];
+        
+                
         CCMenuItemImage *pauseBtn = [CCMenuItemImage itemFromNormalImage: @"pauseBtn.png"
                                                            selectedImage: @"pauseBtn.png"
                                                                   target: self
@@ -107,14 +112,14 @@
         if(CurrentDifficulty == 0)
         {
         
-        CCMenu *buttonsMenu = [CCMenu menuWithItems: universalBtn, nil];
+            buttonsMenu = [CCMenu menuWithItems: universalBtn, nil];
             buttonsMenu.position = ccp(0,0);
             [self addChild: buttonsMenu];
         }
         if(CurrentDifficulty == 1 || CurrentDifficulty == 2)
         {
             
-            CCMenu *buttonsMenu = [CCMenu menuWithItems: runBtn, swimBtn, jumpBtn, scramblBtn, goDownBtn, nil];
+            buttonsMenu = [CCMenu menuWithItems: runBtn, swimBtn, jumpBtn, scramblBtn, goDownBtn, nil];
             buttonsMenu.position = ccp(0,0);
             [self addChild: buttonsMenu];
         }
@@ -171,23 +176,57 @@
     }
 }
 
+- (void) addMistakesSprites
+{
+    if(CurrentDifficulty == 2)
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            CCSprite *mistakeSprite;
+            if(typeCharacter == 0)
+            {
+                mistakeSprite = [CCSprite spriteWithFile: @"CocoHead.png"];
+            }
+            else
+            {
+                mistakeSprite = [CCSprite spriteWithFile: @"francoisHead.png"];
+            }
+            
+            mistakeSprite.position = ccp(35 * i + 30 , 280);
+            mistakeSprite.scale = 0.8;
+            [self addChild: mistakeSprite];
+            
+            [mistakesSpritesArray addObject: mistakeSprite];
+        }
+    }
+    
+    CCLOG(@"CountMassive %i", mistakesSpritesArray.count);
+
+}
+
 - (void) increaseMistake
 {
     mistakes++;
     
-    CCSprite *mistakeSprite = [CCSprite spriteWithFile: @"mistake.png"];
-    mistakeSprite.position = ccp(35 * mistakes - 10 , 290);
-    mistakeSprite.scale = 0.2;
-    [self addChild: mistakeSprite];
+    NSMutableArray *spritesToREmove = [[NSMutableArray alloc] init];
     
-    [mistakesSpritesArray addObject: mistakeSprite];
+    [spritesToREmove addObject: [mistakesSpritesArray lastObject]];
+    
+    for(CCSprite *spr in spritesToREmove)
+    {
+        [self removeChild: spr cleanup: YES];
+    }
+    
+    [mistakesSpritesArray removeLastObject];
+    [spritesToREmove release];
     
     if(mistakes == 3)
     {
-        [self removeAllMistakeSprites];
         mistakes = 0;
         [self showGameOverMenu];
     }
+    
+    
 }
 
 - (void) removeAllMistakeSprites
@@ -246,11 +285,11 @@
         
         pauseLayer = [CCLayerColor layerWithColor: ccc4(0, 0, 0, 200)];
         pauseLayer.position = ccp(0,0);
-        [self addChild: pauseLayer];
+        [self addChild: pauseLayer z: 6];
         
         menuBg = [CCSprite spriteWithFile: @"pauseMenuBg.png"];
         menuBg.position = ccp(240, 480);
-        [self addChild: menuBg];
+        [self addChild: menuBg z: 7];
         
         
         CCMenuItemImage *playMenuBtn = [CCMenuItemImage itemFromNormalImage: @"playBtn.png"
@@ -302,11 +341,11 @@
         
         pauseLayer = [CCLayerColor layerWithColor: ccc4(0, 0, 0, 200)];
         pauseLayer.position = ccp(0,0);
-        [self addChild: pauseLayer];
+        [self addChild: pauseLayer z: 6];
         
         menuBg = [CCSprite spriteWithFile: @"pauseMenuBg.png"];
         menuBg.position = ccp(240, 480);
-        [self addChild: menuBg];
+        [self addChild: menuBg z: 7];
 
         
         CCMenuItemImage *exitMenuBtn = [CCMenuItemImage itemFromNormalImage: @"exitBtn.png"
@@ -339,12 +378,16 @@
 {
     mistakes = 0;
     
-    for(CCSprite *curMistake in mistakesSpritesArray)
+    isMistake = NO;
+    
+    [self addMistakesSprites];
+
+    for(CCSprite *spr in crossesArray)
     {
-        [self removeChild: curMistake cleanup: YES];
+        [self removeChild: spr  cleanup: YES];
     }
     
-    [mistakesSpritesArray removeAllObjects];
+    [crossesArray removeAllObjects];
     
     IsMorphGameActive = YES;
     [gameLayer restartGame];
@@ -363,6 +406,39 @@
 - (void) transmitNumberOfAction: (CCMenuItemFont *) sender
 {
     [gameLayer doAction: sender.tag];
+}
+
+- (void) drawCross: (NSInteger) num
+{
+    CCArray *items = [buttonsMenu children];
+    for(CCMenuItemImage *curItem in items)
+    {
+        if(curItem.tag == num)
+        {
+            isMistake = YES;
+            CCSprite *mist = [CCSprite spriteWithFile: @"mistake.png"];
+            mist.scale = 0.3;
+            mist.position = curItem.position;
+            [self addChild: mist z: 5];
+            
+            [crossesArray addObject: mist];
+            
+            [mist runAction: [CCSequence actions: [CCDelayTime actionWithDuration: 0.2],
+                                                  [CCFadeTo actionWithDuration: 0.8 opacity: 0],
+                                                  [CCDelayTime actionWithDuration: 0.2],
+                                                  [CCFadeTo actionWithDuration: 0.8 opacity: 255],
+                                                  [CCDelayTime actionWithDuration: 0.2],
+                                                  [CCFadeTo actionWithDuration: 0.8 opacity: 0],
+                                                  [CCCallFunc actionWithTarget: self selector: @selector(removeMist)],
+                              nil]];
+        }
+    }
+}
+
+- (void) removeMist
+{
+    isMistake = NO;
+    [self removeChild: [crossesArray lastObject] cleanup: YES];
 }
 
 @end
