@@ -47,6 +47,8 @@
 {
     if (self = [super init])
     {
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic: @"actionBgMusic.wav" loop: YES];
+        
         IsMorphGameActive = YES;
         
         IsMoveRight = YES;
@@ -159,6 +161,8 @@
     [self reorderChild: ground z: -10];
     [guiLayer showGameOverMenu];
     [[SimpleAudioEngine sharedEngine] playEffect: [NSString stringWithFormat: @"%ifinish.mp3", CurrentLanguage]];
+    [[SimpleAudioEngine sharedEngine] playEffect: @"Crowd_applause_1.mp3"];
+    
     
     moveBG = NO;
 }
@@ -352,28 +356,10 @@
 
 - (void) showFirstActionLabel
 {
-    id spawnAction = [CCSpawn actions: [CCFadeTo actionWithDuration: 1 opacity: 255],
-                      [CCScaleTo actionWithDuration: 1 scale: 1.5],
-                      nil];
-    
-    id spawnActionTwo = [CCSpawn actions: [CCFadeTo actionWithDuration: 1 opacity: 0],
-                         [CCScaleTo actionWithDuration: 1 scale: 1],
-                         nil];
-    
-    CCLabelBMFont *currentActionLabel = [CCLabelBMFont labelWithString: @"Run! Run! Run!" fntFile: @"font20.fnt"];
-    currentActionLabel.position = ccp(240, 280);
-    [currentActionLabel setOpacity: 0];
-    [self addChild: currentActionLabel z: 20];
     
     [[SimpleAudioEngine sharedEngine] playEffect: [NSString stringWithFormat: @"%icoco%i.mp3", CurrentLanguage, 0]];
 
     
-    [currentActionLabel runAction:
-                                    [CCSequence actions:
-                                                spawnAction, spawnActionTwo,
-                                     nil]];
-
-
 }
 
 - (void) restartGame
@@ -668,7 +654,7 @@
     }
     if(typeCharacter == 1)
     {
-        if( (fabs(stone.position.x - 210) < 20) && (fabs(stone.position.y - (francois.runningFrancois.position.y +105)) < 50) )
+        if( (fabs(stone.position.x - 210) < 20) && (fabs(stone.position.y - (francois.runningFrancois.position.y +105)) < 40) )
         {
             if(!isCollision)
             {
@@ -706,7 +692,7 @@
     {
         if(!runStone)
         {
-            [self schedule: @selector(runBigStone) interval: 3];
+            [self schedule: @selector(runBigStone) interval: 2];
             runStone = YES;
         }
     }

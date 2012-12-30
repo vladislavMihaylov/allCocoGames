@@ -68,7 +68,9 @@
                                                                  selectedImage: @"backBtnOn.png"
                                                                         target: self 
                                                                       selector: @selector(goToMainMenu:)];
-        
+        fishingGame.scale = 0.9;
+        catchCocoGame.scale = 0.9;
+        morphingGame.scale = 0.9;
         
         fishingGame.position = ccp(GameCenterX, GameCenterY + 90);
         catchCocoGame.position = ccp(GameCenterX, GameCenterY - 20);

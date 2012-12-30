@@ -138,41 +138,9 @@
 {
     if(IsMorphGameActive == YES)
     {
-        id spawnAction = [CCSpawn actions: [CCFadeTo actionWithDuration: 1 opacity: 255],
-                          [CCScaleTo actionWithDuration: 1 scale: 1.5],
-                          nil];
-        
-        id spawnActionTwo = [CCSpawn actions: [CCFadeTo actionWithDuration: 2 opacity: 0],
-                             [CCScaleTo actionWithDuration: 2 scale: 1],
-                             nil];
 
         [[SimpleAudioEngine sharedEngine] playEffect: [NSString stringWithFormat: @"%icoco%i.mp3", CurrentLanguage, (numb - 1000)]];
-        
-        if(numb == 1000 || numb == 666)
-        {
-            currentActionLabel.string = @"Run! Run! Run!";
-        }
-        if(numb == 1001)
-        {
-            currentActionLabel.string = @"Swim!!! Faster!!!";
-        }
-        if(numb == 1002)
-        {
-            currentActionLabel.string = @"Jump!!! Up!!!";
-        }
-        if(numb == 1003)
-        {
-            currentActionLabel.string = @"Scramble!!! Up!!!";
-        }
-        if(numb == 1004)
-        {
-            currentActionLabel.string = @"Get down!!!";
-        }
-        
-        [currentActionLabel runAction:
-                                    [CCSequence actions:
-                                                spawnAction, spawnActionTwo,
-                                     nil]];
+       
     }
 }
 
@@ -307,6 +275,20 @@
         CCMenuItemImage *exitMenuBtn = [CCMenuItemImage itemFromNormalImage: @"exitBtn.png"
                                                               selectedImage: @"exitBtn.png"
                                                                       block: ^(id sender) {
+                                                                          
+                                                                          mistakes = 0;
+                                                                          
+                                                                          isMistake = NO;
+                                                                          
+                                                                          [self addMistakesSprites];
+                                                                          
+                                                                          for(CCSprite *spr in crossesArray)
+                                                                          {
+                                                                              [self removeChild: spr  cleanup: YES];
+                                                                          }
+                                                                          
+                                                                          [crossesArray removeAllObjects];
+                                                                          
                                                                           [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1 scene: [MainMenuLayer scene]]];
                                                                       }
                                         ];
@@ -351,6 +333,20 @@
         CCMenuItemImage *exitMenuBtn = [CCMenuItemImage itemFromNormalImage: @"exitBtn.png"
                                                               selectedImage: @"exitBtn.png"
                                                                       block: ^(id sender) {
+                                                                          
+                                                                          mistakes = 0;
+                                                                          
+                                                                          isMistake = NO;
+                                                                          
+                                                                          [self addMistakesSprites];
+                                                                          
+                                                                          for(CCSprite *spr in crossesArray)
+                                                                          {
+                                                                              [self removeChild: spr  cleanup: YES];
+                                                                          }
+                                                                          
+                                                                          [crossesArray removeAllObjects];
+                                                                          
                                                                           [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1 scene: [MainMenuLayer scene]]];
                                                                       }
                                         ];
