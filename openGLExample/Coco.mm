@@ -454,6 +454,9 @@
     
     //if (_mouseJoint != NULL) return YES;
     
+    [gameLayer checkChestCollision: (CGPoint) location];
+    [gameLayer checkCoinCollision: (CGPoint) location];
+    
     b2Vec2 hookPosition;
     hookPosition = hook->GetPosition();
     

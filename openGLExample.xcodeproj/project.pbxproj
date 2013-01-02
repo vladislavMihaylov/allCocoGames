@@ -473,6 +473,10 @@
 		F5F848B1164BF6E3002F916B /* CocoLeftFootMiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F848AF164BF6E3002F916B /* CocoLeftFootMiddle.png */; };
 		F5F848B4164C1811002F916B /* CocoLeftHandDown.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F848B2164C1811002F916B /* CocoLeftHandDown.png */; };
 		F5F848B5164C1811002F916B /* CocoLeftHandUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F848B3164C1811002F916B /* CocoLeftHandUp.png */; };
+		F5F86E201693FA7800B1B353 /* Chest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F86E1F1693FA7800B1B353 /* Chest.m */; };
+		F5F86E251693FD2D00B1B353 /* chest.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F86E241693FD2D00B1B353 /* chest.png */; };
+		F5F86E2C1694035D00B1B353 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F86E2B1694035D00B1B353 /* Coin.m */; };
+		F5F86E2E1694053400B1B353 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F86E2D1694053400B1B353 /* coin.png */; };
 		F5FE0215165E54BF00794777 /* pauseMenuBg.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FE0214165E54BF00794777 /* pauseMenuBg.png */; };
 		F5FE0219165E596B00794777 /* roosterMinerHead.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FE0218165E596B00794777 /* roosterMinerHead.png */; };
 		F5FF5C3D16416E5C00E8FA97 /* PlayWithCocoBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3916416E5C00E8FA97 /* PlayWithCocoBtn.png */; };
@@ -1164,6 +1168,12 @@
 		F5F848AF164BF6E3002F916B /* CocoLeftFootMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoLeftFootMiddle.png; sourceTree = "<group>"; };
 		F5F848B2164C1811002F916B /* CocoLeftHandDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoLeftHandDown.png; sourceTree = "<group>"; };
 		F5F848B3164C1811002F916B /* CocoLeftHandUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoLeftHandUp.png; sourceTree = "<group>"; };
+		F5F86E1E1693FA7800B1B353 /* Chest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chest.h; sourceTree = "<group>"; };
+		F5F86E1F1693FA7800B1B353 /* Chest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chest.m; sourceTree = "<group>"; };
+		F5F86E241693FD2D00B1B353 /* chest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chest.png; sourceTree = "<group>"; };
+		F5F86E2A1694035D00B1B353 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
+		F5F86E2B1694035D00B1B353 /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
+		F5F86E2D1694053400B1B353 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
 		F5FE0214165E54BF00794777 /* pauseMenuBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseMenuBg.png; sourceTree = "<group>"; };
 		F5FE0218165E596B00794777 /* roosterMinerHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roosterMinerHead.png; sourceTree = "<group>"; };
 		F5FF5C3916416E5C00E8FA97 /* PlayWithCocoBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayWithCocoBtn.png; sourceTree = "<group>"; };
@@ -1414,6 +1424,8 @@
 		0480D87015BF9A9C004FC23C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F5F86E241693FD2D00B1B353 /* chest.png */,
+				F5F86E2D1694053400B1B353 /* coin.png */,
 				F5CFE8F5164145F50070150F /* MorphingSprites */,
 				048DA93E15CE7BCE00DF3B9D /* CommonResourses */,
 				048DA93D15CE7BB500DF3B9D /* CatchCocoGame */,
@@ -1795,6 +1807,10 @@
 				04823F1515C7A61300405F4E /* Coco.mm */,
 				041EE4A115CE383300EBE783 /* Shark.h */,
 				041EE4A215CE383300EBE783 /* Shark.mm */,
+				F5F86E1E1693FA7800B1B353 /* Chest.h */,
+				F5F86E1F1693FA7800B1B353 /* Chest.m */,
+				F5F86E2A1694035D00B1B353 /* Coin.h */,
+				F5F86E2B1694035D00B1B353 /* Coin.m */,
 			);
 			name = FishingGame;
 			sourceTree = "<group>";
@@ -2835,6 +2851,8 @@
 				F5D3DD4A1690AD4A00A7E903 /* upBtnOn.png in Resources */,
 				F5D3DD4E1690B5F900A7E903 /* textures.plist in Resources */,
 				F5D3DD4F1690B5F900A7E903 /* textures.png in Resources */,
+				F5F86E251693FD2D00B1B353 /* chest.png in Resources */,
+				F5F86E2E1694053400B1B353 /* coin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3024,6 +3042,8 @@
 				F50B1162164047B0004BF562 /* MorphGUILayer.mm in Sources */,
 				F50B1163164047B0004BF562 /* MorphGameConfig.m in Sources */,
 				F50B1164164047B0004BF562 /* MorphCommon.mm in Sources */,
+				F5F86E201693FA7800B1B353 /* Chest.m in Sources */,
+				F5F86E2C1694035D00B1B353 /* Coin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

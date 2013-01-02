@@ -69,6 +69,8 @@
 
 - (void) replayGame
 {
+    
+    
     timeLabel.string = @"Time: 01:30";
     scoreLabel.string = @"Score: 0";
     
@@ -81,6 +83,7 @@
     [self removeChild: yourBestScoreLabel cleanup: YES];
     [self removeChild: pauseLabel cleanup: YES];
 
+    [gameLayer unPauseGame];
     [gameLayer startGame];
 }
 

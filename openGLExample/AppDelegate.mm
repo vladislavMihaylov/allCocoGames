@@ -85,13 +85,13 @@
 	// Edit the RootViewController.m file to edit the supported orientations.
 	//
 #if GAME_AUTOROTATION == kGameAutorotationUIViewController
-	[director setDeviceOrientation:kCCDeviceOrientationPortrait];
+	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
 #else
 	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
 #endif
 	
 	[director setAnimationInterval:1.0/60];
-	[director setDisplayFPS: NO];
+	[director setDisplayFPS: YES];
 	
 	
 	// make the OpenGLView a child of the view controller

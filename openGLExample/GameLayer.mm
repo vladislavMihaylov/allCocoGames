@@ -18,10 +18,13 @@
 #import "Common.h"
 #import "SimpleAudioEngine.h"
 #import "VRope.h"
+#import "Coco.h"
 #import <vector>
 
 #import "Fish.h"
 #import "Shark.h"
+#import "Chest.h"
+#import "Coin.h"
 
 using namespace std;
 
@@ -65,6 +68,8 @@ enum {
 	[super dealloc];
     
     [fishesArray release];
+    [coinsArray release];
+    [chestsArray release];
 }
 
 // on "init" you need to initialize your instance
@@ -74,6 +79,10 @@ enum {
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) 
     {
+        coinsArray = [[NSMutableArray alloc] init];
+        chestsArray = [[NSMutableArray alloc] init];
+        
+        self.isTouchEnabled = YES;
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic: @"FishMusic.mp3"];
         
         //////// BackGround
@@ -278,7 +287,7 @@ enum {
         
         
         coco = [Coco createWithWorld: world];
-        
+        coco.gameLayer = self;
         [self addChild: coco z:10];
         
         
@@ -287,9 +296,80 @@ enum {
         [self startGame];
         [self scheduleUpdate];
 
-
+        
 	}
 	return self;
+}
+
+- (void) showChest
+{
+    Chest *chest = [Chest create];
+    
+    NSInteger x = arc4random() % 400 + 40;
+    
+    chest.position = ccp(x, 40);
+    
+    [chestsArray addObject: chest];
+    
+    [self addChild: chest z: 1];
+}
+
+- (void) checkChestCollision: (CGPoint) location
+{
+    NSMutableArray *chestToRemove = [[NSMutableArray alloc] init];
+    
+    for(Chest *curChest in chestsArray)
+    {
+        if([curChest onTaped: location])
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                Coin *coin = [Coin create];
+                
+                coin.position = ccp(curChest.position.x, 40);
+                
+                [coinsArray addObject: coin];
+                
+                [self addChild: coin z: 1];
+                
+                [coin coinJump];
+            }
+            
+            [chestToRemove addObject: curChest];
+            [self removeChild: curChest cleanup: YES];
+        }
+    }
+    
+    for(Chest *curChestToRemove in chestToRemove)
+    {
+        [chestsArray removeObject: curChestToRemove];
+    }
+    
+    [chestToRemove release];
+}
+
+- (void) checkCoinCollision: (CGPoint) location
+{
+    NSMutableArray *coinToRemove = [[NSMutableArray alloc] init];
+    
+    for(Coin *curCoin in coinsArray)
+    {
+        if([curCoin onTapped: location])
+        {
+            score++;
+            [guiLayer updateScoreLabel: score];
+            
+            [coinToRemove addObject: curCoin];
+            [self removeChild: curCoin cleanup: YES];
+        }
+    }
+    
+    for(Coin *curCoinToRemove in coinToRemove)
+    {
+        [coinsArray removeObject: curCoinToRemove];
+    }
+    
+    [coinToRemove release];
 }
 
 - (void) spawnShark
@@ -372,6 +452,25 @@ enum {
 
 - (void) startGame
 {
+    
+    for(Chest *curChest in chestsArray)
+    {
+        [self removeChild: curChest cleanup: YES];
+    }
+    
+    for(Coin *curCoin in coinsArray)
+    {
+        [self removeChild: curCoin cleanup: YES];
+    }
+    
+    [coinsArray removeAllObjects];
+    [chestsArray removeAllObjects];
+    
+    if(CurrentDifficulty == 2)
+    {
+        [self schedule: @selector(showChest) interval: 25];
+    }
+    
     score = 0;
     time = 90;
     IsGameActive = YES;
@@ -435,6 +534,13 @@ enum {
 
 - (void) doPauseGame
 {
+    [self pauseSchedulerAndActions];
+    
+    for(Coin *curCoin in coinsArray)
+    {
+        [curCoin pauseSchedulerAndActions];
+    }
+    
     for(Fish * currentFish in fishesArray)
     {
         [currentFish pauseSchedulerAndActions];
@@ -452,6 +558,13 @@ enum {
 
 - (void) unPauseGame
 {
+    [self resumeSchedulerAndActions];
+    
+    for(Coin *curCoin in coinsArray)
+    {
+        [curCoin resumeSchedulerAndActions];
+    }
+    
     for(Fish * currentFish in fishesArray)
     {
         [currentFish resumeSchedulerAndActions];

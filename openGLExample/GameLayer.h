@@ -9,7 +9,7 @@
 
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
-#import "Coco.h"
+
 #import "GUILayer.h"
 
 #import "Box2D.h"
@@ -19,6 +19,7 @@
 @class Shark;
 @class Fish;
 @class Coco;
+@class Chest;
 
 @interface GameLayer : CCLayer
 {
@@ -80,6 +81,9 @@
     NSMutableArray *sharksArray;
     NSMutableArray *AninatedFishesArray;
     NSMutableArray *AnimatedFishesForRemoveArray;
+    NSMutableArray *coinsArray;
+    NSMutableArray *chestsArray;
+   
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
@@ -89,11 +93,14 @@
 - (void) removeFish: (Fish *) currentFish;
 - (void) removeShark: (Shark *) currentShark;
 - (void) updateIntervalForFishSpawn;
+- (void) showChest;
 
 - (void) startGame;
 - (void) doPauseGame;
 - (void) unPauseGame;
 - (void) fishAnimation: (CCSprite *) fishSprite;
+- (void) checkChestCollision: (CGPoint) location;
+- (void) checkCoinCollision: (CGPoint) location;
 
 @property (nonatomic, assign) CGPoint pos; 
 @property (nonatomic, assign) GUILayer *guiLayer;
