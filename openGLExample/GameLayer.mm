@@ -356,7 +356,7 @@ enum {
     {
         if([curCoin onTapped: location])
         {
-            score++;
+            score += 2;
             [guiLayer updateScoreLabel: score];
             
             [coinToRemove addObject: curCoin];

@@ -36,8 +36,8 @@
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) 
     {
-        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"bg.mp3" loop:YES];
-        [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:0.5f];
+        [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+        //[[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:0.5f];
         //[[SimpleAudioEngine sharedEngine] preloadBackgroundMusic: @"FishMusic.mp3"];
         
         CCSprite *menuBackground = [CCSprite spriteWithFile:@"menuBg.png"];
