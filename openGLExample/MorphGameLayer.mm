@@ -48,6 +48,7 @@
     if (self = [super init])
     {
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic: @"actionBgMusic.wav" loop: YES];
+        [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume: 0.2f];
         
         IsMorphGameActive = YES;
         

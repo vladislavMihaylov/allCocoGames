@@ -479,6 +479,12 @@
 		F5F9660C1696C72E00416751 /* textures.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F9660A1696C72E00416751 /* textures.png */; };
 		F5F966131696CBC100416751 /* arabicLangNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F966111696CBC000416751 /* arabicLangNormal.png */; };
 		F5F966141696CBC100416751 /* arabicLangOn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F966121696CBC100416751 /* arabicLangOn.png */; };
+		F5F9661B1696D2AA00416751 /* 6coco0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F5F966151696D2AA00416751 /* 6coco0.mp3 */; };
+		F5F9661C1696D2AA00416751 /* 6coco1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F5F966161696D2AA00416751 /* 6coco1.mp3 */; };
+		F5F9661D1696D2AA00416751 /* 6coco2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F5F966171696D2AA00416751 /* 6coco2.mp3 */; };
+		F5F9661E1696D2AA00416751 /* 6coco3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F5F966181696D2AA00416751 /* 6coco3.mp3 */; };
+		F5F9661F1696D2AA00416751 /* 6coco4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F5F966191696D2AA00416751 /* 6coco4.mp3 */; };
+		F5F966201696D2AA00416751 /* 6finish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F5F9661A1696D2AA00416751 /* 6finish.mp3 */; };
 		F5FE0215165E54BF00794777 /* pauseMenuBg.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FE0214165E54BF00794777 /* pauseMenuBg.png */; };
 		F5FE0219165E596B00794777 /* roosterMinerHead.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FE0218165E596B00794777 /* roosterMinerHead.png */; };
 		F5FF5C3D16416E5C00E8FA97 /* PlayWithCocoBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3916416E5C00E8FA97 /* PlayWithCocoBtn.png */; };
@@ -1178,6 +1184,12 @@
 		F5F9660A1696C72E00416751 /* textures.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textures.png; sourceTree = "<group>"; };
 		F5F966111696CBC000416751 /* arabicLangNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arabicLangNormal.png; sourceTree = "<group>"; };
 		F5F966121696CBC100416751 /* arabicLangOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arabicLangOn.png; sourceTree = "<group>"; };
+		F5F966151696D2AA00416751 /* 6coco0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6coco0.mp3; sourceTree = "<group>"; };
+		F5F966161696D2AA00416751 /* 6coco1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6coco1.mp3; sourceTree = "<group>"; };
+		F5F966171696D2AA00416751 /* 6coco2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6coco2.mp3; sourceTree = "<group>"; };
+		F5F966181696D2AA00416751 /* 6coco3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6coco3.mp3; sourceTree = "<group>"; };
+		F5F966191696D2AA00416751 /* 6coco4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6coco4.mp3; sourceTree = "<group>"; };
+		F5F9661A1696D2AA00416751 /* 6finish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6finish.mp3; sourceTree = "<group>"; };
 		F5FE0214165E54BF00794777 /* pauseMenuBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseMenuBg.png; sourceTree = "<group>"; };
 		F5FE0218165E596B00794777 /* roosterMinerHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roosterMinerHead.png; sourceTree = "<group>"; };
 		F5FF5C3916416E5C00E8FA97 /* PlayWithCocoBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayWithCocoBtn.png; sourceTree = "<group>"; };
@@ -2325,6 +2337,12 @@
 		F50584021671DA0500CE1F1E /* Arabic */ = {
 			isa = PBXGroup;
 			children = (
+				F5F966151696D2AA00416751 /* 6coco0.mp3 */,
+				F5F966161696D2AA00416751 /* 6coco1.mp3 */,
+				F5F966171696D2AA00416751 /* 6coco2.mp3 */,
+				F5F966181696D2AA00416751 /* 6coco3.mp3 */,
+				F5F966191696D2AA00416751 /* 6coco4.mp3 */,
+				F5F9661A1696D2AA00416751 /* 6finish.mp3 */,
 			);
 			name = Arabic;
 			sourceTree = "<group>";
@@ -2861,6 +2879,12 @@
 				F5F9660C1696C72E00416751 /* textures.png in Resources */,
 				F5F966131696CBC100416751 /* arabicLangNormal.png in Resources */,
 				F5F966141696CBC100416751 /* arabicLangOn.png in Resources */,
+				F5F9661B1696D2AA00416751 /* 6coco0.mp3 in Resources */,
+				F5F9661C1696D2AA00416751 /* 6coco1.mp3 in Resources */,
+				F5F9661D1696D2AA00416751 /* 6coco2.mp3 in Resources */,
+				F5F9661E1696D2AA00416751 /* 6coco3.mp3 in Resources */,
+				F5F9661F1696D2AA00416751 /* 6coco4.mp3 in Resources */,
+				F5F966201696D2AA00416751 /* 6finish.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
