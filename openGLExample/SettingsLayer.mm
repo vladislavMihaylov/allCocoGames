@@ -15,6 +15,7 @@
 #import "CocoGameLayer.h"
 #import "GameLayer.h"
 #import "MorphMainMenu.h"
+#import "Tutorial.h"
 
 
 @implementation SettingsLayer
@@ -251,7 +252,7 @@
 {
     [[SimpleAudioEngine sharedEngine] playEffect:@"tap.mp3"];
     
-    if(send.tag == 10)
+    /*if(send.tag == 10)
     {
         [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [GameLayer scene]]];
     }
@@ -263,7 +264,18 @@
     {
         [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [MorphMainMenu scene]]];
         //[self selectHero];
+    }*/
+    CurrentGame = send.tag;
+    CCLOG(@"%i", CurrentGame);
+    if(CurrentGame == 12)
+    {
+        [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [MorphMainMenu scene]]];
     }
+    else
+    {
+        [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1.0 scene: [Tutorial scene]]];
+    }
+    
 }
 
 - (void) selectHero

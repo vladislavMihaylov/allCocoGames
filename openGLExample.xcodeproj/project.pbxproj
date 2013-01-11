@@ -487,6 +487,16 @@
 		F5F966201696D2AA00416751 /* 6finish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F5F9661A1696D2AA00416751 /* 6finish.mp3 */; };
 		F5FE0215165E54BF00794777 /* pauseMenuBg.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FE0214165E54BF00794777 /* pauseMenuBg.png */; };
 		F5FE0219165E596B00794777 /* roosterMinerHead.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FE0218165E596B00794777 /* roosterMinerHead.png */; };
+		F5FEAB7116A07E34000E124C /* 120.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5FEAB6A16A07E34000E124C /* 120.jpg */; };
+		F5FEAB7216A07E34000E124C /* 121.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5FEAB6B16A07E34000E124C /* 121.jpg */; };
+		F5FEAB7316A07E34000E124C /* 122.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5FEAB6C16A07E34000E124C /* 122.jpg */; };
+		F5FEAB7416A07E34000E124C /* cocoTutorial.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5FEAB6D16A07E34000E124C /* cocoTutorial.jpg */; };
+		F5FEAB7516A07E34000E124C /* 100.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5FEAB6E16A07E34000E124C /* 100.jpg */; };
+		F5FEAB7616A07E34000E124C /* 101.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5FEAB6F16A07E34000E124C /* 101.jpg */; };
+		F5FEAB7716A07E34000E124C /* 102.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5FEAB7016A07E34000E124C /* 102.jpg */; };
+		F5FEAB7A16A07FEF000E124C /* Tutorial.mm in Sources */ = {isa = PBXBuildFile; fileRef = F5FEAB7916A07FEF000E124C /* Tutorial.mm */; };
+		F5FEAB7D16A08DC9000E124C /* okBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FEAB7B16A08DC8000E124C /* okBtn.png */; };
+		F5FEAB7E16A08DC9000E124C /* okBtnTap.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FEAB7C16A08DC8000E124C /* okBtnTap.png */; };
 		F5FF5C3D16416E5C00E8FA97 /* PlayWithCocoBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3916416E5C00E8FA97 /* PlayWithCocoBtn.png */; };
 		F5FF5C3E16416E5C00E8FA97 /* PlayWithCocoBtnTap.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3A16416E5C00E8FA97 /* PlayWithCocoBtnTap.png */; };
 		F5FF5C3F16416E5C00E8FA97 /* PlayWithFrancoisBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FF5C3B16416E5C00E8FA97 /* PlayWithFrancoisBtn.png */; };
@@ -1192,6 +1202,17 @@
 		F5F9661A1696D2AA00416751 /* 6finish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6finish.mp3; sourceTree = "<group>"; };
 		F5FE0214165E54BF00794777 /* pauseMenuBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseMenuBg.png; sourceTree = "<group>"; };
 		F5FE0218165E596B00794777 /* roosterMinerHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roosterMinerHead.png; sourceTree = "<group>"; };
+		F5FEAB6A16A07E34000E124C /* 120.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 120.jpg; sourceTree = "<group>"; };
+		F5FEAB6B16A07E34000E124C /* 121.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 121.jpg; sourceTree = "<group>"; };
+		F5FEAB6C16A07E34000E124C /* 122.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 122.jpg; sourceTree = "<group>"; };
+		F5FEAB6D16A07E34000E124C /* cocoTutorial.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cocoTutorial.jpg; sourceTree = "<group>"; };
+		F5FEAB6E16A07E34000E124C /* 100.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 100.jpg; sourceTree = "<group>"; };
+		F5FEAB6F16A07E34000E124C /* 101.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 101.jpg; sourceTree = "<group>"; };
+		F5FEAB7016A07E34000E124C /* 102.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 102.jpg; sourceTree = "<group>"; };
+		F5FEAB7816A07FEF000E124C /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
+		F5FEAB7916A07FEF000E124C /* Tutorial.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Tutorial.mm; sourceTree = "<group>"; };
+		F5FEAB7B16A08DC8000E124C /* okBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = okBtn.png; sourceTree = "<group>"; };
+		F5FEAB7C16A08DC8000E124C /* okBtnTap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = okBtnTap.png; sourceTree = "<group>"; };
 		F5FF5C3916416E5C00E8FA97 /* PlayWithCocoBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayWithCocoBtn.png; sourceTree = "<group>"; };
 		F5FF5C3A16416E5C00E8FA97 /* PlayWithCocoBtnTap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayWithCocoBtnTap.png; sourceTree = "<group>"; };
 		F5FF5C3B16416E5C00E8FA97 /* PlayWithFrancoisBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayWithFrancoisBtn.png; sourceTree = "<group>"; };
@@ -1440,6 +1461,7 @@
 		0480D87015BF9A9C004FC23C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F5FEAB6816A07E21000E124C /* tutorials */,
 				F502B6BA1696B4A5007AA2C0 /* chest.png */,
 				F502B6B81696B36D007AA2C0 /* coin.png */,
 				F5CFE8F5164145F50070150F /* MorphingSprites */,
@@ -2185,6 +2207,8 @@
 		048DAA1B15CE810E00DF3B9D /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				F5FEAB7816A07FEF000E124C /* Tutorial.h */,
+				F5FEAB7916A07FEF000E124C /* Tutorial.mm */,
 				04922C3815CEBF78000F86CD /* SettingsLayer.h */,
 				04922C3915CEBF78000F86CD /* SettingsLayer.mm */,
 				04922C3A15CEBF78000F86CD /* MainMenuLayer.h */,
@@ -2472,6 +2496,22 @@
 				F5CFE90C164146940070150F /* rightHand.png */,
 			);
 			name = MorphingSprites;
+			sourceTree = "<group>";
+		};
+		F5FEAB6816A07E21000E124C /* tutorials */ = {
+			isa = PBXGroup;
+			children = (
+				F5FEAB7B16A08DC8000E124C /* okBtn.png */,
+				F5FEAB7C16A08DC8000E124C /* okBtnTap.png */,
+				F5FEAB6A16A07E34000E124C /* 120.jpg */,
+				F5FEAB6B16A07E34000E124C /* 121.jpg */,
+				F5FEAB6C16A07E34000E124C /* 122.jpg */,
+				F5FEAB6D16A07E34000E124C /* cocoTutorial.jpg */,
+				F5FEAB6E16A07E34000E124C /* 100.jpg */,
+				F5FEAB6F16A07E34000E124C /* 101.jpg */,
+				F5FEAB7016A07E34000E124C /* 102.jpg */,
+			);
+			name = tutorials;
 			sourceTree = "<group>";
 		};
 		F5FF8A8B1664CAF10080E1CE /* francoisSprites */ = {
@@ -2885,6 +2925,15 @@
 				F5F9661E1696D2AA00416751 /* 6coco3.mp3 in Resources */,
 				F5F9661F1696D2AA00416751 /* 6coco4.mp3 in Resources */,
 				F5F966201696D2AA00416751 /* 6finish.mp3 in Resources */,
+				F5FEAB7116A07E34000E124C /* 120.jpg in Resources */,
+				F5FEAB7216A07E34000E124C /* 121.jpg in Resources */,
+				F5FEAB7316A07E34000E124C /* 122.jpg in Resources */,
+				F5FEAB7416A07E34000E124C /* cocoTutorial.jpg in Resources */,
+				F5FEAB7516A07E34000E124C /* 100.jpg in Resources */,
+				F5FEAB7616A07E34000E124C /* 101.jpg in Resources */,
+				F5FEAB7716A07E34000E124C /* 102.jpg in Resources */,
+				F5FEAB7D16A08DC9000E124C /* okBtn.png in Resources */,
+				F5FEAB7E16A08DC9000E124C /* okBtnTap.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3076,6 +3125,7 @@
 				F50B1164164047B0004BF562 /* MorphCommon.mm in Sources */,
 				F5F86E201693FA7800B1B353 /* Chest.m in Sources */,
 				F5F86E2C1694035D00B1B353 /* Coin.m in Sources */,
+				F5FEAB7A16A07FEF000E124C /* Tutorial.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

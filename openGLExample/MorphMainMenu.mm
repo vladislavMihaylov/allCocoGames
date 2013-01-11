@@ -15,6 +15,7 @@
 //#import "Coco.h"
 
 #import "MorphGameConfig.h"
+#import "Tutorial.h"
 
 // HelloWorldLayer implementation
 @implementation MorphMainMenu
@@ -77,7 +78,7 @@
 {
     [[SimpleAudioEngine sharedEngine] playEffect:@"tap.mp3"];
     typeCharacter = sender.tag;
-    [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1 scene: [MorphGameLayer scene]]];
+    [[CCDirector sharedDirector] replaceScene: [CCTransitionFade transitionWithDuration: 1 scene: [Tutorial scene]]];
 }
 
 

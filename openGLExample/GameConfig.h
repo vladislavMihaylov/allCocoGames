@@ -92,6 +92,7 @@ extern float GameCenterY;
 
 extern int CurrentLanguage;
 extern int CurrentDifficulty;
+extern int CurrentGame;
 
 extern BOOL IsHookActive;
 extern BOOL IsFishCauth;
