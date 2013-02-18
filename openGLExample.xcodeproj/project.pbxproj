@@ -448,6 +448,7 @@
 		F50CE4A51663A7B50066EC2B /* 5coco2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F50CE49F1663A7B50066EC2B /* 5coco2.mp3 */; };
 		F50CE4A61663A7B50066EC2B /* 5coco0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F50CE4A01663A7B50066EC2B /* 5coco0.mp3 */; };
 		F50CE4A71663A7B50066EC2B /* 5coco1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F50CE4A11663A7B50066EC2B /* 5coco1.mp3 */; };
+		F50E627B16CF93FE008223D4 /* 2coco3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F50E627A16CF93FE008223D4 /* 2coco3.mp3 */; };
 		F511E43716A6FC3D0044CAA8 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = F511E43116A6FC3D0044CAA8 /* Icon-Small.png */; };
 		F511E43816A6FC3D0044CAA8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F511E43216A6FC3D0044CAA8 /* Icon@2x.png */; };
 		F511E43916A6FC3D0044CAA8 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F511E43316A6FC3D0044CAA8 /* Icon-72.png */; };
@@ -1161,6 +1162,7 @@
 		F50CE49F1663A7B50066EC2B /* 5coco2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5coco2.mp3; sourceTree = "<group>"; };
 		F50CE4A01663A7B50066EC2B /* 5coco0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5coco0.mp3; sourceTree = "<group>"; };
 		F50CE4A11663A7B50066EC2B /* 5coco1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5coco1.mp3; sourceTree = "<group>"; };
+		F50E627A16CF93FE008223D4 /* 2coco3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2coco3.mp3; sourceTree = "<group>"; };
 		F511E43116A6FC3D0044CAA8 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		F511E43216A6FC3D0044CAA8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		F511E43316A6FC3D0044CAA8 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -2338,6 +2340,7 @@
 			children = (
 				F505840F1671DA2300CE1F1E /* 2coco0.mp3 */,
 				F50584101671DA2300CE1F1E /* 2coco1.mp3 */,
+				F50E627A16CF93FE008223D4 /* 2coco3.mp3 */,
 				F50584111671DA2300CE1F1E /* 2coco2.mp3 */,
 				F50584121671DA2300CE1F1E /* 2coco4.mp3 */,
 				F50584131671DA2300CE1F1E /* 2finish.mp3 */,
@@ -2934,6 +2937,7 @@
 				F511E43A16A6FC3D0044CAA8 /* Icon-Small@2x.png in Resources */,
 				F511E43B16A6FC3D0044CAA8 /* Icon.png in Resources */,
 				F511E43C16A6FC3D0044CAA8 /* Icon-Small-50.png in Resources */,
+				F50E627B16CF93FE008223D4 /* 2coco3.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

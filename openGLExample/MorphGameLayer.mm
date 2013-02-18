@@ -439,13 +439,14 @@
 {
     if(typeCharacter == 0)
     {
-        
+        [self reorderChild: coco z: 1];
         [coco doAction: 0 withSpeed: 7];//currentSpeed];
         [coco doAction: 1002 withSpeed: 7]; //currentSpeed];
         [ground increaseSpeedAnimation: 7];//[coco getCurrentGroundSpeed]];
     }
     else if(typeCharacter == 1)
     {
+        [self reorderChild: francois z: 1];
         [francois doAction: 0 withSpeed: 7];     //currentSpeed];
         [francois doAction: 1002 withSpeed: 7];  //currentSpeed];
         [ground increaseSpeedAnimation: 7];      //[francois getCurrentGroundSpeed]];
@@ -523,6 +524,29 @@
                 [ground increaseSpeedAnimation: [francois getCurrentGroundSpeed]];
                 
             }
+        }
+    }
+    
+    if(curAction == 1001)
+    {
+        if(typeCharacter == 0)
+        {
+            [self reorderChild: coco z: -10];
+        }
+        else if(typeCharacter == 1)
+        {
+            [self reorderChild: francois z: -10];
+        }
+    }
+    else
+    {
+        if(typeCharacter == 0)
+        {
+            [self reorderChild: coco z: 1];
+        }
+        else if(typeCharacter == 1)
+        {
+            [self reorderChild: francois z: 1];
         }
     }
     

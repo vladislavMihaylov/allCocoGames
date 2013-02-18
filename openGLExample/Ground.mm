@@ -95,6 +95,8 @@
     currentGroundType = 1000;
     currentAction = 1000;
     
+    INeedNextAction = NO;
+    
     IsMoveDown = NO;
     IsMoveUp = NO;
     IsMoveRight = YES;
